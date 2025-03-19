@@ -29,7 +29,7 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 ### Goals
 
 1. **Jawaban Pernyataan Masalah 1:**
-   - Mengembangkan strategi untuk membantu freelancer dalam mencari dan mempertahankan klien, termasuk teknik pemasaran dan pengembangan jaringan.
+   - Untuk mengatasi tantangan dalam mencari dan mempertahankan klien, akan dilakukan analisis mendalam terhadap beberapa faktor kunci. Pertama, mengidentifikasi posisi yang menunjukkan permintaan tinggi di pasar. Kedua, penting untuk memahami pengalaman dan keterampilan yang paling dipercaya serta diminati oleh klien. Selain itu, mengetahui wilayah geografis dengan permintaan tinggi dapat memberikan keuntungan kompetitif. Terakhir, memahami metode pembayaran yang disukai oleh klien akan membantu freelancer merancang penawaran yang lebih menarik dan sesuai dengan kebutuhan klien. Dengan pendekatan strategis ini, freelancer dapat meningkatkan peluang mereka untuk mendapatkan klien baru dan membangun hubungan jangka panjang yang saling menguntungkan.
 
 2. **Jawaban Pernyataan Masalah 2:**
    - Menyediakan panduan untuk menetapkan harga jasa yang kompetitif berdasarkan riset pasar dan analisis tarif.
