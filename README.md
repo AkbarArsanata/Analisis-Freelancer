@@ -10,17 +10,46 @@ Namun, meskipun begitu, freelancer sering kali menghadapi persaingan yang ketat 
 
 Selain itu, para freelancer juga menghadapi tantangan lain, yaitu keraguan mengenai tingkat keberhasilan pekerjaan mereka. Freelancer sering kali merasa kurang dihargai dan mengalami ketidakpastian dalam hubungan dengan klien, yang dapat mempengaruhi kepercayaan diri mereka dalam menyelesaikan proyek dengan baik [^7].
 
-Oleh karena itu, di sini saya akan melakukan analisis untuk menyelesaikan masalah-masalah yang dihadapi oleh freelancer, seperti:
 
-- Tantangan untuk mencari klien
-- Job success rate
-- Tantangan dalam menetapkan harga jasa yang kompetitif
+## Business Understanding
 
-Penting untuk memahami bahwa keberhasilan seorang freelancer tidak hanya bergantung pada keterampilan teknis, tetapi juga pada kemampuan mereka untuk menavigasi pasar yang kompetitif. Dengan melakukan riset yang mendalam, freelancer dapat menemukan tarif yang sesuai dan meningkatkan daya tawar mereka. Selain itu, membangun hubungan yang kuat dengan klien dan meningkatkan kepercayaan diri dalam menyelesaikan proyek dapat membantu mengurangi ketidakpastian dan meningkatkan kepuasan kerja. 
+Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer di Indonesia menghadapi berbagai tantangan yang telah dijelaskan pada paragraf diatas. Penting untuk memahami bahwa keberhasilan seorang freelancer tidak hanya bergantung pada keterampilan teknis, tetapi juga pada kemampuan mereka untuk menavigasi pasar yang kompetitif. Dengan melakukan riset yang mendalam, freelancer dapat menemukan tarif yang sesuai dan meningkatkan daya tawar mereka. Selain itu, membangun hubungan yang kuat dengan klien dan meningkatkan kepercayaan diri dalam menyelesaikan proyek dapat membantu mengurangi ketidakpastian dan meningkatkan kepuasan kerja. Melalui analisis ini, saya akan mengidentifikasi strategi yang dapat diterapkan untuk mengatasi tantangan-tantangan tersebut dan menciptakan lingkungan kerja yang lebih mendukung bagi para freelancer.
 
-Melalui analisis ini, saya akan mengidentifikasi strategi yang dapat diterapkan untuk mengatasi tantangan-tantangan tersebut dan menciptakan lingkungan kerja yang lebih mendukung bagi para freelancer.
+### Problem Statements
 
-Business Understanding
+1. **Pernyataan Masalah 1: Tantangan dalam mencari dan mempertahankan klien.**
+   - Freelancer sering kali menghadapi kesulitan dalam mendapatkan klien baru dan mempertahankan hubungan dengan klien yang ada, yang dapat mempengaruhi pendapatan mereka.
+
+2. **Pernyataan Masalah 2: Kesulitan dalam menetapkan harga jasa yang kompetitif.**
+   - Freelancer pemula sering kali bingung dalam menentukan tarif yang sesuai, di mana harga yang terlalu rendah dapat mengurangi nilai pekerjaan, sementara harga yang terlalu tinggi dapat membuat klien ragu.
+
+3. **Pernyataan Masalah 3: Keraguan mengenai tingkat keberhasilan pekerjaan.**
+   - Freelancer sering merasa kurang dihargai dan mengalami ketidakpastian dalam hubungan dengan klien, yang dapat mempengaruhi kepercayaan diri mereka dalam menyelesaikan proyek.
+
+### Goals
+
+1. **Jawaban Pernyataan Masalah 1:**
+   - Mengembangkan strategi untuk membantu freelancer dalam mencari dan mempertahankan klien, termasuk teknik pemasaran dan pengembangan jaringan.
+
+2. **Jawaban Pernyataan Masalah 2:**
+   - Menyediakan panduan untuk menetapkan harga jasa yang kompetitif berdasarkan riset pasar dan analisis tarif.
+
+3. **Jawaban Pernyataan Masalah 3:**
+   - Meningkatkan kepercayaan diri freelancer dengan memberikan alat dan sumber daya untuk menilai dan meningkatkan tingkat keberhasilan proyek mereka.
+
+### Solution Statements
+
+1. **Solution Statement 1:**
+   - Menerapkan model prediktif untuk mengidentifikasi peluang klien yang potensial berdasarkan profil dan preferensi freelancer, sehingga meningkatkan peluang mendapatkan proyek.
+
+2. **Solution Statement 2:**
+   - Melakukan hyperparameter tuning pada model yang digunakan untuk meningkatkan akurasi prediksi job success rate, sehingga freelancer dapat lebih percaya diri dalam menyelesaikan proyek.
+
+3. **Solution Statement 3:**
+   - Mengembangkan dashboard interaktif yang memungkinkan freelancer untuk memantau kinerja mereka, termasuk tingkat keberhasilan proyek dan umpan balik dari klien, untuk meningkatkan hubungan dan kepuasan kerja.
+
+Dengan pendekatan ini, diharapkan dapat membantu freelancer mengatasi tantangan yang mereka hadapi dan menciptakan lingkungan kerja yang lebih mendukung.
+
 Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
 
 Bagian laporan ini mencakup:
@@ -46,7 +75,7 @@ Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih g
 Solution statements
 Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
 Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
-Data Understanding
+## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: UCI Machine Learning Repository.
 
 Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
@@ -58,14 +87,14 @@ dst
 Rubrik/Kriteria Tambahan (Opsional):
 
 Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
-Data Preparation
+## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
 Rubrik/Kriteria Tambahan (Opsional):
 
 Menjelaskan proses data preparation yang dilakukan
 Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
-Modeling
+## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
 Rubrik/Kriteria Tambahan (Opsional):
@@ -73,7 +102,7 @@ Rubrik/Kriteria Tambahan (Opsional):
 Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
 Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. Jelaskan proses improvement yang dilakukan.
 Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. Jelaskan mengapa memilih model tersebut sebagai model terbaik.
-Evaluation
+## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 
 Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik akurasi, precision, recall, dan F1 score. Jelaskan mengenai beberapa hal berikut:
