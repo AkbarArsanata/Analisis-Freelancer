@@ -116,6 +116,12 @@ Rubrik/Kriteria Tambahan (Opsional):
 
 Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 ## Data Preparation
+
+Data preparation merupakan tahapan penting dalam proses pengembangan model machine learning. Ini adalah tahap di mana kita melakukan proses transformasi pada data sehingga menjadi bentuk yang cocok untuk proses pemodelan. Dikarenakan pada submision kita diberi opsi untuk memilih salah satu dari 3 pilihan (Klasifikasi, Regresi, Time series dan forecasting) maka disini diputuskan untuk menggunakan metode Regresi untuk menyelesaikan semua permasalahan tersebut
+
+
+
+
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
 Rubrik/Kriteria Tambahan (Opsional):
