@@ -32,7 +32,7 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
    - Untuk mengatasi tantangan dalam mencari dan mempertahankan klien, akan dilakukan analisis mendalam terhadap beberapa faktor kunci. Pertama, mengidentifikasi posisi yang menunjukkan permintaan tinggi di pasar. Kedua, penting untuk memahami pengalaman dan keterampilan yang paling dipercaya serta diminati oleh klien. Selain itu, mengetahui wilayah geografis dengan permintaan tinggi dapat memberikan keuntungan kompetitif. Terakhir, memahami metode pembayaran yang disukai oleh klien akan membantu freelancer merancang penawaran yang lebih menarik dan sesuai dengan kebutuhan klien. Dengan pendekatan strategis ini, freelancer dapat meningkatkan peluang mereka untuk mendapatkan klien baru dan membangun hubungan jangka panjang yang saling menguntungkan.
 
 2. **Jawaban Pernyataan Masalah 2:**
-   - Menyediakan panduan untuk menetapkan harga jasa yang kompetitif berdasarkan riset pasar dan analisis tarif.
+   - Untuk mengatasi tantangan dari menentukan tarif yang sesuai, akan dilakukan analisis terhadap faktor faktor yang 
 
 3. **Jawaban Pernyataan Masalah 3:**
    - Meningkatkan kepercayaan diri freelancer dengan memberikan alat dan sumber daya untuk menilai dan meningkatkan tingkat keberhasilan proyek mereka.
