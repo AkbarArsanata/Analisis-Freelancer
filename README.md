@@ -1,6 +1,6 @@
 # Laporan Proyek Machine Learning Predictive Analytics - Ibrahim Akbar Arsanata
 
-## Domain Proyek
+# Domain Proyek
 
 Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2]. 
 
@@ -11,11 +11,11 @@ Namun, meskipun begitu, freelancer sering kali menghadapi persaingan yang ketat 
 Selain itu, para freelancer juga menghadapi tantangan lain, yaitu keraguan mengenai tingkat keberhasilan pekerjaan mereka. Freelancer sering kali merasa kurang dihargai dan mengalami ketidakpastian dalam hubungan dengan klien, yang dapat mempengaruhi kepercayaan diri mereka dalam menyelesaikan proyek dengan baik [^7].
 
 
-## Business Understanding
+# Business Understanding
 
 Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer di Indonesia menghadapi berbagai tantangan yang telah dijelaskan pada paragraf diatas. Penting untuk memahami bahwa keberhasilan seorang freelancer tidak hanya bergantung pada keterampilan teknis, tetapi juga pada kemampuan mereka untuk menavigasi pasar yang kompetitif. Dengan melakukan riset yang mendalam, freelancer dapat menemukan tarif yang sesuai dan meningkatkan daya tawar mereka. Selain itu, membangun hubungan yang kuat dengan klien dan meningkatkan kepercayaan diri dalam menyelesaikan proyek dapat membantu mengurangi ketidakpastian dan meningkatkan kepuasan kerja. Melalui analisis ini, saya akan mengidentifikasi strategi yang dapat diterapkan untuk mengatasi tantangan-tantangan tersebut dan menciptakan lingkungan kerja yang lebih mendukung bagi para freelancer.
 
-### Problem Statements
+## Problem Statements
 
 1. **Pernyataan Masalah 1: Apakah peningkatan Job Success Rate dapat secara konsisten menaikkan prediksi pendapatan?**
    -Job Success Rate (JSR) adalah metrik yang mengindikasikan seberapa sukses seorang freelancer dalam menyelesaikan pekerjaannya. Problem statement ini bertujuan untuk mengevaluasi apakah kenaikan JSR berbanding lurus dengan peningkatan pendapatan. Jika ditemukan korelasi positif, maka freelancer atau platform dapat fokus pada strategi peningkatan kualitas pekerjaan untuk meningkatkan pendapatan. Namun, perlu juga dikaji apakah faktor lain seperti jenis pekerjaan atau pengalaman turut memengaruhi hubungan ini.
@@ -32,90 +32,179 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 5. **Penyataan Masalah 5: Apakah tarif per jam memiliki pengaruh signifikan terhadap perubahan estimasi pendapatan?**
    -Tarif per jam adalah faktor langsung dalam penghitungan pendapatan freelancer. Namun, problem ini mengevaluasi apakah menaikkan tarif per jam selalu meningkatkan pendapatan, atau justru berpotensi mengurangi jumlah klien karena harga terlalu tinggi. Analisis dapat mencakup elastisitas permintaan, tingkat persaingan, dan kualitas layanan untuk menentukan strategi penetapan harga optimal.
 
-### Goals
+## Goals
 
-1. **Jawaban Pernyataan Masalah 1:**
-   - Untuk menjawab pertanyaan apakah peningkatan Job Success Rate (JSR) secara konsisten menaikkan prediksi pendapatan, perlu dilakukan analisis korelasi antara kedua variabel tersebut guna mengetahui kekuatan dan arah hubungannya. Selain itu, penting untuk mengidentifikasi apakah terdapat titik optimal di mana kenaikan JSR tidak lagi memberikan dampak signifikan terhadap pendapatan, mengingat kemungkinan adanya hukum diminishing returns. Faktor-faktor pendorong peningkatan JSR, seperti kualitas pekerjaan, kepuasan klien, atau kompleksitas proyek, juga perlu dievaluasi untuk memahami dinamika yang terjadi. Hasil analisis ini dapat menjadi dasar rekomendasi strategi peningkatan JSR, misalnya melalui pelatihan keterampilan, peningkatan komunikasi dengan klien, atau seleksi proyek yang lebih tepat, sehingga freelancer atau platform dapat mengoptimalkan pendapatan secara berkelanjutan.
+## Solution Statements
 
-2. **Jawaban Pernyataan Masalah 2:**
-   - Untuk mengatasi tantangan dari menentukan tarif yang sesuai, akan dilakukan analisis terhadap faktor faktor yang 
+## 1. Memenuhi Asumsi Model Regresi (Assumption Checking and Data Preparation)
 
-3. **Jawaban Pernyataan Masalah 3:**
-   - Meningkatkan kepercayaan diri freelancer dengan memberikan alat dan sumber daya untuk menilai dan meningkatkan tingkat keberhasilan proyek mereka.
+subgraph Assumption_Checking_and_Data_Preparation
+    direction TB
 
-### Solution Statements
+    A1[Eksplorasi Data Awal]
+    A2[Pemeriksaan Asumsi Regresi]
+    A3[Penanganan Data]
+    A4[Deteksi dan Penanganan Outlier & Influential Points]
+    A5[Finalisasi Dataset Siap Modeling]
 
-Berikut adalah versi markdown yang sudah dirapikan dan diformat agar terlihat lebih bagus dan mudah dibaca:
+    %% Detail sub-subgraphs
+    subgraph Eksplorasi_Data_Awal
+        direction LR
+        E1(Inspeksi tipe data, jumlah observasi & variabel)
+        E2(Identifikasi missing values & duplikat)
+        E3(Analisis distribusi variabel: histogram, boxplot)
+        E1 --> E2 --> E3
+    end
+
+    subgraph Pemeriksaan_Asumsi_Regresi
+        direction LR
+        P1(Linearitas: scatter plot, Ramsey RESET, residual plot)
+        P2(Independensi Residual: Durbin-Watson test)
+        P3(Homoskedastisitas: Breusch-Pagan / White test)
+        P4(Normalitas Residual: Shapiro-Wilk / Q-Q plot)
+        
+        P1 --> P2 --> P3 --> P4 
+    end
+
+     subgraph Penanganan_Data_Detail
+         direction LR 
+         H1(Imputasi/hapus missing values) 
+         H2(Pengkodean variabel kategorikal) 
+         H3(Normalisasi/standardisasi skala numerik) 
+         
+         H1 --> H2 --> H3 
+     end
+    
+     subgraph Deteksi_Outlier_Influential_Points_Detail    
+       D1(Hitung Cook’s Distance, DFFITS, DFBetas)  
+       D2(Visual leverage vs studentized residuals)  
+       D3(Lakukan transformasi/hapus outlier jika perlu)  
+       
+       D1 --> D2 --> D3  
+     end
+    
+   %% Hubungkan node utama ke detailnya   
+   A1 --> Eksplorasi_Data_Awal  
+   A2 --> Pemeriksaan_Asumsi_Regresi  
+   A3 --> Penanganan_Data_Detail   
+   A4 --> Deteksi_Outlier_Influential_Points_Detail  
+
+end
+
+**Metrik Evaluasi:**  
+- Uji statistik asumsi (Durbin-Watson > 1.5-< 2.5 untuk independensi).  
+- Nilai p-value > 0.05 pada uji normalitas residual (Shapiro-Wilk).  
+- Plot residual tanpa pola sistematis (visual check).  
 
 ---
 
-### Solution Statement 1:  
-#### Pendekatan Multi-Model dengan Hyperparameter Tuning untuk Optimasi Regresi
+## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
 
-Dalam rangka mendapatkan model regresi terbaik yang **akurat** dan **stabil**, dilakukan pendekatan multi-model sebagai berikut:
+subgraph Compare_Three_Candidate_Models
+direction TB
+  
+C1[Pemilihan Model Kandidat]    
+C2[Pelatihan Masing-Masing Model]    
+C3[Evaluasi Performa Model]    
+C4[Perbandingan dan Pemilihan Sementara]
 
-##### Langkah-langkah:
-- **Pemilihan Kandidat Model:**  
-  Pilih tiga algoritma regresi berbeda yang umum digunakan, yaitu:  
-  *Linear Regression*, *Random Forest Regressor*, dan *Gradient Boosting Regressor*.
+subgraph Candidate_Model_Selection [Model Kandidat]
+direction LR
+  
+M1(Regresi Linear Sederhana)    
+M2(Regresi Linear Berganda)    
+M3(Regresi Polinomial)
 
-- **Hyperparameter Tuning:**  
-  Terapkan teknik hyperparameter tuning (misalnya *Grid Search* atau *Random Search*) pada masing-masing model menggunakan cross-validation untuk menemukan konfigurasi parameter optimal yang meminimalkan error prediksi.
+M1 --- M2 --- M3
+  
+end  
 
-- **Evaluasi Terukur:**  
-  Gunakan metrik **Mean Squared Error (MSE)** dan koefisien determinasi $$R^2$$ sebagai ukuran performa model secara kuantitatif.
+subgraph Evaluation_Metrics [Evaluasi Performa]   
+direction LR
+   
+EMSE(MSE - Mean Squared Error)     
+ERsq(R-squared $$R^2$$)
 
-- **Perbandingan Model:**  
-  Bandingkan hasil evaluasi ketiga model setelah tuning untuk menentukan kandidat terbaik berdasarkan nilai MSE terendah dan $$R^2$$ tertinggi.
+EMSE --- ERsq
+   
+end   
 
-##### Kesimpulan:
-Pendekatan ini memungkinkan peningkatan performa dari baseline model melalui eksplorasi berbagai algoritma sekaligus optimisasi parameter secara sistematis.
+C1 ---> Candidate_Model_Selection ---> C2 ---> C3 ---> Evaluation_Metrics ---> C4 
+
+end
+
+
+**Metrik Evaluasi:**   
+- Mean Squared Error (MSE): nilai lebih rendah lebih baik.   
+- Koefisien Determinasi ($$R^2$$): nilai mendekati 1 menunjukkan model menjelaskan variasi data dengan baik.
 
 ---
 
-### Solution Statement 2:  
-## Improvement Baseline Linear Regression melalui Feature Engineering dan Hyperparameter Optimization
+## 3. Melakukan Hyperparameter Tuning pada Baseline Model Terpilih
 
-Untuk meningkatkan akurasi prediksi dari baseline Linear Regression, dilakukan langkah-langkah berikut:
+subgraph Hyperparameter_Tuning_Baseline_Model
+direction TB
+  
+H0[Pilih Baseline Model Terbaik]      
+H1[Tentukan Ruang Hyperparameter]      
+H2[Pilih Metode Optimisasi Parameter]      
+H3[Lakukan Proses Tuning dengan Cross-validation]      
+H4[Evaluasi Performansi Setelah Tuning]      
+H5[Simpan Parameter Optimal]
 
-#### Langkah-langkah:
-- **Baseline Model:**  
-  Bangun model Linear Regression sederhana sebagai titik awal evaluasi.
+%% Contoh parameter tergantung model:
+param[n_estimators, max_depth, learning_rate...]
 
-- **Feature Engineering & Data Preparation:**  
-  Lakukan encoding variabel kategorikal, normalisasi fitur, serta pembuatan fitur baru jika relevan (misal interaksi antar variabel).
+%% Metode tuning contoh:
+methods(Grid Search / Random Search / Bayesian Optimization)
 
-- **Hyperparameter Tuning pada Regularized Models:**  
-  Terapkan teknik regularisasi seperti *Ridge Regression* dan *Lasso Regression* dengan pencarian parameter regulasi optimal menggunakan cross-validation guna mengurangi overfitting.
+param -.-> H7((Hyperparameter Space))
+methods -.-> H7 
 
-- **Evaluasi Kinerja Terukur:**  
-  Ukur performa setiap versi model menggunakan MSE dan $$R^2$$ agar perbaikan dapat diquantifikasi secara objektif.
+H0 -> H7 -> H3 -> H4 -> H5 
 
-#### Kesimpulan:
-Dengan strategi ini, baseline linear regression ditingkatkan menjadi beberapa varian regularized models yang lebih robust terhadap multikolinearitas sekaligus menghasilkan prediksi lebih akurat.
+end
 
-### Diagram alur solution statement 1
 
-    %% Solution Statement 1
-    subgraph SS1 [Solution Statement 1: Multi-Model Approach]
-        A1[Mulai] --> B1[Pemilihan Kandidat Model\n(Linear Regression, Random Forest, Gradient Boosting)]
-        B1 --> C1[Hyperparameter Tuning\n(Grid Search / Random Search + Cross-validation)]
-        C1 --> D1[Evaluasi Model\n(MSE & R^2)]
-        D1 --> E1[Perbandingan Model]
-        E1 --> F1[Tentukan Model Terbaik]
-        F1 --> G1[Selesai]
-    end
+**Metrik Evaluasi:**   
+- Pengurangan Mean Squared Error (MSE).   
+- Kenaikan Koefisien Determinasi ($$R^2$$).   
+- Validitas hasil melalui cross-validation score stabil.
 
-### Diagram alur solution statement 2
-    %% Solution Statement 2
-    subgraph SS2 [Solution Statement 2: Improvement Baseline Linear Regression]
-        A2[Mulai] --> B2[Buat Baseline Linear Regression]
-        B2 --> C2[Feature Engineering & Data Preparation\n(Encoding, Normalisasi, Pembuatan Fitur Baru)]
-        C2 --> D2[Hyperparameter Tuning pada Regularized Models\n(Ridge & Lasso + Cross-validation)]
-        D2 --> E2[Evaluasi Kinerja\n(MSE & R^2)]
-        E2 --> F2[Peningkatan Model yang Lebih Robust]
-        F2 --> G2[Selesai]
-    end
+---
+
+## 4. Menggabungkan Ketiga Pendekatan Secara Terintegrasi
+
+subgraph Integrated_Solution_Workflow
+direction TB
+  
+I0[Mengeksplor dan Memenuhi Asumsi Data & Model]     
+I01[Membangun Ketiga Kandidat Model dari Dataset Siap Pakai ]     
+I02[Mengevaluasikan Ketiganya Dengan Cross-validation ]     
+I03[Mengidentifikasi Baseline Terbaik Untuk Optimisasi ]     
+I04[Lakukan Hyperparameter Tuning Pada Baseline ]     
+I05[Evaluasikan Kinerja Setelah Tuned ]     
+I06[Simpulkan Performansi Akhir Dan Validitas Solusi ]
+
+%% Alur proses integratif:
+I0 -> I01 -> I02 -> I03 -> I04 -> I05 -> I06 
+
+end
+
+
+**Metrik Evaluasi Gabungan:**   
+
+| Tahapan                        | Metrik Utama                  | Target Ideal                      |
+|-------------------------------|------------------------------|----------------------------------|
+| Pemenuhan Asumsi               | Uji Durbin-Watson; Shapiro-Wilk; Homoskedastisitas tests | p-value > 0.05; DW ~ ２          |
+| Perbandingan Model             | MSE; $$R^２$$                | Minimalkan MSE; Maksimalkan $$R^２$$ |
+| Hyperparameter Tuning          | Cross-validation score improvement on MSE and $$R^２$$      | Signifikan menurunkan error      |
+| Kesimpulan Akhir              | Stabilitas performa di data valid/test                     | Konsisten di berbagai subset data|
+
+---
+
+Jika Anda ingin saya buatkan diagram flowchart visual dari workflow ini atau versi lain seperti tabel ringkasan juga bisa saya bantu! 😊
+
 
 
 
