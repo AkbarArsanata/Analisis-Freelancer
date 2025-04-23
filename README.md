@@ -240,11 +240,42 @@ graph TD
     D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
     D --> E5[Additivity Prediktor: Omnibus, Jarque-Bera, Skew, Kurtosis, Durbin=Watson]
 
-    E1 --> F[Model yang memenuhi semua asumsi regresi]
+    E1 --> F{Bangun 3 Model yang memenuhi asumsi regresi}
     E2 --> F
-E3 --> F
-E4 --> F
-E5 --> F
+    E3 --> F
+    E4 --> F
+
+  F --> F1[Model 1]
+  F --> F2[Model 2] 
+  F --> F3[Model 3]
+
+F1 --> G{Tentukan Hyperparameter}
+F2 --> G
+F3 --> G
+
+    G --> G1[Contoh: degree polinomial, alpha regularisasi]
+    
+    G1 --> H[Pilih Salah Satu Metode Tuning]
+    H --> H1[Grid Search]
+    H --> H2[Random Search]
+    H --> H3[Bayesian Optimization]
+    
+    H1 --> I[Lakukan Tuning dengan CV]
+    H2 --> I
+    H3 --> I
+    
+    I --> J[Evaluasi Hasil Tuning]
+    K --> K1[Perbandingan MSE]
+    K --> K2[Perbandingan R²]
+    
+    K1 --> L[Simpan Parameter Optimal]
+    K2 --> L
+
+  L-->M(Bandingkan Metric)
+  
+  M-->N(MSE terendah, R² tertinggi, Stabilitas performa)
+
+   N-->|Pilih Baseline Terbaik|O[Model Terbaik]
 
 
 ```
