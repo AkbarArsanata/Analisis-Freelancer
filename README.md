@@ -156,9 +156,9 @@ graph LR
   E-->F2(R² tertinggi)
   E-->F3(Stabilitas performa)
 
-   F1-->|Pilih Baseline Terbaik| 
-   F2-->|Pilih Baseline Terbaik|
-   F3-->|Pilih Baseline Terbaik|
+   F1-->|Pilih Baseline Terbaik|G
+   F2-->|Pilih Baseline Terbaik|G
+   F3-->|Pilih Baseline Terbaik|G
 ```
 
 
@@ -199,8 +199,8 @@ graph TB
     F3 --> G
     
     G --> H[Evaluasi Hasil Tuning]
-    H --> H1[Perbandingan MSE/R²]
-    H --> H2[Validasi kurva learning]
+    H --> H1[Perbandingan MSE]
+    H --> H2[Perbandingan R²]
     
     H1 --> I[Simpan Parameter Optimal]
     H2 --> I
