@@ -17,19 +17,25 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 
 ### Problem Statements
 
-1. **Pernyataan Masalah 1: Tantangan dalam mencari dan mempertahankan klien.**
-   - Freelancer sering kali menghadapi kesulitan dalam mendapatkan klien baru dan mempertahankan hubungan dengan klien yang ada, yang dapat mempengaruhi pendapatan mereka.
+1. **Pernyataan Masalah 1: Apakah peningkatan Job Success Rate dapat secara konsisten menaikkan prediksi pendapatan?**
+   -Job Success Rate (JSR) adalah metrik yang mengindikasikan seberapa sukses seorang freelancer dalam menyelesaikan pekerjaannya. Problem statement ini bertujuan untuk mengevaluasi apakah kenaikan JSR berbanding lurus dengan peningkatan pendapatan. Jika ditemukan korelasi positif, maka freelancer atau platform dapat fokus pada strategi peningkatan kualitas pekerjaan untuk meningkatkan pendapatan. Namun, perlu juga dikaji apakah faktor lain seperti jenis pekerjaan atau pengalaman turut memengaruhi hubungan ini.
 
-2. **Pernyataan Masalah 2: Kesulitan dalam menetapkan harga jasa yang kompetitif.**
-   - Freelancer pemula sering kali bingung dalam menentukan tarif yang sesuai, di mana harga yang terlalu rendah dapat mengurangi nilai pekerjaan, sementara harga yang terlalu tinggi dapat membuat klien ragu.
+2. **Pernyataan Masalah 2: Apakah alokasi pemasaran/promosi yang optimal dapat membuat investasi pemasaran lebih efektif dalam mendongkrak pendapatan?**
+   -Investasi dalam pemasaran dan promosi sering kali memakan biaya besar, tetapi tidak selalu berdampak signifikan pada pendapatan. Problem statement ini mengeksplorasi bagaimana alokasi budget pemasaran yang tepat (misalnya: digital ads, referral program, atau SEO) dapat memaksimalkan ROI (Return on Investment). Analisis ini dapat membantu perusahaan atau freelancer dalam mengambil keputusan strategis untuk mengoptimalkan pengeluaran promosi.
 
-3. **Pernyataan Masalah 3: Keraguan mengenai tingkat keberhasilan pekerjaan.**
-   - Freelancer sering merasa kurang dihargai dan mengalami ketidakpastian dalam hubungan dengan klien, yang dapat mempengaruhi kepercayaan diri mereka dalam menyelesaikan proyek.
+3. **Pernyataan Masalah 3: Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas dan penurunan prediksi pendapatan?**
+   -Bekerja dalam durasi panjang (overtime atau jam kerja ekstrem) sering dikaitkan dengan kelelahan (burnout) yang berpotensi menurunkan produktivitas. Problem ini menguji apakah terdapat titik di mana durasi kerja yang terlalu lama justru mengurangi efisiensi dan akhirnya menurunkan pendapatan. Temuan ini dapat menjadi acuan dalam manajemen waktu kerja untuk menjaga produktivitas optimal.
+
+4. **Pernyataan Masalah 4: Apakah ada batasan durasi kerja ideal agar tidak menimbulkan penurunan efisiensi atau kelelahan bagi pekerja?**
+   -Berhubungan dengan problem sebelumnya, problem ini mencari durasi kerja "sweet spot" di mana pekerja dapat mempertahankan produktivitas maksimal tanpa mengalami kelelahan berlebih. Analisis dapat melibatkan variabel seperti jam kerja/hari, istirahat, dan jenis pekerjaan. Hasilnya dapat digunakan untuk rekomendasi kebijakan kerja baik bagi freelancer maupun perusahaan.
+   
+5. **Penyataan Masalah 5: Apakah tarif per jam memiliki pengaruh signifikan terhadap perubahan estimasi pendapatan?**
+   -Tarif per jam adalah faktor langsung dalam penghitungan pendapatan freelancer. Namun, problem ini mengevaluasi apakah menaikkan tarif per jam selalu meningkatkan pendapatan, atau justru berpotensi mengurangi jumlah klien karena harga terlalu tinggi. Analisis dapat mencakup elastisitas permintaan, tingkat persaingan, dan kualitas layanan untuk menentukan strategi penetapan harga optimal.
 
 ### Goals
 
 1. **Jawaban Pernyataan Masalah 1:**
-   - Untuk mengatasi tantangan dalam mencari dan mempertahankan klien, akan dilakukan analisis mendalam terhadap beberapa faktor kunci. Pertama, mengidentifikasi posisi yang menunjukkan permintaan tinggi di pasar. Kedua, penting untuk memahami pengalaman dan keterampilan yang paling dipercaya serta diminati oleh klien. Selain itu, mengetahui wilayah geografis dengan permintaan tinggi dapat memberikan keuntungan kompetitif. Terakhir, memahami metode pembayaran yang disukai oleh klien akan membantu freelancer merancang penawaran yang lebih menarik dan sesuai dengan kebutuhan klien. Dengan pendekatan strategis ini, freelancer dapat meningkatkan peluang mereka untuk mendapatkan klien baru dan membangun hubungan jangka panjang yang saling menguntungkan.
+   - Untuk menjawab pertanyaan apakah peningkatan Job Success Rate (JSR) secara konsisten menaikkan prediksi pendapatan, perlu dilakukan analisis korelasi antara kedua variabel tersebut guna mengetahui kekuatan dan arah hubungannya. Selain itu, penting untuk mengidentifikasi apakah terdapat titik optimal di mana kenaikan JSR tidak lagi memberikan dampak signifikan terhadap pendapatan, mengingat kemungkinan adanya hukum diminishing returns. Faktor-faktor pendorong peningkatan JSR, seperti kualitas pekerjaan, kepuasan klien, atau kompleksitas proyek, juga perlu dievaluasi untuk memahami dinamika yang terjadi. Hasil analisis ini dapat menjadi dasar rekomendasi strategi peningkatan JSR, misalnya melalui pelatihan keterampilan, peningkatan komunikasi dengan klien, atau seleksi proyek yang lebih tepat, sehingga freelancer atau platform dapat mengoptimalkan pendapatan secara berkelanjutan.
 
 2. **Jawaban Pernyataan Masalah 2:**
    - Untuk mengatasi tantangan dari menentukan tarif yang sesuai, akan dilakukan analisis terhadap faktor faktor yang 
@@ -39,42 +45,58 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 
 ### Solution Statements
 
-1. **Solution Statement 1:**
-   - Menerapkan model prediktif untuk mengidentifikasi peluang klien yang potensial berdasarkan profil dan preferensi freelancer, sehingga meningkatkan peluang mendapatkan proyek.
+Berikut adalah versi markdown yang sudah dirapikan dan diformat agar terlihat lebih bagus dan mudah dibaca:
 
-2. **Solution Statement 2:**
-   - Melakukan hyperparameter tuning pada model yang digunakan untuk meningkatkan akurasi prediksi job success rate, sehingga freelancer dapat lebih percaya diri dalam menyelesaikan proyek.
+---
 
-3. **Solution Statement 3:**
-   - Mengembangkan dashboard interaktif yang memungkinkan freelancer untuk memantau kinerja mereka, termasuk tingkat keberhasilan proyek dan umpan balik dari klien, untuk meningkatkan hubungan dan kepuasan kerja.
+# Solution Statement 1:  
+## Pendekatan Multi-Model dengan Hyperparameter Tuning untuk Optimasi Regresi
 
-Dengan pendekatan ini, diharapkan dapat membantu freelancer mengatasi tantangan yang mereka hadapi dan menciptakan lingkungan kerja yang lebih mendukung.
+Dalam rangka mendapatkan model regresi terbaik yang **akurat** dan **stabil**, dilakukan pendekatan multi-model sebagai berikut:
 
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
+### Langkah-langkah:
+- **Pemilihan Kandidat Model:**  
+  Pilih tiga algoritma regresi berbeda yang umum digunakan, yaitu:  
+  *Linear Regression*, *Random Forest Regressor*, dan *Gradient Boosting Regressor*.
 
-Bagian laporan ini mencakup:
+- **Hyperparameter Tuning:**  
+  Terapkan teknik hyperparameter tuning (misalnya *Grid Search* atau *Random Search*) pada masing-masing model menggunakan cross-validation untuk menemukan konfigurasi parameter optimal yang meminimalkan error prediksi.
 
-Problem Statements
-Menjelaskan pernyataan masalah latar belakang:
+- **Evaluasi Terukur:**  
+  Gunakan metrik **Mean Squared Error (MSE)** dan koefisien determinasi $$R^2$$ sebagai ukuran performa model secara kuantitatif.
 
-Pernyataan Masalah 1
-Pernyataan Masalah 2
-Pernyataan Masalah n
-Goals
-Menjelaskan tujuan dari pernyataan masalah:
+- **Perbandingan Model:**  
+  Bandingkan hasil evaluasi ketiga model setelah tuning untuk menentukan kandidat terbaik berdasarkan nilai MSE terendah dan $$R^2$$ tertinggi.
 
-Jawaban pernyataan masalah 1
-Jawaban pernyataan masalah 2
-Jawaban pernyataan masalah n
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+### Kesimpulan:
+Pendekatan ini memungkinkan peningkatan performa dari baseline model melalui eksplorasi berbagai algoritma sekaligus optimisasi parameter secara sistematis.
 
-Rubrik/Kriteria Tambahan (Opsional):
+---
 
-Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut:
+# Solution Statement 2:  
+## Improvement Baseline Linear Regression melalui Feature Engineering dan Hyperparameter Optimization
 
-Solution statements
-Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+Untuk meningkatkan akurasi prediksi dari baseline Linear Regression, dilakukan langkah-langkah berikut:
+
+### Langkah-langkah:
+- **Baseline Model:**  
+  Bangun model Linear Regression sederhana sebagai titik awal evaluasi.
+
+- **Feature Engineering & Data Preparation:**  
+  Lakukan encoding variabel kategorikal, normalisasi fitur, serta pembuatan fitur baru jika relevan (misal interaksi antar variabel).
+
+- **Hyperparameter Tuning pada Regularized Models:**  
+  Terapkan teknik regularisasi seperti *Ridge Regression* dan *Lasso Regression* dengan pencarian parameter regulasi optimal menggunakan cross-validation guna mengurangi overfitting.
+
+- **Evaluasi Kinerja Terukur:**  
+  Ukur performa setiap versi model menggunakan MSE dan $$R^2$$ agar perbaikan dapat diquantifikasi secara objektif.
+
+### Kesimpulan:
+Dengan strategi ini, baseline linear regression ditingkatkan menjadi beberapa varian regularized models yang lebih robust terhadap multikolinearitas sekaligus menghasilkan prediksi lebih akurat.
+
+---
+
+Jika Anda ingin saya tambahkan elemen lain seperti tabel perbandingan atau diagram alur proses, silakan beri tahu! 😊
 
 
 ## Data Understanding
