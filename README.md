@@ -138,43 +138,24 @@ end
 
 ## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
 
-subgraph Compare_Three_Candidate_Models
-direction TB
-  
-C1[Pemilihan Model Kandidat]    
-C2[Pelatihan Masing-Masing Model]    
-C3[Evaluasi Performa Model]    
-C4[Perbandingan dan Pemilihan Sementara]
-
-subgraph Candidate_Model_Selection [Model Kandidat]
-direction LR
-  
-M1(Regresi Linear Sederhana)    
-M2(Regresi Linear Berganda)    
-M3(Regresi Polinomial)
-
-M1 --- M2 --- M3
-  
-end  
-
-subgraph Evaluation_Metrics [Evaluasi Performa]   
-direction LR
-   
-EMSE(MSE - Mean Squared Error)     
-ERsq(R-squared $$R^2$$)
-
-EMSE --- ERsq
-   
-end   
-
-C1 ---> Candidate_Model_Selection ---> C2 ---> C3 ---> Evaluation_Metrics ---> C4 
-
-end
-
-
-**Metrik Evaluasi:**   
-- Mean Squared Error (MSE): nilai lebih rendah lebih baik.   
-- Koefisien Determinasi ($$R^2$$): nilai mendekati 1 menunjukkan model menjelaskan variasi data dengan baik.
+graph LR
+    A[Siapkan Dataset] --> B{Bangun 3 Model}
+    B --> B1[Regresi Linear Sederhana]
+    B --> B2[Regresi Linear Berganda]
+    B --> B3[Regresi Polinomial]
+    
+    B1 --> C[Evaluasi Cross-Validation]
+    B2 --> C
+    B3 --> C
+    
+    C --> D[Bandungkan Metric]
+    D --> E1[MSE terendah]
+    D --> E2[R² tertinggi]
+    D --> E3[Stabilitas performa]
+    
+    E1 --> F[Pilih Baseline Terbaik]
+    E2 --> F
+    E3 --> F
 
 ---
 
