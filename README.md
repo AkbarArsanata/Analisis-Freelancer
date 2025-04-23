@@ -155,29 +155,27 @@ graph LR
 
 ## 3. Melakukan Hyperparameter Tuning pada Baseline Model Terpilih
 
-subgraph Hyperparameter_Tuning_Baseline_Model
-direction TB
-  
-H0[Pilih Baseline Model Terbaik]      
-H1[Tentukan Ruang Hyperparameter]      
-H2[Pilih Metode Optimisasi Parameter]      
-H3[Lakukan Proses Tuning dengan Cross-validation]      
-H4[Evaluasi Performansi Setelah Tuning]      
-H5[Simpan Parameter Optimal]
-
-%% Contoh parameter tergantung model:
-param[n_estimators, max_depth, learning_rate...]
-
-%% Metode tuning contoh:
-methods(Grid Search / Random Search / Bayesian Optimization)
-
-param -.-> H7((Hyperparameter Space))
-methods -.-> H7 
-
-H0 -> H7 -> H3 -> H4 -> H5 
-
-end
-
+```mermaid
+graph TB
+    A[Baseline Model Terpilih] --> B{Tentukan Hyperparameter}
+    B --> B1[Contoh: degree polinomial, alpha regularisasi]
+    
+    B1 --> C[Pilih Metode Tuning]
+    C --> C1[Grid Search]
+    C --> C2[Random Search]
+    C --> C3[Bayesian Optimization]
+    
+    C1 --> D[Lakukan Tuning dengan CV]
+    C2 --> D
+    C3 --> D
+    
+    D --> E[Evaluasi Hasil Tuning]
+    E --> E1[Perbandingan MSE/R²]
+    E --> E2[Validasi kurva learning]
+    
+    E1 --> F[Simpan Parameter Optimal]
+    E2 --> F
+```
 
 **Metrik Evaluasi:**   
 - Pengurangan Mean Squared Error (MSE).   
