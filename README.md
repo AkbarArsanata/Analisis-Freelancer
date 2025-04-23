@@ -209,7 +209,7 @@ Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi
 
 ---
 
-## 4. Menggabungkan Ketiga Pendekatan Secara Terintegrasi
+## Workflow
 
 ```mermaid
 graph TD
@@ -279,13 +279,14 @@ F3 --> G
 ```
 
 ---
-## Data Understanding
+# Data Understanding
 Data yang saya gunakan merupakan data tentang seputar freelancer Dataset ini menyajikan informasi lengkap mengenai berbagai freelancer yang bekerja di platform-platform populer seperti Fiverr, PeoplePerHour, dan Upwork. Fokus utamanya meliputi profil dan karakteristik freelancer berdasarkan kategori pekerjaan, tingkat pengalaman, serta wilayah geografis klien yang mereka layani. Selain itu, dataset ini juga mencakup metode pembayaran yang digunakan, statistik performa seperti jumlah pekerjaan yang telah diselesaikan, penghasilan total dalam USD, dan tarif per jam yang ditetapkan oleh freelancer.  
 
 Indikator kualitas kerja seperti tingkat keberhasilan pekerjaan dan rating dari klien turut disertakan, bersama dengan durasi pengerjaan proyek serta jenis kontrak yang digunakan, baik fixed price maupun hourly rate. Aspek bisnis tambahan seperti rehire rate dan biaya pemasaran juga diintegrasikan untuk memberikan gambaran lebih komprehensif. Tujuan utama dataset ini adalah untuk menganalisis performa freelancer di berbagai platform dengan mempertimbangkan faktor demografis dan ekonomi, sehingga dapat mengungkap pola kesuksesan dalam pasar freelancing global yang semakin kompetitif.
 
-Sumber dataset ini saya ambil dari kaggle dengan link dataset berikut (https://www.kaggle.com/datasets/abderahmanchtebat/freelancer-earnings-bd) dengan rincian variable atau fitur pada datanya sebagai berikut:
+Sumber dataset ini saya ambil dari kaggle dengan link dataset berikut (https://www.kaggle.com/datasets/abderahmanchtebat/freelancer-earnings-bd) dengan banyak kolom sejumlah 15 kolom dan memiliki 1950 baris(1950 x 15). Adapula rincian variable atau fitur pada datanya sebagai berikut:
 
+## Keterangan Fitur
 Freelancer_ID : ID unik untuk setiap freelancer dalam dataset.
 Job_Category : Kategori pekerjaan yang dilakukan freelancer, misalnya Web Development, App Development, Data Entry, Digital Marketing.
 Platform : Platform freelance tempat pekerjaan dilakukan, seperti Fiverr, PeoplePerHour, Upwork.
@@ -301,6 +302,42 @@ Job_Duration_Days : Durasi rata-rata penyelesaian proyek dalam hari.
 Project_Type : Jenis kontrak/proyek: Fixed (harga tetap) atau Hourly (berdasarkan jam kerja).
 Rehire_Rate : Persentase seberapa sering klien mengontrak ulang freelancer tersebut.
 Marketing_Spend : Pengeluaran untuk pemasaran oleh freelancer untuk mendapatkan job.
+
+## Nilai Setiap Kolom
+Dataset ini memiliki jumlah nilai unik sebagai berikut
+
+| Kolom              | Nilai Unik / Contoh Nilai |
+|--------------------|---------------------------|
+| **Freelancer_ID**   | 1950                      |
+| **Job_Category**    | 8                         |
+| **Platform**        | 5                         |
+| **Experience_Level**| 3                         |
+| **Client_Region**   | 7                         |
+| **Payment_Method**  | 4                         |
+| **Job_Completed**   | 295                       |
+| **Earnings_USD**    | 1766                      |
+| **Hourly_Rate**     | 1770                      |
+| **Job_Success_Rate**| 1605                      |
+| **Client_Rating**   | 201                       |
+| **Job_Duration_Days** | 89                      |
+| **Project_Type**    | 2                         |
+| **Rehire_Rate**     |1701                       |
+| **Marketing_Spend** |489                        |
+
+Dari informasi diatas dapat dilihat bahwa ada 1 kolom yang tidak berguna dalam proses analisis karna tidak akan memberikan informasi apa-apa apabila tidak digunakan. Kolom tersebut bernama Freelancer_ID dimana kolom ini termasuk ke dalam kategori kolom unik, dimana setiap nilainya memiliki value yang berbeda
+
+
+Adapun keterangan nilai unik pada setiap kategorinya seperti berikut
+
+| Kategori          | Nilai Unik                                                                                  |
+|-------------------|---------------------------------------------------------------------------------------------|
+| **Job_Category**   | Web Development, App Development, Data Entry, Digital Marketing, Customer Support, Content Writing, Graphic Design, SEO |
+| **Platform**       | Fiverr, PeoplePerHour, Upwork, Toptal, Freelancer                                          |
+| **Experience_Level** | Beginner, Intermediate, Expert                                                           |
+| **Client_Region**  | Asia, Australia, UK, Europe, USA, Middle East, Canada                                     |
+| **Payment_Method** | Asia, Australia, UK , Europe , USA , Middle East , Canada                                 |
+| **Project_Type**   | fixed , hourly                                                                             |
+
 
 
 ![image](https://github.com/user-attachments/assets/02f518b2-0798-4b3d-af55-4b7c7b39189d)
