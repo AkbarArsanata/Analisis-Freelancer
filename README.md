@@ -51,10 +51,9 @@ Berikut adalah empat solusi utama yang dapat diterapkan untuk meningkatkan perfo
 
 ## 1. Memfilter Model Melalui Pemenuhan Asumsi Regresi (Assumption Checking and Data Preparation)
 
-Solusi ini menitikberatkan pada proses *filtering* model dengan memastikan data memenuhi asumsi dasar regresi linear seperti linearitas, independensi residual, homoskedastisitas, normalitas residual, dan aditivitas prediktor. Proses ini melibatkan pemeriksaan visual serta uji statistik (misalnya Durbin-Watson untuk autokorelasi, Breusch-Pagan untuk heteroskedastisitas), sekaligus penanganan data seperti pengkodean variabel kategorikal dan normalisasi skala numerik.
-
+Solusi ini menitikberatkan pada proses *filtering* model dengan memastikan data sesuai dengan asumsi model regresi seperti linearitas, independensi residual, homoskedastisitas, normalitas residual, dan aditivitas prediktor. Proses ini melibatkan pemeriksaan visual serta uji statistik (misalnya Durbin-Watson untuk autokorelasi, Breusch-Pagan untuk heteroskedastisitas), sekaligus penanganan data seperti pengkodean variabel kategorikal dan normalisasi skala numerik.
 Dengan melakukan filter ini terlebih dahulu, hanya model yang valid secara statistik yang akan dipertimbangkan lebih lanjut sehingga estimasi parameter menjadi lebih reliabel.
----
+
 ## Workflow 
 
 ```mermaid
@@ -95,7 +94,6 @@ E5 --> F
 
 ```
 
----
 
 ## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
 
@@ -103,7 +101,6 @@ Solusi ini mengusulkan pemilihan tiga jenis model regresi berbeda — misalnya r
 
 Tujuannya adalah menemukan struktur model terbaik yang paling sesuai dengan karakteristik data tanpa menggabungkan proses lain.
 
----
 
 ## Workflow 
 
@@ -146,7 +143,6 @@ C5 --> D
    F3-->|Pilih Baseline Terbaik|G
 ```
 
----
 
 ## 3. Melakukan Hyperparameter Tuning pada Baseline Model Terpilih
 
@@ -154,7 +150,6 @@ Fokus solusi ini adalah melakukan optimasi hyperparameter pada salah satu baseli
 
 Keberhasilan tuning diukur dengan peningkatan nilai $$R^2$$ serta penurunan MSE pada data validasi cross-validation tanpa harus melakukan langkah-langkah lain sebelumnya.
 
----
 ## workflow
 
 ```mermaid
@@ -366,12 +361,24 @@ Investasi marketing juga berpengaruh, di mana 25% freelancer teratas menghabiska
 
 Gambar tersebut menampilkan distribusi dari sembilan variabel yang berkaitan dengan freelancer, seperti Freelancer_ID, Job_Completed, Earnings_USD, Hourly_Rate, Job_Success_Rate, Client_Rating, Job_Duration_Days, Rehire_Rate, dan Marketing_Spend. Secara umum, distribusi data pada masing-masing variabel menunjukkan pola yang relatif merata tanpa adanya konsentrasi nilai ekstrem atau outlier yang signifikan. Misalnya, Freelancer_ID tersebar secara uniform di seluruh rentang ID yang ada. Jumlah pekerjaan yang diselesaikan (Job_Completed) dan pendapatan (Earnings_USD) juga terdistribusi cukup seimbang di berbagai nilai tanpa puncak dominan. Tarif per jam kerja (Hourly_Rate), tingkat keberhasilan pekerjaan (Job_Success_Rate), serta rating dari klien (Client_Rating) menunjukkan variasi nilai dengan kecenderungan stabil di tengah rentang masing-masing variabel. Durasi pekerjaan dalam hari (Job_Duration_Days), tingkat pengulangan kerja oleh klien atau rehire rate (Rehire_Rate), dan pengeluaran untuk pemasaran (Marketing_Spend) juga memperlihatkan sebaran data yang cukup merata tanpa adanya dominasi nilai tertentu. Hal ini mengindikasikan bahwa populasi freelancer dalam dataset ini memiliki karakteristik beragam dan seimbang dalam hal pengalaman kerja serta interaksi dengan kliennya.
 
+## Missing Value Checking
+![image](https://github.com/user-attachments/assets/9c02a967-8a03-4ac6-a3e4-d046eabd19cf)
+
+Terlihat dari gambar diatas tidak terindikasi adanya missing value
+
+## Duplicated Checking 
+
+## Inconsistent Checking
+
+## Outlier Checking
+![image](https://github.com/user-attachments/assets/e3f4c3c1-15f2-4942-ba17-a321fb7a3ffd)
+
+Terlihat dari gambar diatas tidak terindikasi adanya Outlier
+
+
 ## Korelasi
 
 ![image](https://github.com/user-attachments/assets/48c1083b-1fd1-49b1-8659-eeedc2ef019c)
-
-
----
 
 
 Matriks korelasi ini menunjukkan hubungan linear antar variabel seperti Freelancer_ID, Job_Completed, Earnings_USD, Hourly_Rate, Job_Success_Rate, Client_Rating, Job_Duration_Days, Rehire_Rate, dan Marketing_Spend. Nilai korelasi berada dalam rentang -1 hingga 1 dengan warna merah menandakan korelasi positif dan biru untuk korelasi negatif.
@@ -383,7 +390,7 @@ Berdasarkan matriks korelasi ini dapat disimpulkan bahwa **tidak terdapat gejala
 
 Oleh karena itu, **tidak perlu dilakukan teknik reduksi dimensi seperti Principal Component Analysis (PCA)** untuk mengatasi masalah multikolinearitas pada data ini.
 
-
+---
 
 
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: UCI Machine Learning Repository.
