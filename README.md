@@ -338,9 +338,49 @@ Adapun keterangan nilai unik pada setiap kategorinya seperti berikut
 | **Payment_Method** | Asia, Australia, UK , Europe , USA , Middle East , Canada                                 |
 | **Project_Type**   | fixed , hourly                                                                             |
 
+## Statistic Summary
+| Statistik | Freelancer_ID | Job_Completed | Earnings_USD | Hourly_Rate | Job_Success_Rate | Client_Rating | Job_Duration_Days | Rehire_Rate | Marketing_Spend |
+|-----------|--------------:|--------------:|-------------:|------------:|-----------------:|--------------:|------------------:|------------:|----------------:|
+| **count**  | 1950.000      | 1950.000      | 1950.000     | 1950.000    | 1950.000         | 1950.000      | 1950.000          | 1950.000    | 1950.000        |
+| **mean**   | 975.500        |150.864         |5017.567       |52.580        |74.952             |3.996           		│44,705           │44,557       │248,517         |
+│ **std**    │563,061        │85,481         │2926,280      │26,928       │14,616            │0,576           		│26            	  ├20             ├148             ├
+│ **min**    ┤1              ┤5              ┤51            ┤5             ┤50               ║3              ║1                ║10           ║
+│ **25%**    ╟488            ╟76             ╟2419          ╟30            ╟62               ⎪3·51           ⎪22               ⎪27·15        ⎪119          ⎪
+│ **50%**    ▏975·5          ▏149            ▏5048          ▏52·285        ▏75·4             ▁3·99           ▁45               ▁43·92        ▁252·5         ▁
+│ **75%**    █1462·75        █225            █7608·25       █75·125        █87··54           ██4··5           ██67               ██61··69     ██379         ██
+│ **max**    ■19500          ■29900          ■99910         ■99830         ■99990            ■50000         ■89000             ■79950       ■49900
 
+
+**Data ini mengungkapkan pola kinerja freelancer yang menarik.** Rata-rata freelancer menyelesaikan 150 job dengan pendapatan $5.017, namun terdapat kesenjangan besar antara yang berpengalaman (bisa mencapai 225 job/$7.608) dan pemula (76 job/$2.419). Tarif per jam berkisar $30-$75, dengan beberapa mencapai $100, menunjukkan adanya segmentasi pasar yang jelas.  
+
+Reputasi freelancer cukup baik, dengan rata-rata job success rate 75% dan client rating 3.99/5. Freelancer top memiliki rehire rate di atas 61%, menunjukkan kepuasan klien yang tinggi. Durasi pengerjaan bervariasi, dengan setengah freelancer menyelesaikan job dalam 45 hari atau kurang.  
+
+Investasi marketing juga berpengaruh, di mana 25% freelancer teratas menghabiskan lebih dari $379 dan cenderung mendapatkan lebih banyak job. **Kunci suksesnya terletak pada kombinasi jumlah job, tarif kompetitif, reputasi baik, dan strategi marketing yang tepat.** Freelancer baru bisa fokus pada peningkatan kualitas kerja, sementara yang berpengalaman dapat mengoptimalkan efisiensi dan promosi untuk meningkatkan pendapatan.
+
+## Distribusi 
 
 ![image](https://github.com/user-attachments/assets/02f518b2-0798-4b3d-af55-4b7c7b39189d)
+
+Gambar tersebut menampilkan distribusi dari sembilan variabel yang berkaitan dengan freelancer, seperti Freelancer_ID, Job_Completed, Earnings_USD, Hourly_Rate, Job_Success_Rate, Client_Rating, Job_Duration_Days, Rehire_Rate, dan Marketing_Spend. Secara umum, distribusi data pada masing-masing variabel menunjukkan pola yang relatif merata tanpa adanya konsentrasi nilai ekstrem atau outlier yang signifikan. Misalnya, Freelancer_ID tersebar secara uniform di seluruh rentang ID yang ada. Jumlah pekerjaan yang diselesaikan (Job_Completed) dan pendapatan (Earnings_USD) juga terdistribusi cukup seimbang di berbagai nilai tanpa puncak dominan. Tarif per jam kerja (Hourly_Rate), tingkat keberhasilan pekerjaan (Job_Success_Rate), serta rating dari klien (Client_Rating) menunjukkan variasi nilai dengan kecenderungan stabil di tengah rentang masing-masing variabel. Durasi pekerjaan dalam hari (Job_Duration_Days), tingkat pengulangan kerja oleh klien atau rehire rate (Rehire_Rate), dan pengeluaran untuk pemasaran (Marketing_Spend) juga memperlihatkan sebaran data yang cukup merata tanpa adanya dominasi nilai tertentu. Hal ini mengindikasikan bahwa populasi freelancer dalam dataset ini memiliki karakteristik beragam dan seimbang dalam hal pengalaman kerja serta interaksi dengan kliennya.
+
+## Korelasi
+
+![image](https://github.com/user-attachments/assets/48c1083b-1fd1-49b1-8659-eeedc2ef019c)
+
+
+---
+
+
+Matriks korelasi ini menunjukkan hubungan linear antar variabel seperti Freelancer_ID, Job_Completed, Earnings_USD, Hourly_Rate, Job_Success_Rate, Client_Rating, Job_Duration_Days, Rehire_Rate, dan Marketing_Spend. Nilai korelasi berada dalam rentang -1 hingga 1 dengan warna merah menandakan korelasi positif dan biru untuk korelasi negatif.
+
+Dari matriks terlihat bahwa sebagian besar nilai korelasi antar variabel sangat dekat dengan nol (baik positif maupun negatif), misalnya nilai-nilai seperti 0.01, -0.02, 0.03 yang menunjukkan hubungan yang sangat lemah atau hampir tidak ada hubungan linear antara variabel-variabel tersebut. Tidak ada pasangan variabel yang memiliki nilai korelasi tinggi (misalnya di atas 0.7 atau di bawah -0.7) yang biasanya menjadi indikasi adanya multikolinearitas.
+
+
+Berdasarkan matriks korelasi ini dapat disimpulkan bahwa **tidak terdapat gejala multikolinearitas** signifikan antar variabel dalam dataset freelancer ini karena semua nilai korelasinya rendah dan tidak menunjukkan ketergantungan linier kuat satu sama lain.
+
+Oleh karena itu, **tidak perlu dilakukan teknik reduksi dimensi seperti Principal Component Analysis (PCA)** untuk mengatasi masalah multikolinearitas pada data ini.
+
+
 
 
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: UCI Machine Learning Repository.
