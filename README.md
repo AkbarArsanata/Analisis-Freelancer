@@ -49,12 +49,12 @@ Berikut adalah versi markdown yang sudah dirapikan dan diformat agar terlihat le
 
 ---
 
-# Solution Statement 1:  
-## Pendekatan Multi-Model dengan Hyperparameter Tuning untuk Optimasi Regresi
+### Solution Statement 1:  
+#### Pendekatan Multi-Model dengan Hyperparameter Tuning untuk Optimasi Regresi
 
 Dalam rangka mendapatkan model regresi terbaik yang **akurat** dan **stabil**, dilakukan pendekatan multi-model sebagai berikut:
 
-### Langkah-langkah:
+##### Langkah-langkah:
 - **Pemilihan Kandidat Model:**  
   Pilih tiga algoritma regresi berbeda yang umum digunakan, yaitu:  
   *Linear Regression*, *Random Forest Regressor*, dan *Gradient Boosting Regressor*.
@@ -68,17 +68,17 @@ Dalam rangka mendapatkan model regresi terbaik yang **akurat** dan **stabil**, d
 - **Perbandingan Model:**  
   Bandingkan hasil evaluasi ketiga model setelah tuning untuk menentukan kandidat terbaik berdasarkan nilai MSE terendah dan $$R^2$$ tertinggi.
 
-### Kesimpulan:
+##### Kesimpulan:
 Pendekatan ini memungkinkan peningkatan performa dari baseline model melalui eksplorasi berbagai algoritma sekaligus optimisasi parameter secara sistematis.
 
 ---
 
-# Solution Statement 2:  
+### Solution Statement 2:  
 ## Improvement Baseline Linear Regression melalui Feature Engineering dan Hyperparameter Optimization
 
 Untuk meningkatkan akurasi prediksi dari baseline Linear Regression, dilakukan langkah-langkah berikut:
 
-### Langkah-langkah:
+#### Langkah-langkah:
 - **Baseline Model:**  
   Bangun model Linear Regression sederhana sebagai titik awal evaluasi.
 
@@ -91,12 +91,32 @@ Untuk meningkatkan akurasi prediksi dari baseline Linear Regression, dilakukan l
 - **Evaluasi Kinerja Terukur:**  
   Ukur performa setiap versi model menggunakan MSE dan $$R^2$$ agar perbaikan dapat diquantifikasi secara objektif.
 
-### Kesimpulan:
+#### Kesimpulan:
 Dengan strategi ini, baseline linear regression ditingkatkan menjadi beberapa varian regularized models yang lebih robust terhadap multikolinearitas sekaligus menghasilkan prediksi lebih akurat.
 
----
+### Diagram alur solution statement 1
+flowchart TD
+    %% Solution Statement 1
+    subgraph SS1 [Solution Statement 1: Multi-Model Approach]
+        A1[Mulai] --> B1[Pemilihan Kandidat Model\n(Linear Regression, Random Forest, Gradient Boosting)]
+        B1 --> C1[Hyperparameter Tuning\n(Grid Search / Random Search + Cross-validation)]
+        C1 --> D1[Evaluasi Model\n(MSE & R^2)]
+        D1 --> E1[Perbandingan Model]
+        E1 --> F1[Tentukan Model Terbaik]
+        F1 --> G1[Selesai]
+    end
 
-Jika Anda ingin saya tambahkan elemen lain seperti tabel perbandingan atau diagram alur proses, silakan beri tahu! 😊
+### Diagram alur solution statement 2
+    %% Solution Statement 2
+    subgraph SS2 [Solution Statement 2: Improvement Baseline Linear Regression]
+        A2[Mulai] --> B2[Buat Baseline Linear Regression]
+        B2 --> C2[Feature Engineering & Data Preparation\n(Encoding, Normalisasi, Pembuatan Fitur Baru)]
+        C2 --> D2[Hyperparameter Tuning pada Regularized Models\n(Ridge & Lasso + Cross-validation)]
+        D2 --> E2[Evaluasi Kinerja\n(MSE & R^2)]
+        E2 --> F2[Peningkatan Model yang Lebih Robust]
+        F2 --> G2[Selesai]
+    end
+
 
 
 ## Data Understanding
