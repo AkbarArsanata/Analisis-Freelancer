@@ -144,8 +144,8 @@ end
 graph LR
   A[Siapkan Dataset] --> B{Bangun 3 Model}
   B --> B1[Regresi Linear Sederhana]
-  B ->>B2[Regresi Linear Berganda] 
-  B --->B3[Regresi Polinomial]
+  B --> B2[Regresi Linear Berganda] 
+  B --> B3[Regresi Polinomial]
 
   B1-->C(Evaluasi Cross-Validation)
   B2-->C 
