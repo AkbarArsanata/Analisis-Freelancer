@@ -138,25 +138,30 @@ end
 
 ## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
 
-graph LR
+# Flowchart Proses Model
 
-    A[Siapkan Dataset] --> B{Bangun 3 Model}
-    B --> B1[Regresi Linear Sederhana]
-    B --> B2[Regresi Linear Berganda]
-    B --> B3[Regresi Polinomial]
-    
-    B1 --> C[Evaluasi Cross-Validation]
-    B2 --> C
-    B3 --> C
-    
-    C --> D[Bandungkan Metric]
-    D --> E1[MSE terendah]
-    D --> E2[R² tertinggi]
-    D --> E3[Stabilitas performa]
-    
-    E1 --> F[Pilih Baseline Terbaik]
-    E2 --> F
-    E3 --> F
+```mermaid
+graph LR
+  A[Siapkan Dataset] --> B{Bangun 3 Model}
+  B --> B1[Regresi Linear Sederhana]
+  B ->>B2[Regresi Linear Berganda] 
+  B --->B3[Regresi Polinomial]
+
+  B1-->C(Evaluasi Cross-Validation)
+  B2-->C 
+  B3-->C
+
+  C-->D(Bandungkan Metric)
+  
+  D-->E1(MSE terendah)
+  D-->E2(R² tertinggi)
+  D-->E3(Stabilitas performa)
+
+   E1-->|Pilih Baseline Terbaik|F 
+   E2-->|Pilih Baseline Terbaik|F 
+   E3-->|Pilih Baseline Terbaik|F 
+
+
 
 ---
 
