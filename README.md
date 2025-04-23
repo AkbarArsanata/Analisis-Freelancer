@@ -81,7 +81,10 @@ Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi
 ## 📌 1. Assumption Checking & Data Preparation
 ```mermaid
 graph TD
-    A[Eksplorasi Data Awal] --> B1[Inspeksi tipe data, observasi, variabel]
+    A[Data Exploration] --> A1[Data Inspection, observasi, variabel]
+    A --> A1[Data Observation]
+    A --> A1[Noise Checking]
+    A2[Data Prepaartion] --> A3[Encode]
     A --> B2[Identifikasi missing values & duplikat]
     A --> B3[Analisis distribusi variabel]
     
