@@ -84,14 +84,19 @@ graph TD
     A[Data Exploration] --> A1[Data Inspection]
     A --> A2[Data Observation]
     A --> A3[Noise Checking]
-    A1 --> B
-    B[Data Prepaartion] --> A3[Encode]
-    A --> B2[Identifikasi missing values & duplikat]
-    A --> B3[Analisis distribusi variabel]
+    A1 --> B[Data Preparation]
+    A2 --> B
+    A3 --> B
+
+    B --> C1[Encode]
+    B --> C2[Correlation/Multikolineritas]
+    B --> C3[Normalized]
+    B --> C4[Feature Selection]
     
     C1 --> D[Pemeriksaan Asumsi Regresi]
     C2 --> D
     C3 --> D
+    C4 --> D
     
     D --> E1[Linearitas: Scatter plot, Ramsey RESET]
     D --> E2[Independensi: Durbin-Watson test]
