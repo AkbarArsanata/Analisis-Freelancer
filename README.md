@@ -1,5 +1,8 @@
 # Laporan Proyek Machine Learning Predictive Analytics - Ibrahim Akbar Arsanata
 
+---
+---
+
 # Domain Proyek
 
 Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2]. 
@@ -41,8 +44,6 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 ## Goals
 
 ## Solution Statements
-
-# Solution Statement
 
 Berikut adalah empat solusi utama yang dapat diterapkan untuk meningkatkan performa dan keandalan model regresi dalam memprediksi variabel target. Setiap solusi berdiri sendiri dan dapat diimplementasikan secara terpisah sesuai kebutuhan.
 
@@ -287,21 +288,23 @@ Indikator kualitas kerja seperti tingkat keberhasilan pekerjaan dan rating dari 
 Sumber dataset ini saya ambil dari kaggle dengan link dataset berikut (https://www.kaggle.com/datasets/abderahmanchtebat/freelancer-earnings-bd) dengan banyak kolom sejumlah 15 kolom dan memiliki 1950 baris(1950 x 15). Adapula rincian variable atau fitur pada datanya sebagai berikut:
 
 ## Keterangan Fitur
-Freelancer_ID : ID unik untuk setiap freelancer dalam dataset.
-Job_Category : Kategori pekerjaan yang dilakukan freelancer, misalnya Web Development, App Development, Data Entry, Digital Marketing.
-Platform : Platform freelance tempat pekerjaan dilakukan, seperti Fiverr, PeoplePerHour, Upwork.
-Experience_Level : Tingkat pengalaman freelancer: Beginner (pemula), Intermediate (menengah), Expert (ahli).
-Client_Region : Wilayah geografis klien yang mempekerjakan freelancer seperti Asia, Australia, UK, dll.
-Payment_Method : Metode pembayaran yang digunakan oleh klien seperti Mobile Banking, Bank Transfer, Crypto.
-Job_Completed : Jumlah pekerjaan atau proyek yang telah diselesaikan oleh freelancer.
-Earnings_USD : Total penghasilan dalam USD dari semua pekerjaan yang telah diselesaikan.
-Hourly_Rate : Tarif per jam kerja dalam USD dari freelancer tersebut.
-Job_Success_Rate : Persentase keberhasilan proyek atau tingkat kepuasan terhadap hasil kerja (biasanya berdasarkan feedback/penilaian).
-Client_Rating : Rating rata-rata dari klien terhadap kinerja freelancer pada skala tertentu (misal 1-5).
-Job_Duration_Days : Durasi rata-rata penyelesaian proyek dalam hari.
-Project_Type : Jenis kontrak/proyek: Fixed (harga tetap) atau Hourly (berdasarkan jam kerja).
-Rehire_Rate : Persentase seberapa sering klien mengontrak ulang freelancer tersebut.
-Marketing_Spend : Pengeluaran untuk pemasaran oleh freelancer untuk mendapatkan job.
+| Variabel            | Deskripsi |
+|---------------------|-----------|
+| **Freelancer_ID**   | ID unik untuk setiap freelancer dalam dataset. |
+| **Job_Category**    | Kategori pekerjaan (misalnya: Web Development, App Development, Data Entry, Digital Marketing). |
+| **Platform**        | Platform freelance tempat pekerjaan dilakukan (contoh: Fiverr, PeoplePerHour, Upwork). |
+| **Experience_Level**| Tingkat pengalaman freelancer: **Beginner** (pemula), **Intermediate** (menengah), **Expert** (ahli). |
+| **Client_Region**   | Wilayah geografis klien (misal: Asia, Australia, UK, dll.). |
+| **Payment_Method**  | Metode pembayaran (contoh: Mobile Banking, Bank Transfer, Crypto). |
+| **Job_Completed**   | Jumlah proyek yang telah diselesaikan oleh freelancer. |
+| **Earnings_USD**    | Total penghasilan (USD) dari semua pekerjaan. |
+| **Hourly_Rate**     | Tarif per jam (USD) yang ditetapkan freelancer. |
+| **Job_Success_Rate**| Persentase keberhasilan proyek (berdasarkan feedback/penilaian). |
+| **Client_Rating**   | Rating rata-rata klien (skala tertentu, misal 1-5). |
+| **Job_Duration_Days**| Durasi rata-rata penyelesaian proyek (dalam hari). |
+| **Project_Type**    | Jenis kontrak: **Fixed** (harga tetap) atau **Hourly** (berdasarkan jam kerja). |
+| **Rehire_Rate**     | Persentase klien yang mengontrak ulang freelancer. |
+| **Marketing_Spend** | Pengeluaran pemasaran untuk mendapatkan proyek (dalam USD). |
 
 ## Nilai Setiap Kolom
 Dataset ini memiliki jumlah nilai unik sebagai berikut
@@ -339,16 +342,16 @@ Adapun keterangan nilai unik pada setiap kategorinya seperti berikut
 | **Project_Type**   | fixed , hourly                                                                             |
 
 ## Statistic Summary
-| Statistik | Freelancer_ID | Job_Completed | Earnings_USD | Hourly_Rate | Job_Success_Rate | Client_Rating | Job_Duration_Days | Rehire_Rate | Marketing_Spend |
-|-----------|--------------:|--------------:|-------------:|------------:|-----------------:|--------------:|------------------:|------------:|----------------:|
-| **count**  | 1950.000      | 1950.000      | 1950.000     | 1950.000    | 1950.000         | 1950.000      | 1950.000          | 1950.000    | 1950.000        |
-| **mean**   | 975.500        |150.864         |5017.567       |52.580        |74.952             |3.996           		│44,705           │44,557       │248,517         |
-│ **std**    │563,061        │85,481         │2926,280      │26,928       │14,616            │0,576           		│26            	  ├20             ├148             ├
-│ **min**    ┤1              ┤5              ┤51            ┤5             ┤50               ║3              ║1                ║10           ║
-│ **25%**    ╟488            ╟76             ╟2419          ╟30            ╟62               ⎪3·51           ⎪22               ⎪27·15        ⎪119          ⎪
-│ **50%**    ▏975·5          ▏149            ▏5048          ▏52·285        ▏75·4             ▁3·99           ▁45               ▁43·92        ▁252·5         ▁
-│ **75%**    █1462·75        █225            █7608·25       █75·125        █87··54           ██4··5           ██67               ██61··69     ██379         ██
-│ **max**    ■19500          ■29900          ■99910         ■99830         ■99990            ■50000         ■89000             ■79950       ■49900
+| Statistik          | Freelancer_ID | Job_Completed | Earnings_USD | Hourly_Rate | Job_Success_Rate | Client_Rating | Job_Duration_Days | Rehire_Rate | Marketing_Spend |
+|--------------------|---------------|---------------|--------------|-------------|------------------|---------------|-------------------|-------------|-----------------|
+| count             | 1950.000000   | 1950.000000   | 1950.000000  | 1950.000000 | 1950.000000      | 1950.000000   | 1950.000000       | 1950.000000 | 1950.000000     |
+| mean              | 975.500000    | 150.864103    | 5017.566667  | 52.579774   | 74.951846        | 3.995892      | 44.704615         | 44.556913   | 248.517436      |
+| std               | 563.060832    | 85.480770     | 2926.279918  | 26.927584   | 14.615735        | 0.575976      | 26.022998         | 20.193842   | 148.084581      |
+| min               | 1.000000      | 5.000000      | 51.000000    | 5.020000    | 50.160000        | 3.000000      | 1.000000          | 10.000000   | 0.000000        |
+| 25%               | 488.250000    | 76.000000     | 2419.000000  | 30.047500   | 61.917500        | 3.510000      | 22.000000         | 27.150000   | 119.000000      |
+| 50%               | 975.500000    | 149.000000    | 5048.000000  | 52.285000   | 75.400000        | 3.990000      | 45.000000         | 43.920000   | 252.500000      |
+| 75%               | 1462.750000   | 225.000000    | 7608.250000  | 75.125000   | 87.537500        | 4.500000      | 67.000000         | 61.690000   | 379.000000      |
+| max               | 1950.000000   | 299.000000    | 9991.000000  | 99.830000   | 99.990000        | 5.000000      | 89.000000         | 79.950000   | 499.000000      |
 
 
 **Data ini mengungkapkan pola kinerja freelancer yang menarik.** Rata-rata freelancer menyelesaikan 150 job dengan pendapatan $5.017, namun terdapat kesenjangan besar antara yang berpengalaman (bisa mencapai 225 job/$7.608) dan pemula (76 job/$2.419). Tarif per jam berkisar $30-$75, dengan beberapa mencapai $100, menunjukkan adanya segmentasi pasar yang jelas.  
