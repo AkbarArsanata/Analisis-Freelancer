@@ -95,7 +95,7 @@ Untuk meningkatkan akurasi prediksi dari baseline Linear Regression, dilakukan l
 Dengan strategi ini, baseline linear regression ditingkatkan menjadi beberapa varian regularized models yang lebih robust terhadap multikolinearitas sekaligus menghasilkan prediksi lebih akurat.
 
 ### Diagram alur solution statement 1
-flowchart TD
+
     %% Solution Statement 1
     subgraph SS1 [Solution Statement 1: Multi-Model Approach]
         A1[Mulai] --> B1[Pemilihan Kandidat Model\n(Linear Regression, Random Forest, Gradient Boosting)]
