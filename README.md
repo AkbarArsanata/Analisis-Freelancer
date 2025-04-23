@@ -127,15 +127,13 @@ E5 --> F
 ```mermaid
 graph LR
   A[Siapkan Dataset] --> B{Bangun 3 Model}
-  B --> B1[Regresi Linear Sederhana]
-  B --> B2[Regresi Linear Berganda] 
-  B --> B3[Regresi Polinomial]
+  B --> B1[Model 1]
+  B --> B2[Model 2] 
+  B --> B3[Model 3]
 
-  B1-->C(Evaluasi Cross-Validation)
-  B2-->C 
-  B3-->C
-
-  C-->D(Bandingkan Metric)
+  B1-->D(Bandingkan Metric)
+  B2-->D
+  B3-->D
   
   D-->E1(MSE terendah)
   D-->E2(R² tertinggi)
