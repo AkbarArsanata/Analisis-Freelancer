@@ -104,6 +104,13 @@ graph TD
     D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
     D --> E5[Additivity Prediktor: Omnibus, Jarque-Bera, Skew, Kurtosis, Durbin=Watson]
 
+    E1 --> F[Mencari kandidat model yang memenuhi semua asumsi regresi]
+    E2 --> F
+E3 --> F
+E4 --> F
+E5 --> F
+
+
 ```
 
 **Metrik Evaluasi:**  
