@@ -102,27 +102,7 @@ graph TD
     D --> E2[Independensi: Durbin-Watson test]
     D --> E3[Homoskedastisitas: Breusch-Pagan/White test]
     D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
-    
-    E1 --> F[Penanganan Data]
-    E2 --> F
-    E3 --> F
-    E4 --> F
-    
-    F --> G1[Imputasi/hapus missing values]
-    F --> G2[Encoding variabel kategorikal]
-    F --> G3[Normalisasi/standardisasi]
-    
-    G1 --> H[Deteksi Outlier]
-    G2 --> H
-    G3 --> H
-    
-    I --> J1[Cook's Distance, DFFITS]
-    I --> J2[Leverage vs residual plot]
-    I --> J3[Transformasi/hapus outlier]
-    
-    I1 --> J[Final Dataset]
-    I2 --> J
-    I3 --> J
+    D --> E5[Additivity Prediktor: Omnibus, Jarque-Bera, Skew, Kurtosis, Durbin=Watson]
 
 ```
 
