@@ -47,38 +47,9 @@ Berikut adalah empat solusi utama yang dapat diterapkan untuk meningkatkan perfo
 Solusi ini menitikberatkan pada proses *filtering* model dengan memastikan data memenuhi asumsi dasar regresi linear seperti linearitas, independensi residual, homoskedastisitas, normalitas residual, dan aditivitas prediktor. Proses ini melibatkan pemeriksaan visual serta uji statistik (misalnya Durbin-Watson untuk autokorelasi, Breusch-Pagan untuk heteroskedastisitas), sekaligus penanganan data seperti pengkodean variabel kategorikal dan normalisasi skala numerik.
 
 Dengan melakukan filter ini terlebih dahulu, hanya model yang valid secara statistik yang akan dipertimbangkan lebih lanjut sehingga estimasi parameter menjadi lebih reliabel.
-
 ---
+## Workflow 
 
-## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
-
-Solusi ini mengusulkan pemilihan tiga jenis model regresi berbeda — misalnya regresi linear sederhana, regresi linear berganda, dan regresi polinomial — sebagai kandidat utama. Setiap model dievaluasi menggunakan metrik kuantitatif seperti Mean Squared Error (MSE) dan koefisien determinasi ($$R^2$$).
-
-Tujuannya adalah menemukan struktur model terbaik yang paling sesuai dengan karakteristik data tanpa menggabungkan proses lain.
-
----
-
-## 3. Melakukan Hyperparameter Tuning pada Baseline Model Terpilih
-
-Fokus solusi ini adalah melakukan optimasi hyperparameter pada salah satu baseline model terbaik berdasarkan evaluasi awal. Teknik tuning bisa berupa *grid search* atau *Bayesian optimization* untuk menemukan kombinasi parameter optimal agar error prediksi dapat diminimalkan secara signifikan dibandingkan baseline awal.
-
-Keberhasilan tuning diukur dengan peningkatan nilai $$R^2$$ serta penurunan MSE pada data validasi cross-validation tanpa harus melakukan langkah-langkah lain sebelumnya.
-
----
-
-## 4. Menggabungkan Ketiga Pendekatan Secara Terintegrasi
-
-Solusi komprehensif ini merupakan pendekatan holistik dengan mengintegrasikan ketiga aspek: pemenuhan asumsi sebagai filter awal; perbandingan beberapa kandidat model; serta hyperparameter tuning pada kandidat terbaik tersebut.
-
-Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi juga valid secara statistik serta stabil terhadap variasi data melalui evaluasi metrik standar (MSE & $$R^2$$).
-
----
-
-## 1. Memenuhi Asumsi Model Regresi (Assumption Checking and Data Preparation)
-
-# Workflow Analisis Data & Model Regresi
-
-## 📌 1. Assumption Checking & Data Preparation
 ```mermaid
 graph TD
     A[Data Exploration] --> A1[Data Inspection]
@@ -92,11 +63,15 @@ graph TD
     B --> C2[Correlation/Multikolineritas]
     B --> C3[Normalized]
     B --> C4[Feature Selection]
+B --> C5[Noise Cleaning]
+
+
     
     C1 --> D[Pemeriksaan Asumsi Regresi]
     C2 --> D
     C3 --> D
     C4 --> D
+C5 --> D
     
     D --> E1[Linearitas: Scatter plot, Ramsey RESET]
     D --> E2[Independensi: Durbin-Watson test]
@@ -113,16 +88,17 @@ E5 --> F
 
 ```
 
-**Metrik Evaluasi:**  
-- Uji statistik asumsi (Durbin-Watson > 1.5-< 2.5 untuk independensi).  
-- Nilai p-value > 0.05 pada uji normalitas residual (Shapiro-Wilk).  
-- Plot residual tanpa pola sistematis (visual check).  
-
 ---
 
 ## 2. Membandingkan Tiga Kandidat Model Regresi Berbeda
 
-# Flowchart Proses Model
+Solusi ini mengusulkan pemilihan tiga jenis model regresi berbeda — misalnya regresi linear sederhana, regresi linear berganda, dan regresi polinomial — sebagai kandidat utama. Setiap model dievaluasi menggunakan metrik kuantitatif seperti Mean Squared Error (MSE) dan koefisien determinasi ($$R^2$$).
+
+Tujuannya adalah menemukan struktur model terbaik yang paling sesuai dengan karakteristik data tanpa menggabungkan proses lain.
+
+---
+
+## Workflow 
 
 ```mermaid
 graph LR
@@ -138,11 +114,13 @@ graph LR
     B --> C2[Correlation/Multikolineritas]
     B --> C3[Normalized]
     B --> C4[Feature Selection]
-    
+B --> C5[Noise Cleaning]
+
     C1 --> D{Bangun 3 Model}
     C2 --> D
     C3 --> D
     C4 --> D
+C5 --> D
 
   D --> D1[Model 1]
   D --> D2[Model 2] 
@@ -161,10 +139,16 @@ graph LR
    F3-->|Pilih Baseline Terbaik|G
 ```
 
-
 ---
 
 ## 3. Melakukan Hyperparameter Tuning pada Baseline Model Terpilih
+
+Fokus solusi ini adalah melakukan optimasi hyperparameter pada salah satu baseline model terbaik berdasarkan evaluasi awal. Teknik tuning bisa berupa *grid search* atau *Bayesian optimization* untuk menemukan kombinasi parameter optimal agar error prediksi dapat diminimalkan secara signifikan dibandingkan baseline awal.
+
+Keberhasilan tuning diukur dengan peningkatan nilai $$R^2$$ serta penurunan MSE pada data validasi cross-validation tanpa harus melakukan langkah-langkah lain sebelumnya.
+
+---
+## workflow
 
 ```mermaid
 graph TB
@@ -180,11 +164,14 @@ graph TB
     B --> C2[Correlation/Multikolineritas]
     B --> C3[Normalized]
     B --> C4[Feature Selection]
+
+B --> C5[Noise Cleaning]
     
     C1 --> D{Memilih Baseline Model}
     C2 --> D
     C3 --> D
     C4 --> D
+C5 --> D
 
     D --> E{Tentukan Hyperparameter}
     E --> E1[Contoh: degree polinomial, alpha regularisasi]
@@ -206,10 +193,13 @@ graph TB
     H2 --> I
 ```
 
-**Metrik Evaluasi:**   
-- Pengurangan Mean Squared Error (MSE).   
-- Kenaikan Koefisien Determinasi ($$R^2$$).   
-- Validitas hasil melalui cross-validation score stabil.
+---
+
+## 4. Menggabungkan Ketiga Pendekatan Secara Terintegrasi
+
+Solusi komprehensif ini merupakan pendekatan holistik dengan mengintegrasikan ketiga aspek: pemenuhan asumsi sebagai filter awal; perbandingan beberapa kandidat model; serta hyperparameter tuning pada kandidat terbaik tersebut.
+
+Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi juga valid secara statistik serta stabil terhadap variasi data melalui evaluasi metrik standar (MSE & $$R^2$$).
 
 ---
 
@@ -228,11 +218,13 @@ graph TD
     B --> C2[Correlation/Multikolineritas]
     B --> C3[Normalized]
     B --> C4[Feature Selection]
-    
+B --> C5[Noise Cleaning]
+  
     C1 --> D[Pemeriksaan Asumsi Regresi]
     C2 --> D
     C3 --> D
     C4 --> D
+C5 --> D
     
     D --> E1[Linearitas: Scatter plot, Ramsey RESET]
     D --> E2[Independensi: Durbin-Watson test]
@@ -264,7 +256,7 @@ F3 --> G
     H2 --> I
     H3 --> I
     
-    I --> J[Evaluasi Hasil Tuning]
+    I --> K[Evaluasi Hasil Tuning]
     K --> K1[Perbandingan MSE]
     K --> K2[Perbandingan R²]
     
@@ -280,23 +272,7 @@ F3 --> G
 
 ```
 
-
-**Metrik Evaluasi Gabungan:**   
-
-| Tahapan                        | Metrik Utama                  | Target Ideal                      |
-|-------------------------------|------------------------------|----------------------------------|
-| Pemenuhan Asumsi               | Uji Durbin-Watson; Shapiro-Wilk; Homoskedastisitas tests | p-value > 0.05; DW ~ ２          |
-| Perbandingan Model             | MSE; $$R^２$$                | Minimalkan MSE; Maksimalkan $$R^２$$ |
-| Hyperparameter Tuning          | Cross-validation score improvement on MSE and $$R^２$$      | Signifikan menurunkan error      |
-| Kesimpulan Akhir              | Stabilitas performa di data valid/test                     | Konsisten di berbagai subset data|
-
 ---
-
-Jika Anda ingin saya buatkan diagram flowchart visual dari workflow ini atau versi lain seperti tabel ringkasan juga bisa saya bantu! 😊
-
-
-
-
 ## Data Understanding
 Data yang saya gunakan merupakan data tentang seputar freelancer Dataset ini menyajikan informasi lengkap mengenai berbagai freelancer yang bekerja di platform-platform populer seperti Fiverr, PeoplePerHour, dan Upwork. Fokus utamanya meliputi profil dan karakteristik freelancer berdasarkan kategori pekerjaan, tingkat pengalaman, serta wilayah geografis klien yang mereka layani. Selain itu, dataset ini juga mencakup metode pembayaran yang digunakan, statistik performa seperti jumlah pekerjaan yang telah diselesaikan, penghasilan total dalam USD, dan tarif per jam yang ditetapkan oleh freelancer.  
 
