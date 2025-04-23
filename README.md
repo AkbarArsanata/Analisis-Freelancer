@@ -104,7 +104,7 @@ graph TD
     D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
     D --> E5[Additivity Prediktor: Omnibus, Jarque-Bera, Skew, Kurtosis, Durbin=Watson]
 
-    E1 --> F[Mencari kandidat model yang memenuhi semua asumsi regresi]
+    E1 --> F[Model yang memenuhi semua asumsi regresi]
     E2 --> F
 E3 --> F
 E4 --> F
@@ -126,22 +126,39 @@ E5 --> F
 
 ```mermaid
 graph LR
-  A[Siapkan Dataset] --> B{Bangun 3 Model}
-  B --> B1[Model 1]
-  B --> B2[Model 2] 
-  B --> B3[Model 3]
 
-  B1-->D(Bandingkan Metric)
-  B2-->D
-  B3-->D
+   A[Data Exploration] --> A1[Data Inspection]
+    A --> A2[Data Observation]
+    A --> A3[Noise Checking]
+    A1 --> B[Data Preparation]
+    A2 --> B
+    A3 --> B
+
+    B --> C1[Encode]
+    B --> C2[Correlation/Multikolineritas]
+    B --> C3[Normalized]
+    B --> C4[Feature Selection]
+    
+    C1 --> D{Bangun 3 Model}
+    C2 --> D
+    C3 --> D
+    C4 --> D
+
+  D --> D1[Model 1]
+  D --> D2[Model 2] 
+  D --> D3[Model 3]
+
+  D1-->E(Bandingkan Metric)
+  D2-->E
+  D3-->E
   
-  D-->E1(MSE terendah)
-  D-->E2(R² tertinggi)
-  D-->E3(Stabilitas performa)
+  E-->F1(MSE terendah)
+  E-->F2(R² tertinggi)
+  E-->F3(Stabilitas performa)
 
-   E1-->|Pilih Baseline Terbaik|F 
-   E2-->|Pilih Baseline Terbaik|F 
-   E3-->|Pilih Baseline Terbaik|F
+   F1-->|Pilih Baseline Terbaik| 
+   F2-->|Pilih Baseline Terbaik|
+   F3-->|Pilih Baseline Terbaik|
 ```
 
 
@@ -151,24 +168,42 @@ graph LR
 
 ```mermaid
 graph TB
-    A[Baseline Model Terpilih] --> B{Tentukan Hyperparameter}
-    B --> B1[Contoh: degree polinomial, alpha regularisasi]
+
+   A[Data Exploration] --> A1[Data Inspection]
+    A --> A2[Data Observation]
+    A --> A3[Noise Checking]
+    A1 --> B[Data Preparation]
+    A2 --> B
+    A3 --> B
+
+    B --> C1[Encode]
+    B --> C2[Correlation/Multikolineritas]
+    B --> C3[Normalized]
+    B --> C4[Feature Selection]
     
-    B1 --> C[Pilih Metode Tuning]
-    C --> C1[Grid Search]
-    C --> C2[Random Search]
-    C --> C3[Bayesian Optimization]
-    
-    C1 --> D[Lakukan Tuning dengan CV]
+    C1 --> D{Memilih Baseline Model}
     C2 --> D
     C3 --> D
+    C4 --> D
+
+    D --> E{Tentukan Hyperparameter}
+    E --> E1[Contoh: degree polinomial, alpha regularisasi]
     
-    D --> E[Evaluasi Hasil Tuning]
-    E --> E1[Perbandingan MSE/R²]
-    E --> E2[Validasi kurva learning]
+    E1 --> F[Pilih Salah Satu Metode Tuning]
+    F --> F1[Grid Search]
+    F --> F2[Random Search]
+    F --> F3[Bayesian Optimization]
     
-    E1 --> F[Simpan Parameter Optimal]
-    E2 --> F
+    F1 --> G[Lakukan Tuning dengan CV]
+    F2 --> G
+    F3 --> G
+    
+    G --> H[Evaluasi Hasil Tuning]
+    H --> H1[Perbandingan MSE/R²]
+    H --> H2[Validasi kurva learning]
+    
+    H1 --> I[Simpan Parameter Optimal]
+    H2 --> I
 ```
 
 **Metrik Evaluasi:**   
@@ -180,21 +215,39 @@ graph TB
 
 ## 4. Menggabungkan Ketiga Pendekatan Secara Terintegrasi
 
-subgraph Integrated_Solution_Workflow
-direction TB
-  
-I0[Mengeksplor dan Memenuhi Asumsi Data & Model]     
-I01[Membangun Ketiga Kandidat Model dari Dataset Siap Pakai ]     
-I02[Mengevaluasikan Ketiganya Dengan Cross-validation ]     
-I03[Mengidentifikasi Baseline Terbaik Untuk Optimisasi ]     
-I04[Lakukan Hyperparameter Tuning Pada Baseline ]     
-I05[Evaluasikan Kinerja Setelah Tuned ]     
-I06[Simpulkan Performansi Akhir Dan Validitas Solusi ]
+```mermaid
+graph TD
+    A[Data Exploration] --> A1[Data Inspection]
+    A --> A2[Data Observation]
+    A --> A3[Noise Checking]
+    A1 --> B[Data Preparation]
+    A2 --> B
+    A3 --> B
 
-%% Alur proses integratif:
-I0 -> I01 -> I02 -> I03 -> I04 -> I05 -> I06 
+    B --> C1[Encode]
+    B --> C2[Correlation/Multikolineritas]
+    B --> C3[Normalized]
+    B --> C4[Feature Selection]
+    
+    C1 --> D[Pemeriksaan Asumsi Regresi]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    
+    D --> E1[Linearitas: Scatter plot, Ramsey RESET]
+    D --> E2[Independensi: Durbin-Watson test]
+    D --> E3[Homoskedastisitas: Breusch-Pagan/White test]
+    D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
+    D --> E5[Additivity Prediktor: Omnibus, Jarque-Bera, Skew, Kurtosis, Durbin=Watson]
 
-end
+    E1 --> F[Model yang memenuhi semua asumsi regresi]
+    E2 --> F
+E3 --> F
+E4 --> F
+E5 --> F
+
+
+```
 
 
 **Metrik Evaluasi Gabungan:**   
