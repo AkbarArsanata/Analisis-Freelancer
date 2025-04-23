@@ -458,19 +458,28 @@ graph TD
     H --> I[Normalitas Distribusi Residual]
     I --> J[End]
 
-    subgraph Data Preparation
+    subgraph D Transformasi Data
         B[Encode]
         C[Binning]
         D[Normalized]
     end
 
-    subgraph Evaluasi Residual
+    subgraph Pengecekan Asumsi Regresi
         F[Linearitas Predictor dan Response]
         G[Independensi Residual]
         H[Homoskedastisitas Residual]
         I[Normalitas Distribusi Residual]
     end
 ```
+
+| Asumsi               | Status           | Transformasi Data | Solusi                                                                                                  |
+|----------------------|------------------|------------------|--------------------------------------------------------------------------------------------------------|
+| Linearitas           | Terpenuhi tapi fit rendah | Tidak            | Model linier kurang fit → gunakan model non-linier seperti regresi polinomial, decision tree, atau machine learning. Transformasi tidak wajib karena masalah utama adalah pola hubungan yang kompleks, bukan skala variabel. |
+| Indepedensi Residual  | Terpenuhi        | Tidak            | Residual acak dan tidak ada autokorelasi → transformasi tidak perlu karena asumsi independensi sudah terpenuhi. |
+| Homoskedastisitas     | Terpenuhi        | Tidak            | Varians residual konstan → transformasi (seperti log atau sqrt) biasanya untuk mengatasi heteroskedastisitas, jadi di sini tidak diperlukan. |
+| Normalitas Residual   | Tidak terpenuhi   | Tidak            | Meskipun normalitas residu dilanggar, transformasi data seringkali kurang efektif memperbaiki distribusi error; lebih baik gunakan model non-parametrik atau machine learning yang bebas asumsi normalitas. |
+| Influential Points    | Tidak signifikan  | Tidak            | Karena tidak ada outlier berpengaruh besar, transformasi untuk mengurangi pengaruh outlier tidak diperlukan; fokus pada pemilihan model robust terhadap noise/outlier jika perlu. |
+
 ---
 ## Modeling
 
