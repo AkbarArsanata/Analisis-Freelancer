@@ -156,7 +156,7 @@ graph LR
   E-->F2(R² tertinggi)
   E-->F3(Stabilitas performa)
 
-   F1-->|Pilih Baseline Terbaik|G
+   F1-->|Pilih Baseline Terbaik|G[Model Terbaik]
    F2-->|Pilih Baseline Terbaik|G
    F3-->|Pilih Baseline Terbaik|G
 ```
