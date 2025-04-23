@@ -82,41 +82,42 @@ Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi
 ```mermaid
 graph TD
     A[Data Exploration] --> A1[Data Inspection]
-    A --> A1[Data Observation]
-    A --> A1[Noise Checking]
-    A2[Data Prepaartion] --> A3[Encode]
+    A --> A2[Data Observation]
+    A --> A3[Noise Checking]
+    A1 --> B
+    B[Data Prepaartion] --> A3[Encode]
     A --> B2[Identifikasi missing values & duplikat]
     A --> B3[Analisis distribusi variabel]
     
-    B1 --> C[Pemeriksaan Asumsi Regresi]
-    B2 --> C
-    B3 --> C
+    C1 --> D[Pemeriksaan Asumsi Regresi]
+    C2 --> D
+    C3 --> D
     
-    C --> D1[Linearitas: Scatter plot, Ramsey RESET]
-    C --> D2[Independensi: Durbin-Watson test]
-    C --> D3[Homoskedastisitas: Breusch-Pagan/White test]
-    C --> D4[Normalitas: Shapiro-Wilk/Q-Q plot]
+    D --> E1[Linearitas: Scatter plot, Ramsey RESET]
+    D --> E2[Independensi: Durbin-Watson test]
+    D --> E3[Homoskedastisitas: Breusch-Pagan/White test]
+    D --> E4[Normalitas: Shapiro-Wilk/Q-Q plot]
     
-    D1 --> E[Penanganan Data]
-    D2 --> E
-    D3 --> E
-    D4 --> E
+    E1 --> F[Penanganan Data]
+    E2 --> F
+    E3 --> F
+    E4 --> F
     
-    E --> F1[Imputasi/hapus missing values]
-    E --> F2[Encoding variabel kategorikal]
-    E --> F3[Normalisasi/standardisasi]
+    F --> G1[Imputasi/hapus missing values]
+    F --> G2[Encoding variabel kategorikal]
+    F --> G3[Normalisasi/standardisasi]
     
-    F1 --> G[Deteksi Outlier]
-    F2 --> G
-    F3 --> G
+    G1 --> H[Deteksi Outlier]
+    G2 --> H
+    G3 --> H
     
-    G --> H1[Cook's Distance, DFFITS]
-    G --> H2[Leverage vs residual plot]
-    G --> H3[Transformasi/hapus outlier]
+    I --> J1[Cook's Distance, DFFITS]
+    I --> J2[Leverage vs residual plot]
+    I --> J3[Transformasi/hapus outlier]
     
-    H1 --> I[Final Dataset]
-    H2 --> I
-    H3 --> I
+    I1 --> J[Final Dataset]
+    I2 --> J
+    I3 --> J
 
 ```
 
