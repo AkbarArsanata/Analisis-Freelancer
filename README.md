@@ -76,58 +76,46 @@ Pendekatan ini bertujuan menghasilkan model akhir yang tidak hanya akurat tetapi
 
 ## 1. Memenuhi Asumsi Model Regresi (Assumption Checking and Data Preparation)
 
-subgraph Assumption_Checking_and_Data_Preparation
-    direction TB
+# Workflow Analisis Data & Model Regresi
 
-    A1[Eksplorasi Data Awal]
-    A2[Pemeriksaan Asumsi Regresi]
-    A3[Penanganan Data]
-    A4[Deteksi dan Penanganan Outlier & Influential Points]
-    A5[Finalisasi Dataset Siap Modeling]
-
-    %% Detail sub-subgraphs
-    subgraph Eksplorasi_Data_Awal
-        direction LR
-        E1(Inspeksi tipe data, jumlah observasi & variabel)
-        E2(Identifikasi missing values & duplikat)
-        E3(Analisis distribusi variabel: histogram, boxplot)
-        E1 --> E2 --> E3
-    end
-
-    subgraph Pemeriksaan_Asumsi_Regresi
-        direction LR
-        P1(Linearitas: scatter plot, Ramsey RESET, residual plot)
-        P2(Independensi Residual: Durbin-Watson test)
-        P3(Homoskedastisitas: Breusch-Pagan / White test)
-        P4(Normalitas Residual: Shapiro-Wilk / Q-Q plot)
-        
-        P1 --> P2 --> P3 --> P4 
-    end
-
-     subgraph Penanganan_Data_Detail
-         direction LR 
-         H1(Imputasi/hapus missing values) 
-         H2(Pengkodean variabel kategorikal) 
-         H3(Normalisasi/standardisasi skala numerik) 
-         
-         H1 --> H2 --> H3 
-     end
+## 📌 1. Assumption Checking & Data Preparation
+```mermaid
+graph TD
+    A[Eksplorasi Data Awal] --> B1[Inspeksi tipe data, observasi, variabel]
+    A --> B2[Identifikasi missing values & duplikat]
+    A --> B3[Analisis distribusi variabel]
     
-     subgraph Deteksi_Outlier_Influential_Points_Detail    
-       D1(Hitung Cook’s Distance, DFFITS, DFBetas)  
-       D2(Visual leverage vs studentized residuals)  
-       D3(Lakukan transformasi/hapus outlier jika perlu)  
-       
-       D1 --> D2 --> D3  
-     end
+    B1 --> C[Pemeriksaan Asumsi Regresi]
+    B2 --> C
+    B3 --> C
     
-   %% Hubungkan node utama ke detailnya   
-   A1 --> Eksplorasi_Data_Awal  
-   A2 --> Pemeriksaan_Asumsi_Regresi  
-   A3 --> Penanganan_Data_Detail   
-   A4 --> Deteksi_Outlier_Influential_Points_Detail  
+    C --> D1[Linearitas: Scatter plot, Ramsey RESET]
+    C --> D2[Independensi: Durbin-Watson test]
+    C --> D3[Homoskedastisitas: Breusch-Pagan/White test]
+    C --> D4[Normalitas: Shapiro-Wilk/Q-Q plot]
+    
+    D1 --> E[Penanganan Data]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    
+    E --> F1[Imputasi/hapus missing values]
+    E --> F2[Encoding variabel kategorikal]
+    E --> F3[Normalisasi/standardisasi]
+    
+    F1 --> G[Deteksi Outlier]
+    F2 --> G
+    F3 --> G
+    
+    G --> H1[Cook's Distance, DFFITS]
+    G --> H2[Leverage vs residual plot]
+    G --> H3[Transformasi/hapus outlier]
+    
+    H1 --> I[Final Dataset]
+    H2 --> I
+    H3 --> I
 
-end
+```
 
 **Metrik Evaluasi:**  
 - Uji statistik asumsi (Durbin-Watson > 1.5-< 2.5 untuk independensi).  
@@ -151,7 +139,7 @@ graph LR
   B2-->C 
   B3-->C
 
-  C-->D(Bandungkan Metric)
+  C-->D(Bandingkan Metric)
   
   D-->E1(MSE terendah)
   D-->E2(R² tertinggi)
@@ -159,7 +147,7 @@ graph LR
 
    E1-->|Pilih Baseline Terbaik|F 
    E2-->|Pilih Baseline Terbaik|F 
-   E3-->|Pilih Baseline Terbaik|F 
+   E3-->|Pilih Baseline Terbaik|F
 ```
 
 
