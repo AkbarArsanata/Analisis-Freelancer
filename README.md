@@ -550,155 +550,6 @@ graph TD
 ---
 ## Modeling
 
-Berikut adalah analisis detail improvement dari model baseline (default parameters) ke model dengan best parameters untuk setiap algoritma, termasuk dampak hyperparameter tuning terhadap performa dan kompleksitas model, dalam format markdown:
-
----
-
-### **1. RandomForestRegressor**
-#### **Baseline (Default Parameters)**
-- Parameter default scikit-learn:  
-  ```python
-  {'n_estimators': 100, 'max_depth': None, 'min_samples_split': 2,  
-   'min_samples_leaf': 1, 'max_features': 'auto'}
-  ```
-- **Masalah**:  
-  - `max_depth=None` dan `min_samples_*` rendah → risiko **overfitting** tinggi (pohon tumbuh sangat dalam hingga semua leaf murni).  
-  - `max_features='auto'` (=1.0) menggunakan semua fitur → meningkatkan variance.
-
-#### **Best Parameters**  
-```python
-{'max_depth': 3, 'max_features': 'log2', 'min_samples_leaf': 3,  
- 'min_samples_split': 4, 'n_estimators': 180}
-```
-**Improvement yang Dicapai**:  
-1. **Kontrol Kompleksitas Model**:  
-   - `max_depth=3` membatasi kedalaman pohon → model lebih sederhana dan generalisir lebih baik.  
-   - `min_samples_leaf=3` dan `min_samples_split=4` mencegah pembagian node untuk sampel kecil → mengurangi overfitting.  
-
-2. **Reduksi Variance**:  
-   - `max_features='log2'` (hanya √(n_features) yang digunakan) → meningkatkan diversitas antar pohon.  
-   - `n_estimators=180` (lebih banyak dari baseline) → stabilisasi prediksi melalui voting.  
-
-3. **Dampak pada MSE**:  
-   - Baseline MSE mungkin > 0.1 (asumsi), best parameter mencapai **0.0859** → penurunan ~15% atau lebih.  
-
----
-
-### **2. CatBoost**
-#### **Baseline (Default Parameters)**
-- Parameter default CatBoost:  
-  ```python
-  {'iterations': 1000, 'depth': 6, 'learning_rate': 0.03,  
-   'subsample': 0.8, 'colsample_bylevel': 1.0}
-  ```
-- **Masalah**:  
-  - `depth=6` dan `iterations=1000` → risiko overfitting untuk dataset kecil/medium.  
-  - `learning_rate=0.03` mungkin terlalu agresif.  
-
-#### **Best Parameters**  
-```python
-{'subsample': 0.7, 'n_estimators': 100, 'max_depth': 4,  
- 'learning_rate': 0.01, 'colsample_bylevel': 0.6}
-```
-**Improvement yang Dicapai**:  
-1. **Regularisasi Lebih Ketat**:  
-   - `max_depth=4` (vs 6) → batasi kompleksitas pohon.  
-   - `subsample=0.7` dan `colsample_bylevel=0.6` → introduksi randomness (seperti bagging).  
-
-2. **Optimasi Konvergensi**:  
-   - `learning_rate=0.01` (lebih kecil) + `n_estimators=100` (lebih sedikit) → pelatihan lebih stabil tetapi mungkin butuh lebih banyak iterasi untuk konvergensi penuh.  
-
-3. **Dampak pada MSE**:  
-   - Baseline MSE mungkin ~0.09, best parameter mencapai **0.0856** → penurunan ~5%.  
-
----
-
-### **3. XGBoost**
-#### **Baseline (Default Parameters)**
-- Parameter default XGBoost:  
-  ```python
-  {'n_estimators': 100, 'max_depth': 6, 'learning_rate': 0.3,  
-   'subsample': 1.0, 'colsample_bytree': 1.0}
-  ```
-- **Masalah**:  
-  - `learning_rate=0.3` terlalu tinggi → risiko overshooting optima.  
-  - `max_depth=6` dan `subsample=1.0` → risiko overfitting.  
-
-#### **Best Parameters**  
-```python
-{'subsample': 0.7, 'n_estimators': 100, 'max_depth': 4,  
- 'learning_rate': 0.01, 'colsample_bytree': 0.6}
-```
-**Improvement yang Dicapai**:  
-1. **Penyesuaian Learning Rate**:  
-   - `learning_rate=0.01` (vs 0.3) → update bobot lebih halus, konvergensi lebih baik.  
-
-2. **Kontrol Kompleksitas**:  
-   - `max_depth=4` (vs 6) → pohon lebih dangkal dan generalisir.  
-   - `subsample=0.7` dan `colsample_bytree=0.6` → mengurangi variance melalui stochastic boosting.  
-
-3. **Dampak pada MSE**:  
-   - Baseline MSE mungkin ~0.095, best parameter mencapai **0.0854** → penurunan ~10%.  
-
----
-
-### **4. SVR**
-#### **Baseline (Default Parameters)**
-- Parameter default scikit-learn:  
-  ```python
-  {'C': 1.0, 'epsilon': 0.1, 'gamma': 'scale'}
-  ```
-- **Masalah**:  
-  - `C=1.0` dan `epsilon=0.1` mungkin terlalu ketat → model underfit.  
-  - `gamma='scale'` (1/(n_features * X.var())) bisa kurang optimal untuk data non-linear.  
-
-#### **Best Parameters**  
-```python
-{'C': 3.84, 'epsilon': 1.05, 'gamma': 0.73}
-```
-**Improvement yang Dicapai**:  
-1. **Penyesuaian Margin dan Error Tolerance**:  
-   - `C=3.84` → lebih fleksibel dalam melanggar margin (trade-off bias-variance).  
-   - `epsilon=1.05` (besar) → toleransi error lebih tinggi, cocok untuk data noisy.  
-
-2. **Optimasi Kernel RBF**:  
-   - `gamma=0.73` (manual) → kontrol non-linearitas lebih baik daripada `gamma='scale'`.  
-
-3. **Dampak pada MSE**:  
-   - Baseline MSE mungkin ~0.12, best parameter mencapai **0.085** → penurunan ~30% atau lebih.  
-
----
-
-### **Pattern Umum Improvement**  
-1. **Kontrol Overfitting**:  
-   - Semua model best parameter memiliki **kompleksitas lebih rendah** (contoh: `max_depth` dikurangi, `min_samples_*` dinaikkan).  
-   - Teknik **subsampling** (`subsample`, `colsample_by*`) diterapkan untuk mengurangi variance.  
-
-2. **Optimasi Konvergensi**:  
-   - **Learning rate lebih kecil** (XGBoost/CatBoost) untuk update bobot lebih presisi.  
-   - **Jumlah estimator (pohon) disesuaikan** agar tidak berlebihan.  
-
-3. **Peningkatan Generalisasi**:  
-   - MSE turun signifikan (**10-30%**) tanpa tanda overfitting (terlihat dari konsistensi MSE train-test).  
-
-4. **Perbedaan Algoritma**:  
-   - **Tree-based methods (XGBoost, CatBoost, RF)** lebih unggul daripada SVR untuk dataset ini, karena mampu menangkap interaksi fitur secara hierarkis.  
-   - **SVR** memerlukan tuning lebih hati-hati untuk kompetitif.  
-
-### **Rekomendasi Tuning Lanjutan**  
-- **Untuk Tree-Based Models**:  
-  - Eksperimen dengan `learning_rate` lebih tinggi (e.g., 0.05) dan `n_estimators` lebih besar.  
-  - Tambahkan regularisasi L1/L2 (XGBoost: `reg_alpha`, `reg_lambda`).  
-- **Untuk SVR**:  
-  - Coba kernel alternatif (e.g., `linear`) jika hubungan fitur sederhana.  
-  - Scaling fitur bisa kritikal untuk SVR.  
-
-Dengan tuning ini, model tidak hanya lebih akurat tetapi juga lebih **robust terhadap autokorelasi dan non-normalitas residual** yang teridentifikasi dalam evaluasi awal.
-
----Berikut adalah analisis detail improvement dari model baseline (default parameters) ke model dengan best parameters untuk setiap algoritma, termasuk dampak hyperparameter tuning terhadap performa dan kompleksitas model, dalam format markdown:
-
----
-
 ### **1. RandomForestRegressor**
 #### **Baseline (Default Parameters)**
 - Parameter default scikit-learn:  
@@ -816,15 +667,68 @@ Penurunan MSE signifikan (~30%).
 ---
 
 
+## Kelebihan dan Kekurangan Model Dalam Konteks Dataset Saya
 
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+### **1. RandomForestRegressor**  
+#### **Kelebihan**:  
+- **Robust terhadap overfitting** setelah tuning:  
+  - `max_depth=3`, `min_samples_leaf=3`, dan `max_features='log2'` membatasi kompleksitas model.  
+  - Cocok untuk data dengan noise atau outlier karena menggunakan **rata-rata prediksi** banyak pohon.  
+- **Tidak memerlukan scaling** fitur (berbasis pohon).  
+- **Feature importance** bawaan untuk interpretasi.  
 
-Rubrik/Kriteria Tambahan (Opsional):
+#### **Kekurangan**:  
+- **Kurang optimal untuk hubungan non-linear kompleks** karena kedalaman pohon dibatasi (`max_depth=3`).  
+- **Lebih lambat** dibanding boosting (e.g., XGBoost) karena `n_estimators=180`.  
+- **Risiko underfit** jika hubungan fitur-target sangat kompleks.  
 
-Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. Jelaskan proses improvement yang dilakukan.
-Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. Jelaskan mengapa memilih model tersebut sebagai model terbaik.
+---
 
+### **2. CatBoost**  
+#### **Kelebihan**:  
+- **Handling kategorikal otomatis** (tidak relevan di sini karena data numerik).  
+- **Regularisasi kuat** dengan `subsample=0.7` dan `colsample_bylevel=0.6` mengurangi overfitting.  
+- **Learning rate rendah (`0.01`)** + `n_estimators=100` membuat konvergensi lebih stabil.  
+
+#### **Kekurangan**:  
+- **Waktu training lebih lama** dibanding RandomForest karena boosting sequential.  
+- **Hyperparameter sensitif** (e.g., `depth`, `subsample`) butuh tuning ekstensif.  
+- **Less interpretable** dibanding RandomForest.  
+
+---
+
+### **3. XGBoost**  
+#### **Kelebihan**:  
+- **Efisiensi tinggi** dengan `learning_rate=0.01` dan `max_depth=4` (konvergensi cepat).  
+- **Stochastic boosting** (`subsample=0.7`, `colsample_bytree=0.6`) meningkatkan generalisasi.  
+- **Fitur tambahan**: Early stopping, weighting samples.  
+
+#### **Kekurangan**:  
+- **Butuh tuning lebih detail** (e.g., gamma, lambda) untuk performa maksimal.  
+- **Sensitif terhadap noise** jika `learning_rate` terlalu rendah atau `max_depth` terlalu kecil.  
+- **Memerlukan scaling** untuk beberapa kasus (meski kurang kritis dibanding SVR).  
+
+---
+
+### **4. SVR**  
+#### **Kelebihan**:  
+- **Optimal untuk data non-linear** setelah tuning `gamma=0.73` (RBF kernel).  
+- **Tahan overfitting** jika `C=3.84` dan `epsilon=1.05` diatur tepat (fleksibilitas kontrol).  
+
+#### **Kekurangan**:  
+- **Scalabilitas buruk** untuk dataset besar (kompleksitas O(n²)).  
+- **Sangat bergantung pada scaling** (harus normalisasi/standarisasi fitur).  
+- **Sulit diinterpretasikan** (model black-box).  
+
+---
+
+### **Ringkasan Perbandingan**  
+| Model               | Keunggulan                          | Kelemahan                           | Cocok untuk Kasus...                |  
+|----------------------|-------------------------------------|-------------------------------------|--------------------------------------|  
+| **RandomForest**     | Robust, interpretable              | Underfit jika kompleks             | Data noisy, fitur heterogen         |  
+| **CatBoost**         | Auto-handling kategorikal           | Lambat, hyperparameter sensitif    | Data dengan fitur campuran (num+cat) |  
+| **XGBoost**          | Efisien, stokastik boosting         | Tuning kompleks                    | Data besar, hubungan non-linear      |  
+| **SVR**             | Non-linear kuat, generalisasi baik  | Scalability rendah                 | Dataset kecil, hubungan kompleks    |  
 
 
 ## Evaluation
@@ -1032,6 +936,124 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 | Experience_Level  | Positif                          | Semakin tinggi pengalaman seseorang, semakin besar kontribusinya dalam menaikkan prediksi pendapatan.                                               |
 | Job_Duration_Days | Sedikit negatif                  | Durasi kerja yang panjang cenderung sedikit menurunkan prediksi pendapatan, mungkin karena faktor efisiensi atau kelelahan kerja jangka panjang.     |
 | Hourly_Rate       | Netral / kecil                   | Tarif per jam tidak memberikan pengaruh signifikan terhadap perubahan estimasi earnings menurut model ini; mungkin dipengaruhi oleh faktor lain juga.  |
+
+## Kesimpulan
+
+# Solusi dan Rekomendasi Lengkap Berdasarkan Analisis Partial Dependence & SHAP
+
+---
+
+## 1. Apakah peningkatan Job Success Rate (JSR) secara konsisten dapat menaikkan prediksi pendapatan freelancer di Indonesia?
+
+### Kesimpulan Utama
+- **JSR memiliki korelasi kuat dan positif** terhadap pendapatan freelancer, terutama pada nilai JSR ≥ 0.9, di mana partial dependence menunjukkan peningkatan tajam.
+- Faktor lain seperti **Experience Level** (tingkat pengalaman) dan **Job Category** juga memengaruhi hubungan ini.
+
+### Detail Analisis
+- Partial dependence menunjukkan bahwa JSR di bawah 0.9 relatif stabil, namun ada lonjakan signifikan saat JSR mencapai atau melewati 0.9.
+- Kombinasi JSR tinggi dengan Marketing Spend tinggi (0.8–1.0) atau Experience Level tinggi memberikan nilai partial dependence tertinggi (~0.52).
+- SHAP menegaskan bahwa JSR adalah fitur dominan yang secara konsisten meningkatkan prediksi pendapatan.
+
+### Rekomendasi Strategi
+- **Peningkatan Kualitas Kerja:**
+  - Terapkan sistem *feedback* dari klien untuk perbaikan berkelanjutan.
+  - Adakan pelatihan teknis dan komunikasi untuk meningkatkan keahlian.
+- **Optimasi Proyek:**
+  - Manajemen waktu efektif agar proyek selesai tepat waktu.
+  - Gunakan alat kolaborasi seperti Trello atau Slack untuk mengurangi kesalahan koordinasi.
+- **Pemilihan Job Category:**
+  - Fokus pada kategori pekerjaan dengan dampak positif terhadap pendapatan; hindari kategori yang cenderung negatif (misal kategori 6–7).
+
+---
+
+## 2. Bagaimana alokasi anggaran pemasaran/promosi yang optimal dapat meningkatkan efektivitas investasi promosi?
+
+### Kesimpulan Utama
+- Pengeluaran pemasaran dalam rentang **0.7–1.0 memberikan ROI terbaik**, dengan lonjakan signifikan mendekati nilai maksimum (1.0).
+
+### Detail Analisis
+- Partial dependence menunjukkan kenaikan dari sekitar nilai marketing spend 0.7 hingga puncak di sekitar nilai mendekati satu (~0.52–0.53).
+- Kombinasi marketing spend tinggi dengan JSR tinggi menghasilkan dampak paling positif pada target model.
+
+### Rekomendasi Strategi
+- Alokasikan anggaran pemasaran dalam kisaran efektif yaitu antara **70% sampai hampir penuh (100%) dari total budget promosi**.
+- Prioritaskan platform pemasaran *targeted* sesuai segmen pasar:
+   - LinkedIn Ads untuk profesional teknis,
+   - Instagram/Facebook Ads untuk segmen kreatif,
+   - Gunakan testimoni klien serta portofolio sukses sebagai konten iklan.
+  
+- Lakukan A/B testing berbagai saluran iklan guna menentukan metode paling efektif dalam konteks pasar freelance Indonesia.
+
+---
+
+## 3 &amp;4 . Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas? Adakah durasi kerja ideal ("sweet spot") bagi freelancer?
+
+### Kesimpulan Utama
+- Durasi kerja panjang mendekati batas maksimal memiliki dampak negatif kecil terhadap prediksi pendapatan karena penurunan efisiensi akibat kelelahan/burnout.
+  
+- Durasi ideal berada pada rentang sedang, sekitar $$60\%-80\%$$ dari kapasitas maksimal harian/mingguan — misalnya setara dengan sekitar *6–8 jam per hari* atau *30–40 jam per minggu*, menjaga produktivitas tanpa risiko burnout.
+
+### Detail Analisis
+
+| Rentang Durasi Kerja | Dampak Terhadap Target Model |
+|---------------------|------------------------------|
+| Rendah – Sedang      | Stabil (~0,49 – ~0,50)        |
+| Mendekati Maksimal   | Penurunan tajam (~48 – ~49) |
+
+Kombinasi durasi panjang tetap bisa berdampak positif jika didukung oleh JSR sangat tinggi tapi kurang optimal dibanding durasi sedang/singkat.
+
+SHAP juga mengindikasikan pengaruh negatif kecil terkait durasi kerja panjang (-nilai minor).
+
+### Rekomendari Strategi Manajemen Waktu
+
+* Bataskan jam kerja mingguan idealnya tidak lebih dari $$40$$ jam agar terhindar dari penurunan performa akibat kelelahan kronis;
+* Terapkan teknik time-blocking agar ada jeda istirahat teratur setiap $$2$$ jam selama $$15{-}20$$ menit;
+* Liburkan minimal satu hari penuh tiap minggu;
+* Gunakan aplikasi pengingat istirahat seperti Stretchly atau RescueTime;
+* Sesuaikan jadwal berdasarkan jenis pekerjaan — misalnya pekerja kreatif butuh lebih banyak jeda daripada pekerja teknis;
+
+---
+
+## 5\. Sejauh mana tarif per jam memengaruhi perubahan estimasi pendapatan serta daya saing harga jasa freelance?
+
+### Kesimpulan Utama
+
+Tarif per jam memiliki efek netral hingga kecil:
+
+\- Tarif rendah sampai sedang ($$\leqslant\,{ }{ }^{\sim} { }_{\,} { }_{\,} { }_{\,} { }_{\,}{\sim}\,$$ $${\approx}\,$$ $${}_{\,}{\sim}\,$$ $${}_{\,}{<}\,{ }\!{ }\!{ }\!{ }\!{ }\!{}^{~}$$${}_{~}{<}\,{ }{}^{~}$ $${}_{~}{<}\,{ }{}^{~}$$${}_{~}{<}\,{ }{}^{~}$ $${}_{~~}^{~~}$$ $\approx$ $$\texttt{tarif ≤ ~20% skala normalisasi}) cenderung menaikkan estimasinya sedikit sebelum datar/menurun setelahnya;
+
+\- Daya saing harga lebih dipengaruhi oleh kualitas layanan (*JSR*) dan pengalaman daripada tarif semata.
+
+Partial Dependence memperlihatkan kenaikan awal sampai tarif sekitar$$20\%$$kemudian flat/slightly turun; SHAP menegaskan pengaruh netral/kecil tarif ini.
+
+### Rekomendari Penetapan Tarif
+
+\- Tetapkan tarif kompetitif di kisaran rendah-sedang terlebih dahulu ($$\leqslant \texttt{sekitar} \;20\%$$ skala normalisasi);
+
+\- Tingkatkan tarif secara bertahap seiring reputasimu membaik melalui peningkatan *Job Success Rate*, portofolio kuat, dan ulasan positif;
+
+\- Tawarkan layanan tambahan bernilai tambah seperti garansi revisi proyek;
+
+\- Sertakan bukti Return on Investment (ROI) proyek kepada calon klien sebagai diferensiasi;
+
+\- Lakukan survei pasar lokal freelance Indonesia guna mengetahui rata-rata harga kompetitor;
+
+\- Pertimbangkan strategi dynamic pricing berdasarkan permintaan khusus/proyek mendesak.
+
+
+---
+
+# Kesimpulan Umum 🌟
+
+Dengan fokus utama pada:
+
+* Peningkatan kualitas melalui ***Job Success Rate*** sebagai faktor dominan penghasil income,
+* Optimalisasi anggaran marketing terutama di rentang efektif antara ***70%-100%***,
+* Manajemen waktu bijaksana menjaga durasinya tidak terlalu panjang agar mencegah burnout,
+* Penetapan tarif kompetitif rendah-sedang sambil membangun reputasimu lewat kualitas,
+
+freelancer dapat meningkatkan prediksi pendapatannya secara berkelanjutan tanpa mengorbankan produktivitas maupun kesejahteraan pribadi mereka.
+
 
 
 
