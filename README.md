@@ -937,13 +937,92 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 | Job_Duration_Days | Sedikit negatif                  | Durasi kerja yang panjang cenderung sedikit menurunkan prediksi pendapatan, mungkin karena faktor efisiensi atau kelelahan kerja jangka panjang.     |
 | Hourly_Rate       | Netral / kecil                   | Tarif per jam tidak memberikan pengaruh signifikan terhadap perubahan estimasi earnings menurut model ini; mungkin dipengaruhi oleh faktor lain juga.  |
 
+
+## Keterangan skala vs nilai asli
+
+Berikut adalah tabel dalam format Markdown berdasarkan informasi yang diberikan:
+
+### Mapping Kategori
+
+| Kategori            | Nilai | Deskripsi          |
+|---------------------|-------|--------------------|
+| **Job_Category**    | 1     | App Development    |
+|                     | 2     | Content Writing    |
+|                     | 3     | Customer Support   |
+|                     | 4     | Data Entry         |
+|                     | 5     | Digital Marketing  |
+|                     | 6     | Graphic Design     |
+|                     | 7     | SEO                |
+|                     | 8     | Web Development    |
+| **Experience_Level**| 0     | Beginner           |
+|                     | 1     | Expert             |
+|                     | 2     | Intermediate       |
+
+### Informasi Skala Numerik
+
+#### Job_Success_Rate
+| Nilai Skala | Nilai Asli |
+|-------------|------------|
+| 0.1         | 55.25      |
+| 0.2         | 60.21      |
+| 0.3         | 65.17      |
+| 0.4         | 70.13      |
+| 0.5         | 75.09      |
+| 0.6         | 80.06      |
+| 0.7         | 85.02      |
+| 0.8         | 89.98      |
+| 0.9         | 94.94      |
+| 1.0         | 99.90      |
+
+#### Marketing_Spend
+| Nilai Skala | Nilai Asli |
+|-------------|------------|
+| 0.1         | 50.80      |
+| 0.2         | 100.60     |
+| 0.3         | 150.40     |
+| 0.4         | 200.20     |
+| 0.5         | 250.00     |
+| 0.6         | 299.80     |
+| 0.7         | 349.60     |
+| 0.8         | 399.40     |
+| 0.9         | 449.20     |
+| 1.0         | 499.00     |
+
+#### Job_Duration_Days
+| Nilai Skala | Nilai Asli |
+|-------------|------------|
+| 0.1         | 9.80       |
+| 0.2         | 18.60      |
+| 0.3         | 27.40      |
+| 0.4         | 36.20      |
+| 0.5         | 45.00      |
+| 0.6         | 53.80      |
+| 0.7         | 62.60      |
+| 0.8         | 71.40      |
+| 0.9         | 80.20      |
+| 1.0         | 89.00      |
+
+#### Hourly_Rate
+| Nilai Skala | Nilai Asli |
+|-------------|------------|
+| 0.1         | 14.60      |
+| 0.2         | 24.05      |
+| 0.3         | 33.51      |
+| 0.4         | 42.96      |
+| 0.5         | 52.42      |
+| 0.6         | 61.88      |
+| 0.7         | 71.33      |
+| 0.8         | 80.79      |
+| 0.9         | 90.24      |
+| 1.0         | 99.70      |
+
 ## Hasil Analisis Untuk Menjawab Goals Dan Problem Statement
 
 Berikut adalah jawaban untuk setiap poin dan sub-poin Problem Statement dengan nilai asli, dirapikan dalam format **Markdown** agar lebih mudah dibaca dan dipahami:
 
 ---
 
-# Jawaban Problem Statement dengan Nilai Asli
+## Jawaban Problem Statement dengan Nilai Asli
 
 ## 1. Peningkatan Job Success Rate (JSR) dan Prediksi Pendapatan Freelancer
 
