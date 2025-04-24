@@ -10,7 +10,7 @@ Berikut adalah versi markdown yang sudah dirapikan dan diformat dengan baik untu
 
 Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2].
 
-Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam jurnal penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesia mengalami peningkatan yang signifikan. Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya.
+Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam jurnal penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesia mengalami peningkatan yang signifikan. Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya[^4].
 
 Tren ini terus berlanjut hingga 2025, dengan banyak generasi muda beralih ke pekerjaan freelance karena fleksibilitas dan otonomi yang ditawarkan [^4]. Survei menunjukkan mayoritas freelancer berasal dari generasi milenial dan Z yang mengutamakan fleksibilitas dan kesempatan menyalurkan kreativitas. Sebanyak 95 persen responden survei berencana menekuni pekerjaan freelance dalam jangka panjang, dengan 53 persen berencana melakukannya lebih dari 5 tahun [^5].
 
@@ -52,16 +52,6 @@ Riset pasar menjadi penting untuk menemukan tarif sesuai pada platform freelance
 
 ---
 
-Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2]. 
-
-Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam Jurnal Penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesi a mengalami peningkatan yang signifikan, dengan Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya. Tren ini terus berlanjut hingga 2025, dengan banyak generasi muda beralih ke pekerjaan freelance karena fleksibilitas dan otonomi yang ditawarkan [^4]. Survei menunjukkan mayoritas freelancer berasal dari generasi milenial dan Z yang mengutamakan fleksibilitas dan kesempatan menyalurkan kreativitas. Sebanyak 95 persen responden survei berencana menekuni pekerjaan freelance dalam jangka panjang, dengan 53 persen berencana melakukannya lebih dari 5 tahun [^5]. Dengan kata lain, saat ini banyak pekerja pemula (entry level) yang ingin berkarir sebagai freelancer. Namun, hal ini tidak mudah karena banyak faktor yang harus dipertimbangkan untuk sukses di dunia freelance. Berikut beberapa tantangan yang perlu diantisipasi:
-
-freelancer  menghadapi  tantangan  ketidakstabilan  pendapatan  dan  minimnya  akses  terhadap jaminan sosial, banyak freelancer mengalami ketidakpastian terkait keberlanjutan karir mereka, terutama  dalam  menghadapi  persaingan  global  di  platform  digital.  Kekhawatiran  terhadap  kurangnya jaminan kesehatan dan pensiun menjadi tantangan yang memerlukan solusi kebijakan yang inovatif.[^6]. Untuk menemukan solusi tersebut perlu dilakukan analisis faktor faktor apa saja yang bisa meningkatkan pendapatan. Untuk meningkatkan pendapatan, perlu dianalisis faktor-faktor seperti Job Success Rate (JSR), yang menunjukkan keberhasilan penyelesaian pekerjaan. Jika JSR meningkat, pendapatan kemungkinan juga naik, meski jenis pekerjaan dan pengalaman turut memengaruhi. Selain itu, alokasi anggaran pemasaran yang tepat—melalui digital ads atau program referral—dapat meningkatkan efektivitas investasi promosi dan mendongkrak penghasilan. Durasi kerja panjang berpotensi menurunkan produktivitas akibat kelelahan, sehingga penting menemukan durasi kerja ideal agar efisiensi tetap maksimal tanpa burnout. Terakhir, tarif per jam harus ditetapkan dengan hati-hati karena kenaikan harga tidak selalu menaikkan pendapatan jika mengurangi jumlah klien. Analisis menyeluruh dari faktor-faktor ini dapat membantu freelancer meningkatkan stabilitas dan besaran penghasilan sekaligus mendorong kebijakan perlindungan sosial yang inovatif di sektor gig economy.
-
-Tantangan utama lain bagi freelancer pemula termasuk kesulitan dalam menetapkan harga jasa yang kompetitif. Ditekankan bahwa menetapkan harga terlalu rendah dapat mengurangi nilai pekerjaan, sementara harga yang terlalu tinggi dapat membuat klien ragu. Riset pasar menjadi penting untuk menemukan tarif yang sesuai di platform freelance seperti Upwork dan Fiverr [^7]. 
-
-
-
 # Business Understanding
 
 ---
@@ -70,22 +60,56 @@ Meskipun menawarkan fleksibilitas dan peluang yang lebih luas, para freelancer d
 
 ## Problem Statements
 
-1. **Pernyataan Masalah 1: Apakah peningkatan Job Success Rate dapat secara konsisten menaikkan prediksi pendapatan?**
-   -Job Success Rate (JSR) adalah metrik yang mengindikasikan seberapa sukses seorang freelancer dalam menyelesaikan pekerjaannya. Problem statement ini bertujuan untuk mengevaluasi apakah kenaikan JSR berbanding lurus dengan peningkatan pendapatan. Jika ditemukan korelasi positif, maka freelancer atau platform dapat fokus pada strategi peningkatan kualitas pekerjaan untuk meningkatkan pendapatan. Namun, perlu juga dikaji apakah faktor lain seperti jenis pekerjaan atau pengalaman turut memengaruhi hubungan ini.
+## Pernyataan Masalah
 
-2. **Pernyataan Masalah 2: Apakah alokasi pemasaran/promosi yang optimal dapat membuat investasi pemasaran lebih efektif dalam mendongkrak pendapatan?**
-   -Investasi dalam pemasaran dan promosi sering kali memakan biaya besar, tetapi tidak selalu berdampak signifikan pada pendapatan. Problem statement ini mengeksplorasi bagaimana alokasi budget pemasaran yang tepat (misalnya: digital ads, referral program, atau SEO) dapat memaksimalkan ROI (Return on Investment). Analisis ini dapat membantu perusahaan atau freelancer dalam mengambil keputusan strategis untuk mengoptimalkan pengeluaran promosi.
+1. **Apakah peningkatan Job Success Rate (JSR) secara konsisten dapat menaikkan prediksi pendapatan freelancer di Indonesia?**  
+   Dalam pasar freelance yang sangat kompetitif, terutama bagi para pekerja pemula, Job Success Rate (JSR) menjadi salah satu indikator utama keberhasilan penyelesaian proyek dan kepuasan klien. Permasalahan ini bertujuan untuk mengevaluasi apakah kenaikan JSR secara signifikan berbanding lurus dengan peningkatan pendapatan freelancer. Selain itu, analisis juga akan mempertimbangkan pengaruh variabel lain seperti jenis pekerjaan yang dikerjakan serta tingkat pengalaman freelancer dalam konteks pasar freelance di Indonesia.
 
-3. **Pernyataan Masalah 3: Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas dan penurunan prediksi pendapatan?**
-   -Bekerja dalam durasi panjang (overtime atau jam kerja ekstrem) sering dikaitkan dengan kelelahan (burnout) yang berpotensi menurunkan produktivitas. Problem ini menguji apakah terdapat titik di mana durasi kerja yang terlalu lama justru mengurangi efisiensi dan akhirnya menurunkan pendapatan. Temuan ini dapat menjadi acuan dalam manajemen waktu kerja untuk menjaga produktivitas optimal.
+2. **Bagaimana alokasi anggaran pemasaran atau promosi yang optimal dapat meningkatkan efektivitas investasi promosi untuk mendongkrak pendapatan para freelancer?**  
+   Banyak freelancer mengandalkan platform digital dan media sosial sebagai sarana utama untuk mendapatkan klien baik lokal maupun global. Permasalahan ini mengkaji bagaimana strategi pemasaran—termasuk penggunaan iklan digital, program referral, atau metode promosi lainnya—dapat dimaksimalkan agar investasi pada kegiatan promosi memberikan Return on Investment (ROI) terbaik bagi para freelancer maupun pelaku usaha terkait di ekosistem gig economy Indonesia.
 
-4. **Pernyataan Masalah 4: Apakah ada batasan durasi kerja ideal agar tidak menimbulkan penurunan efisiensi atau kelelahan bagi pekerja?**
-   -Berhubungan dengan problem sebelumnya, problem ini mencari durasi kerja "sweet spot" di mana pekerja dapat mempertahankan produktivitas maksimal tanpa mengalami kelelahan berlebih. Analisis dapat melibatkan variabel seperti jam kerja/hari, istirahat, dan jenis pekerjaan. Hasilnya dapat digunakan untuk rekomendasi kebijakan kerja baik bagi freelancer maupun perusahaan.
-   
-5. **Penyataan Masalah 5: Apakah tarif per jam memiliki pengaruh signifikan terhadap perubahan estimasi pendapatan?**
-   -Tarif per jam adalah faktor langsung dalam penghitungan pendapatan freelancer. Namun, problem ini mengevaluasi apakah menaikkan tarif per jam selalu meningkatkan pendapatan, atau justru berpotensi mengurangi jumlah klien karena harga terlalu tinggi. Analisis dapat mencakup elastisitas permintaan, tingkat persaingan, dan kualitas layanan untuk menentukan strategi penetapan harga optimal.
+3. **Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas dan menurunkan prediksi pendapatan para freelancer?**  
+   Freelancer sering kali menghadapi tekanan untuk bekerja dalam durasi waktu yang panjang demi memenuhi permintaan klien atau target proyek tertentu. Namun demikian, jam kerja yang terlalu lama berpotensi menyebabkan kelelahan fisik dan mental (burnout), sehingga produktivitas justru menurun. Problem statement ini ingin mengetahui apakah terdapat dampak negatif signifikan dari durasi kerja panjang terhadap produktivitas serta bagaimana hal tersebut memengaruhi estimasi pendapatan mereka.
+
+4. **Adakah durasi kerja ideal ("sweet spot") bagi freelancer agar tetap produktif tanpa mengalami kelelahan berlebih?**  
+   Berhubungan dengan masalah sebelumnya, analisis ini bertujuan mencari batasan durasi kerja harian atau mingguan optimal dimana efisiensi kerja tetap terjaga tanpa risiko burnout berlebihan pada freelancer. Temuan dari studi ini akan sangat berguna sebagai rekomendasi manajemen waktu pribadi bagi individu maupun sebagai dasar kebijakan perlindungan sosial di sektor gig economy Indonesia.
+
+5. **Sejauh mana tarif per jam memengaruhi perubahan estimasi pendapatan serta daya saing harga jasa freelance di pasar Indonesia?**  
+   Penetapan tarif per jam merupakan tantangan besar khususnya bagi pekerja pemula karena harus mampu menarik klien sekaligus menjaga nilai jasa mereka agar tidak undervalued. Problem statement ini mengevaluasi apakah kenaikan tarif per jam selalu berdampak positif terhadap total pendapatan atau justru menurunkan jumlah klien akibat harga dianggap terlalu tinggi oleh pasar, dengan mempertimbangkan elastisitas permintaan serta tingkat persaingan pada platform lokal maupun internasional.
+
 
 ## Goals
+
+1. **Apakah peningkatan Job Success Rate (JSR) secara konsisten dapat menaikkan prediksi pendapatan freelancer di Indonesia?:**    
+   **Tujuan:**  
+   - Menganalisis korelasi antara JSR dan pendapatan freelancer.  
+   - Mengidentifikasi faktor lain seperti jenis pekerjaan dan pengalaman yang memengaruhi hubungan tersebut.  
+   - Memberikan rekomendasi strategi peningkatan kualitas kerja untuk meningkatkan penghasilan.
+
+2. **Bagaimana alokasi anggaran pemasaran/promosi yang optimal dapat meningkatkan efektivitas investasi promosi untuk mendongkrak pendapatan freelancer?:**  
+   **Tujuan:**  
+   - Mengevaluasi efektivitas berbagai metode pemasaran.  
+   - Menentukan alokasi budget pemasaran terbaik untuk memaksimalkan Return on Investment (ROI).  
+   - Membantu freelancer atau perusahaan dalam pengambilan keputusan strategis terkait promosi.
+
+3. **Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas dan menurunkan prediksi pendapatan para freelancer?:**   
+    **Tujuan:**   
+    - Mengukur dampak durasi kerja panjang terhadap produktivitas dan penghasilan.   
+    - Menemukan titik kritis dimana kelelahan mulai menurunkan efisiensi kerja.   
+    - Memberikan insight manajemen waktu agar menghindari burnout.
+
+4. **Adakah durasi kerja ideal ("sweet spot") bagi freelancer agar tetap produktif tanpa mengalami kelelahan berlebih?:**      
+    **Tujuan:**    
+    - Menentukan batasan durasi kerja harian/mingguan optimal bagi freelancer.    
+    - Menganalisis variabel terkait seperti jam istirahat dan jenis pekerjaan yang mendukung produktivitas maksimal tanpa risiko burnout.    
+    - Memberi rekomendasi kebijakan manajemen waktu bagi pekerja freelance maupun pembuat kebijakan sosial.
+
+5. **Sejauh mana tarif per jam memengaruhi perubahan estimasi pendapatan serta daya saing harga jasa freelance di pasar Indonesia?:**         
+     **Tujuan:**     
+     - Menganalisis hubungan antara tarif per jam dengan jumlah klien dan total pendapatan freelancers.
+     - Memahami elastisitas permintaan jasa freelance berdasarkan harga.
+     - Merumuskan strategi penetapan harga kompetitif yang seimbang antara nilai jasa dan daya tarik pasar.
+
 
 ## Solution Statements
 
@@ -793,10 +817,6 @@ Penurunan MSE signifikan (~30%).
 
 
 
-
-
-
-
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
 Rubrik/Kriteria Tambahan (Opsional):
@@ -804,6 +824,9 @@ Rubrik/Kriteria Tambahan (Opsional):
 Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
 Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. Jelaskan proses improvement yang dilakukan.
 Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. Jelaskan mengapa memilih model tersebut sebagai model terbaik.
+
+
+
 ## Evaluation
 
 ## Penjelasan Metrik Evaluasi: Mean Squared Error (MSE)
@@ -831,7 +854,6 @@ MSE dipilih karena:
 - **Memudahkan perbandingan antar model:** Nilai MSE dapat langsung dibandingkan antar berbagai model regresi untuk menentukan mana yang memiliki performa terbaik.
 - **Kesesuaian dengan asumsi regresi:** Model-model regresi biasanya diasumsikan memiliki error residual berdistribusi normal; penggunaan kuadrat error sesuai dengan asumsi ini.
 
----
 
 ### Hasil Evaluasi Model Berdasarkan Nilai MSE
 
@@ -842,7 +864,6 @@ MSE dipilih karena:
 | XGBoost                    | **0.08541151237146728** | Menangkap pola tapi agak menyebar  |
 | CatBoost                   | 0.08562445585396082     | Mirip XGBoost                     |
 
----
 
 ## Interpretasi Visualisasi Hasil Prediksi
 
@@ -856,7 +877,6 @@ Selain melihat angka MSE sebagai ukuran kuantitatif kualitas model, analisis vis
 
 - **XGBoost** dan **CatBoost** mampu menangkap pola non-linear namun titik-titiknya agak tersebar sehingga ada sedikit ketidakakuratan lokal walau secara numerik menghasilkan nilai mse terendah.
 
----
 
 ## Keputusan Pemilihan Model
 
@@ -866,9 +886,65 @@ Berdasarkan kombinasi antara metrik numerik (MSE) dan analisis visualisasi:
 
 Keputusan ini mendukung solusi praktis agar tidak hanya bergantung pada angka statistik saja tetapi juga mempertimbangkan interpretabilitas serta kestabilan hasil di lapangan.
 
+---
 
-### Feature Interaction
-#### Category Feature
+## Keterbatasan Metrik Evaluasi
+
+Meskipun **Mean Squared Error (MSE)** sangat berguna untuk mengukur performa kuantitatif model, metrik ini tidak dapat menjelaskan secara jelas bagaimana setiap fitur memengaruhi prediksi. Oleh karena itu, diperlukan teknik tambahan untuk memahami kontribusi dan pengaruh fitur terhadap hasil prediksi. Dua teknik interpretabilitas yang digunakan adalah **SHAP** dan **Partial Dependence Plot (PDP)**.
+
+## 1. SHAP (SHapley Additive exPlanations)
+
+### Penjelasan
+
+SHAP adalah metode berbasis teori permainan kooperatif yang memberikan nilai kontribusi setiap fitur dalam sebuah prediksi model secara adil dan konsisten. Nilai SHAP menunjukkan seberapa besar pengaruh suatu fitur terhadap perubahan output model dibandingkan dengan rata-rata output.
+
+### Cara Kerja
+
+- Setiap fitur dianggap sebagai "pemain" dalam permainan.
+- Kontribusi tiap pemain dihitung berdasarkan rata-rata marginal contribution-nya di semua subset kombinasi pemain lain.
+- Nilai SHAP memenuhi properti additivitas sehingga total kontribusi semua fitur sama dengan selisih antara prediksi aktual dengan nilai baseline (rata-rata).
+
+### Persamaan Matematik SHAP
+
+Nilai SHAP untuk fitur \( i \) pada instance \( x \) didefinisikan sebagai:
+
+$$
+\phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! (|N| - |S| - 1)!}{|N|!} [f_{S \cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S)]
+$$
+
+di mana:
+- \( N = \{1, 2, ..., M\} \) adalah himpunan semua fitur,
+- \( S \) adalah subset dari fitur tanpa elemen \( i \),
+- \( f_S(x_S) = E[f(x)|x_S] \) adalah ekspektasi output model ketika hanya menggunakan subset fitur \( S\),
+- Faktor pembobot di depan memastikan distribusi kontribusi adil sesuai teori Shapley.
+
+---
+## 2. Partial Dependence Plot (PDP)
+
+### Penjelasan
+
+Partial Dependence Plot menggambarkan hubungan marginal antara satu atau dua variabel input tertentu dengan target prediksi, dengan mengabaikan efek variabel lain. PDP membantu melihat pola pengaruh langsung suatu atau beberapa variabel terhadap hasil model secara global.
+
+### Cara Kerja
+
+Untuk satu variabel input \( X_j \), PDP menghitung rata-rata prediksi model ketika nilai variabel tersebut diubah sementara variabel lain tetap mengikuti distribusinya asli:
+
+$$
+PD_j(x_j) = E_{X_{\setminus j}}[f(x_j, X_{\setminus j})] = 
+\int f(x_j, x_{\setminus j}) dP(X_{\setminus j})
+$$
+
+di mana:
+- \( x_j \) adalah nilai tetap dari variabel yang dianalisis,
+- \( X_{\setminus j} = X_1,...,X_{j-1},X_{j+1},...,X_M\),
+- Ekspektasi dilakukan atas distribusi gabungan dari semua variabel kecuali variable ke-\(j\).
+
+Dengan kata lain, PDP menampilkan bagaimana perubahan nilai pada satu atau dua feature mempengaruhi rata-rata output model secara keseluruhan.
+
+---
+
+## Hasil
+### Category Feature
 Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-masing fitur:
 
 1. **Const**: Nilai konstan, tidak ada variasi, sehingga tidak memberikan pengaruh yang berubah terhadap target.
@@ -944,63 +1020,22 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 | Durasi Pekerjaan Panjang (0.7 - 0.85) & Tarif Per Jam Sedang-Hinggi (0.4 - 1.0) | Rentang spesifik tersebut          | Peningkatan hingga sekitar 0.51                        | Kombinasi durasi kerja lebih lama dan tarif per jam cukup tinggi memberikan dampak positif paling kuat            |
 | Durasi Kerja Pendek & Tarif Per Jam Rendah   | Area dengan nilai rendah (~0.48)    | Partial dependence lebih rendah (~0.48)                | Dampak kurang signifikan terhadap hasil model                                                                     |
 
-## Keterbatasan Metrik Evaluasi
+## SHAP
 
-Meskipun **Mean Squared Error (MSE)** sangat berguna untuk mengukur performa kuantitatif model, metrik ini tidak dapat menjelaskan secara jelas bagaimana setiap fitur memengaruhi prediksi. Oleh karena itu, diperlukan teknik tambahan untuk memahami kontribusi dan pengaruh fitur terhadap hasil prediksi. Dua teknik interpretabilitas yang digunakan adalah **SHAP** dan **Partial Dependence Plot (PDP)**.
+![image](https://github.com/user-attachments/assets/3d48b0f6-17ec-4e45-8d86-9d9629e82939)
 
----
+| Fitur             | Pengaruh Terhadap Pendapatan       | Detail Penjelasan                                                                                      |
+|-------------------|-----------------------------------|------------------------------------------------------------------------------------------------------|
+| Job_Success_Rate  | Sangat positif dan dominan        | Nilai tinggi pada fitur ini secara konsisten meningkatkan prediksi pendapatan. Ini menunjukkan bahwa keberhasilan pekerjaan sangat menentukan earning. |
+| Marketing_Spend   | Positif dengan variasi cukup besar| Pengeluaran pemasaran yang lebih tinggi cenderung menaikkan pendapatan, menandakan investasi marketing efektif dalam meningkatkan earning.           |
+| Job_Category      | Variatif (positif atau negatif tergantung kategori) | Kategori pekerjaan berbeda memberikan dampak berbeda pada pendapatan; beberapa kategori lebih menguntungkan daripada yang lain.                       |
+| Experience_Level  | Positif                          | Semakin tinggi pengalaman seseorang, semakin besar kontribusinya dalam menaikkan prediksi pendapatan.                                               |
+| Job_Duration_Days | Sedikit negatif                  | Durasi kerja yang panjang cenderung sedikit menurunkan prediksi pendapatan, mungkin karena faktor efisiensi atau kelelahan kerja jangka panjang.     |
+| Hourly_Rate       | Netral / kecil                   | Tarif per jam tidak memberikan pengaruh signifikan terhadap perubahan estimasi earnings menurut model ini; mungkin dipengaruhi oleh faktor lain juga.  |
 
-## 1. SHAP (SHapley Additive exPlanations)
 
-### Penjelasan
 
-SHAP adalah metode berbasis teori permainan kooperatif yang memberikan nilai kontribusi setiap fitur dalam sebuah prediksi model secara adil dan konsisten. Nilai SHAP menunjukkan seberapa besar pengaruh suatu fitur terhadap perubahan output model dibandingkan dengan rata-rata output.
 
-### Cara Kerja
-
-- Setiap fitur dianggap sebagai "pemain" dalam permainan.
-- Kontribusi tiap pemain dihitung berdasarkan rata-rata marginal contribution-nya di semua subset kombinasi pemain lain.
-- Nilai SHAP memenuhi properti additivitas sehingga total kontribusi semua fitur sama dengan selisih antara prediksi aktual dengan nilai baseline (rata-rata).
-
-### Persamaan Matematik SHAP
-
-Nilai SHAP untuk fitur \( i \) pada instance \( x \) didefinisikan sebagai:
-
-$$
-\phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! (|N| - |S| - 1)!}{|N|!} [f_{S \cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S)]
-$$
-
-di mana:
-- \( N = \{1, 2, ..., M\} \) adalah himpunan semua fitur,
-- \( S \) adalah subset dari fitur tanpa elemen \( i \),
-- \( f_S(x_S) = E[f(x)|x_S] \) adalah ekspektasi output model ketika hanya menggunakan subset fitur \( S\),
-- Faktor pembobot di depan memastikan distribusi kontribusi adil sesuai teori Shapley.
-
----
-
-## 2. Partial Dependence Plot (PDP)
-
-### Penjelasan
-
-Partial Dependence Plot menggambarkan hubungan marginal antara satu atau dua variabel input tertentu dengan target prediksi, dengan mengabaikan efek variabel lain. PDP membantu melihat pola pengaruh langsung suatu atau beberapa variabel terhadap hasil model secara global.
-
-### Cara Kerja
-
-Untuk satu variabel input \( X_j \), PDP menghitung rata-rata prediksi model ketika nilai variabel tersebut diubah sementara variabel lain tetap mengikuti distribusinya asli:
-
-$$
-PD_j(x_j) = E_{X_{\setminus j}}[f(x_j, X_{\setminus j})] = 
-\int f(x_j, x_{\setminus j}) dP(X_{\setminus j})
-$$
-
-di mana:
-- \( x_j \) adalah nilai tetap dari variabel yang dianalisis,
-- \( X_{\setminus j} = X_1,...,X_{j-1},X_{j+1},...,X_M\),
-- Ekspektasi dilakukan atas distribusi gabungan dari semua variabel kecuali variable ke-\(j\).
-
-Dengan kata lain, PDP menampilkan bagaimana perubahan nilai pada satu atau dua feature mempengaruhi rata-rata output model secara keseluruhan.
-
----
 
 
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
