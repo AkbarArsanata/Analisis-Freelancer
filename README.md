@@ -548,7 +548,7 @@ graph TD
 | Influential Points    | Tidak signifikan  | Tidak            | Karena tidak ada outlier berpengaruh besar, transformasi untuk mengurangi pengaruh outlier tidak diperlukan; fokus pada pemilihan model robust terhadap noise/outlier jika perlu. |
 
 ---
-## Modeling
+# Modeling
 
 ### **1. RandomForestRegressor**
 #### **Baseline (Default Parameters)**
@@ -608,7 +608,7 @@ Improvement yang dicapai:
 
 ---
 
-### 3.XGBoost
+### **3.XGBoost**
 
 Baseline(DefaultParameters)
 ```python
@@ -636,7 +636,7 @@ Improvement:
 
 ---
 
-### 4.SVR
+### **4.SVR**
 
 Baseline(DefaultParameters)
 
@@ -731,7 +731,7 @@ Penurunan MSE signifikan (~30%).
 | **SVR**             | Non-linear kuat, generalisasi baik  | Scalability rendah                 | Dataset kecil, hubungan kompleks    |  
 
 
-## Evaluation
+# Evaluation
 
 ## Penjelasan Metrik Evaluasi: Mean Squared Error (MSE)
 
@@ -937,148 +937,96 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 | Job_Duration_Days | Sedikit negatif                  | Durasi kerja yang panjang cenderung sedikit menurunkan prediksi pendapatan, mungkin karena faktor efisiensi atau kelelahan kerja jangka panjang.     |
 | Hourly_Rate       | Netral / kecil                   | Tarif per jam tidak memberikan pengaruh signifikan terhadap perubahan estimasi earnings menurut model ini; mungkin dipengaruhi oleh faktor lain juga.  |
 
+## Hasil Analisis Untuk Menjawab Goals Dan Problem Statement
+
+Berikut adalah jawaban untuk setiap poin dan sub-poin Problem Statement dengan nilai asli, dirapikan dalam format **Markdown** agar lebih mudah dibaca dan dipahami:
+
+---
+
+# Jawaban Problem Statement dengan Nilai Asli
+
+## 1. Peningkatan Job Success Rate (JSR) dan Prediksi Pendapatan Freelancer
+
+### Hasil Analisis:
+- **SHAP:** Job Success Rate (JSR) adalah fitur paling dominan dalam meningkatkan prediksi pendapatan. Nilai tinggi JSR berkorelasi kuat dengan pendapatan yang lebih tinggi.
+- **PDP:** Terdapat peningkatan tajam partial dependence ketika JSR mendekati ≥94.94, menunjukkan bahwa freelancer dengan tingkat keberhasilan pekerjaan tinggi cenderung menghasilkan pendapatan lebih besar.
+
+### Rekomendasi:
+- Prioritaskan kualitas pekerjaan (misalnya, penyelesaian tepat waktu, kepuasan klien) untuk meningkatkan JSR.
+- Freelancer dengan JSR rendah harus fokus pada perbaikan kualitas kerja sebelum menaikkan tarif atau memperpanjang durasi kerja.
+- Platform freelance dapat memberikan insentif (e.g., badge "Top Performer") untuk freelancer dengan JSR tinggi sehingga meningkatkan daya tarik mereka di pasar.
+
+---
+
+## 2. Alokasi Anggaran Pemasaran Optimal untuk Meningkatkan Pendapatan
+
+### Hasil Analisis:
+- **PDP & SHAP:** Marketing Spend memiliki dampak positif signifikan terutama saat mencapai kisaran antara **349.60 – 399.40 USD** (nilai asli). Namun efeknya tidak linier—terjadi lonjakan di kisaran tersebut.
+- **Interaksi dengan JSR:** Kombinasi *JSR tinggi* + *Marketing Spend* tinggi (~349.60–499 USD) memberikan dampak terbesar terhadap pendapatan.
+
+### Rekomendasi:
+- Alokasikan budget pemasaran secara strategis, tidak sekadar meningkatkan pengeluaran; fokus pada efektivitas kampanye (misalnya target audiens yang tepat).
+- Freelancer dengan JSR tinggi sebaiknya menginvestasikan lebih banyak dana untuk promosi karena kombinasi ini memberikan ROI terbaik.
+- Platform freelance dapat menyediakan fitur "promoted gigs" dengan pricing tier yang disesuaikan efektivitas pemasaran.
+
+---
+
+## 3. Dampak Durasi Kerja Panjang terhadap Produktivitas dan Pendapatan
+
+### Hasil Analisis:
+- **SHAP:** Job Duration Days memiliki dampak sedikit negatif pada pendapatan terutama saat durasi sangat panjang.
+- **PDP:** Ada penurunan partial dependence saat durasi mendekati sekitar **89 hari kerja** (~nilai asli), mengindikasikan risiko burnout atau penurunan efisiensi.
+
+### Rekomendasi:
+- Hindari durasi kerja terlalu panjang (>80 jam/minggu atau sekitar >10 jam/hari secara konsisten), karena dapat menurunkan produktivitas dan pendapatan.
+- Freelancer sebaiknya menerapkan time management seperti teknik Pomodoro dan istirahat teratur agar menjaga efisiensi kerja.
+- Platform freelance dapat memberikan peringatan atau rekomendasi saat freelancer mengambil proyek berdurasi ekstrem.
+
+---
+
+## 4. Durasi Kerja Ideal ("Sweet Spot") untuk Produktivitas Maksimal
+
+### Hasil Analisis:
+- PDP Interaksi menunjukkan kombinasi *Job Duration Days* antara sekitar **62–71 hari kerja** + *Hourly Rate* antara **42–100 USD** menghasilkan partial dependence tertinggi (~0.51).
+  
+Ini mengindikasikan bahwa durasi kerja "cukup panjang" tapi tidak ekstrem serta tarif per jam kompetitif adalah optimal.
+
+### Rekomendasi:
+- Freelancer sebaiknya menetapkan durasi kerja harian sekitar 6–8 jam/hari  
+(asumsi normalisasi ~0.7–0.85 setara 62–71 hari dalam konteks data).
+  
+- Gunakan data produktivitas pribadi untuk menentukan sweet spot individual karena beberapa orang mungkin lebih produktif di rentang waktu berbeda.
+  
+- Platform bisa menyediakan analytics waktu kerja vs pendapatan guna membantu optimisasi jadwal freelancer.
+
+---
+
+## 5.Pengaruh Tarif Per Jam terhadap Pendapatan dan Daya Saing Pasar
+
+### Hasil Analisis:
+ - SHAP menunjukkan Hourly Rate berdampak netral/kecil terhadap prediksi pendapatan; faktor lain seperti JSR jauh lebih berpengaruh.
+ - PDP memperlihatkan kenaikan partial dependence pada tarif per jam sekitar $24 USD (~skala normalisasi 0.2), namun setelah itu efek stabil — menaikkan tarif tidak selalu menaikkan pendapatan secara signifikan.
+
+### Rekomendasi: 
+ - Freelancer pemula bisa mulai dari tarif rendah sekitar $24 USD/jam guna membangun portofolio dan meningkatkan JSR terlebih dahulu.
+ - Freelancer berpengalaman disarankan tak hanya mengandalkan kenaikan tarif tapi juga fokus ke peningkatan kualitas layanan serta efisiensi kerja.
+ - Strategi harga dinamis seperti diskon proyek jangka panjang bisa jadi alternatif efektif dibanding sekadar menaikkan harga per jam.
+
+
+---
+
 ## Kesimpulan
 
-# Solusi dan Rekomendasi Lengkap Berdasarkan Analisis Partial Dependence & SHAP
-
----
-
-## 1. Apakah peningkatan Job Success Rate (JSR) secara konsisten dapat menaikkan prediksi pendapatan freelancer di Indonesia?
-
-### Kesimpulan Utama
-- **JSR memiliki korelasi kuat dan positif** terhadap pendapatan freelancer, terutama pada nilai JSR ≥ 0.9, di mana partial dependence menunjukkan peningkatan tajam.
-- Faktor lain seperti **Experience Level** (tingkat pengalaman) dan **Job Category** juga memengaruhi hubungan ini.
-
-### Detail Analisis
-- Partial dependence menunjukkan bahwa JSR di bawah 0.9 relatif stabil, namun ada lonjakan signifikan saat JSR mencapai atau melewati 0.9.
-- Kombinasi JSR tinggi dengan Marketing Spend tinggi (0.8–1.0) atau Experience Level tinggi memberikan nilai partial dependence tertinggi (~0.52).
-- SHAP menegaskan bahwa JSR adalah fitur dominan yang secara konsisten meningkatkan prediksi pendapatan.
-
-### Rekomendasi Strategi
-- **Peningkatan Kualitas Kerja:**
-  - Terapkan sistem *feedback* dari klien untuk perbaikan berkelanjutan.
-  - Adakan pelatihan teknis dan komunikasi untuk meningkatkan keahlian.
-- **Optimasi Proyek:**
-  - Manajemen waktu efektif agar proyek selesai tepat waktu.
-  - Gunakan alat kolaborasi seperti Trello atau Slack untuk mengurangi kesalahan koordinasi.
-- **Pemilihan Job Category:**
-  - Fokus pada kategori pekerjaan dengan dampak positif terhadap pendapatan; hindari kategori yang cenderung negatif (misal kategori 6–7).
-
----
-
-## 2. Bagaimana alokasi anggaran pemasaran/promosi yang optimal dapat meningkatkan efektivitas investasi promosi?
-
-### Kesimpulan Utama
-- Pengeluaran pemasaran dalam rentang **0.7–1.0 memberikan ROI terbaik**, dengan lonjakan signifikan mendekati nilai maksimum (1.0).
-
-### Detail Analisis
-- Partial dependence menunjukkan kenaikan dari sekitar nilai marketing spend 0.7 hingga puncak di sekitar nilai mendekati satu (~0.52–0.53).
-- Kombinasi marketing spend tinggi dengan JSR tinggi menghasilkan dampak paling positif pada target model.
-
-### Rekomendasi Strategi
-- Alokasikan anggaran pemasaran dalam kisaran efektif yaitu antara **70% sampai hampir penuh (100%) dari total budget promosi**.
-- Prioritaskan platform pemasaran *targeted* sesuai segmen pasar:
-   - LinkedIn Ads untuk profesional teknis,
-   - Instagram/Facebook Ads untuk segmen kreatif,
-   - Gunakan testimoni klien serta portofolio sukses sebagai konten iklan.
-  
-- Lakukan A/B testing berbagai saluran iklan guna menentukan metode paling efektif dalam konteks pasar freelance Indonesia.
-
----
-
-## 3 &amp;4 . Apakah durasi kerja panjang berdampak negatif signifikan terhadap produktivitas? Adakah durasi kerja ideal ("sweet spot") bagi freelancer?
-
-### Kesimpulan Utama
-- Durasi kerja panjang mendekati batas maksimal memiliki dampak negatif kecil terhadap prediksi pendapatan karena penurunan efisiensi akibat kelelahan/burnout.
-  
-- Durasi ideal berada pada rentang sedang, sekitar $$60\%-80\%$$ dari kapasitas maksimal harian/mingguan — misalnya setara dengan sekitar *6–8 jam per hari* atau *30–40 jam per minggu*, menjaga produktivitas tanpa risiko burnout.
-
-### Detail Analisis
-
-| Rentang Durasi Kerja | Dampak Terhadap Target Model |
-|---------------------|------------------------------|
-| Rendah – Sedang      | Stabil (~0,49 – ~0,50)        |
-| Mendekati Maksimal   | Penurunan tajam (~48 – ~49) |
-
-Kombinasi durasi panjang tetap bisa berdampak positif jika didukung oleh JSR sangat tinggi tapi kurang optimal dibanding durasi sedang/singkat.
-
-SHAP juga mengindikasikan pengaruh negatif kecil terkait durasi kerja panjang (-nilai minor).
-
-### Rekomendari Strategi Manajemen Waktu
-
-* Bataskan jam kerja mingguan idealnya tidak lebih dari $$40$$ jam agar terhindar dari penurunan performa akibat kelelahan kronis;
-* Terapkan teknik time-blocking agar ada jeda istirahat teratur setiap $$2$$ jam selama $$15{-}20$$ menit;
-* Liburkan minimal satu hari penuh tiap minggu;
-* Gunakan aplikasi pengingat istirahat seperti Stretchly atau RescueTime;
-* Sesuaikan jadwal berdasarkan jenis pekerjaan — misalnya pekerja kreatif butuh lebih banyak jeda daripada pekerja teknis;
-
----
-
-## 5\. Sejauh mana tarif per jam memengaruhi perubahan estimasi pendapatan serta daya saing harga jasa freelance?
-
-### Kesimpulan Utama
-
-Tarif per jam memiliki efek netral hingga kecil:
-
-\- Tarif rendah sampai sedang ($$\leqslant\,{ }{ }^{\sim} { }_{\,} { }_{\,} { }_{\,} { }_{\,}{\sim}\,$$ $${\approx}\,$$ $${}_{\,}{\sim}\,$$ $${}_{\,}{<}\,{ }\!{ }\!{ }\!{ }\!{ }\!{}^{~}$$${}_{~}{<}\,{ }{}^{~}$ $${}_{~}{<}\,{ }{}^{~}$$${}_{~}{<}\,{ }{}^{~}$ $${}_{~~}^{~~}$$ $\approx$ $$\texttt{tarif ≤ ~20% skala normalisasi}) cenderung menaikkan estimasinya sedikit sebelum datar/menurun setelahnya;
-
-\- Daya saing harga lebih dipengaruhi oleh kualitas layanan (*JSR*) dan pengalaman daripada tarif semata.
-
-Partial Dependence memperlihatkan kenaikan awal sampai tarif sekitar$$20\%$$kemudian flat/slightly turun; SHAP menegaskan pengaruh netral/kecil tarif ini.
-
-### Rekomendari Penetapan Tarif
-
-\- Tetapkan tarif kompetitif di kisaran rendah-sedang terlebih dahulu ($$\leqslant \texttt{sekitar} \;20\%$$ skala normalisasi);
-
-\- Tingkatkan tarif secara bertahap seiring reputasimu membaik melalui peningkatan *Job Success Rate*, portofolio kuat, dan ulasan positif;
-
-\- Tawarkan layanan tambahan bernilai tambah seperti garansi revisi proyek;
-
-\- Sertakan bukti Return on Investment (ROI) proyek kepada calon klien sebagai diferensiasi;
-
-\- Lakukan survei pasar lokal freelance Indonesia guna mengetahui rata-rata harga kompetitor;
-
-\- Pertimbangkan strategi dynamic pricing berdasarkan permintaan khusus/proyek mendesak.
-
-
----
-
-# Kesimpulan Umum 🌟
-
-Dengan fokus utama pada:
-
-* Peningkatan kualitas melalui ***Job Success Rate*** sebagai faktor dominan penghasil income,
-* Optimalisasi anggaran marketing terutama di rentang efektif antara ***70%-100%***,
-* Manajemen waktu bijaksana menjaga durasinya tidak terlalu panjang agar mencegah burnout,
-* Penetapan tarif kompetitif rendah-sedang sambil membangun reputasimu lewat kualitas,
-
-freelancer dapat meningkatkan prediksi pendapatannya secara berkelanjutan tanpa mengorbankan produktivitas maupun kesejahteraan pribadi mereka.
+| No | Topik                                      | Kesimpulan Utama                                                                                          |
+|-----|--------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| 1   | Peningkatan Job Success Rate (JSR)         | JSR sangat dominan dalam prediksi pendapatan; kualitas kerja tinggi → pendapatan lebih besar.             |
+| 2   | Alokasi Anggaran Pemasaran Optimal          | Marketing Spend efektif di kisaran $349.60–$399.40; kombinasi JSR tinggi + marketing tinggi hasil terbaik.|
+| 3   | Dampak Durasi Kerja Panjang                  | Durasi kerja sangat panjang (>89 hari) menurunkan produktivitas dan pendapatan akibat risiko burnout.      |
+| 4   | Durasi Kerja Ideal ("Sweet Spot")            | Durasi sekitar 62–71 hari dengan tarif per jam $42–$100 optimal untuk produktivitas dan pendapatan maksimal.|
+| 5   | Pengaruh Tarif Per Jam terhadap Pendapatan    | Tarif per jam berpengaruh kecil, kenaikan tarif setelah ~$24 stabil; fokus pada kualitas & efisiensi kerja.|
 
 
 
-
-
-
-
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
-
-
-
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik akurasi, precision, recall, dan F1 score. Jelaskan mengenai beberapa hal berikut:
-
-Penjelasan mengenai metrik yang digunakan
-Menjelaskan hasil proyek berdasarkan metrik evaluasi
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-Rubrik/Kriteria Tambahan (Opsional):
-
-Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
----Ini adalah bagian akhir laporan---
-
-Catatan:
-
-Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor Dillinger, Github Guides: Mastering markdown, atau sumber lain di internet. Semangat!
-Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
 
 ## Referensi
 [^1]: Mabanta, R. (2024). *PRESIDEN: ANGKA PENGANGGURAN TERBUKA DITEKAN HINGGA 4,5% DI 2025*. CGS International Sekuritas Indonesia, Jakarta Selatan.
