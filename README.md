@@ -763,6 +763,65 @@ Jika menggunakan satu algoritma pada solution statement, lakukan proses improvem
 Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. Jelaskan mengapa memilih model tersebut sebagai model terbaik.
 ## Evaluation
 
+```markdown
+# Penjelasan Metrik Evaluasi: Mean Squared Error (MSE)
+
+## Apa itu MSE?
+
+Mean Squared Error (MSE) adalah metrik evaluasi yang umum digunakan dalam masalah regresi untuk mengukur seberapa dekat prediksi model dengan nilai aktual. Secara matematis, MSE dihitung sebagai rata-rata dari kuadrat selisih antara nilai prediksi dan nilai sebenarnya:
+
+$$
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+$$
+
+di mana:
+- \( y_i \) adalah nilai aktual,
+- \( \hat{y}_i \) adalah nilai prediksi,
+- \( n \) adalah jumlah data.
+
+## Mengapa Memilih MSE?
+
+*Dalam konteks proyek ini*, tujuan utama adalah memprediksi pendapatan freelancer berdasarkan berbagai faktor seperti Job Success Rate, alokasi pemasaran, durasi kerja, dan tarif per jam. Karena target variabel berupa angka kontinu (pendapatan), maka regresi menjadi metode yang tepat.
+
+MSE dipilih karena:
+
+- **Sensitivitas terhadap kesalahan besar:** Dengan mengkuadratkan selisih error, MSE memberikan penalti lebih besar pada kesalahan prediksi yang signifikan sehingga model didorong untuk meminimalkan error besar.
+- **Memudahkan perbandingan antar model:** Nilai MSE dapat langsung dibandingkan antar berbagai model regresi untuk menentukan mana yang memiliki performa terbaik.
+- **Kesesuaian dengan asumsi regresi:** Model-model regresi biasanya diasumsikan memiliki error residual berdistribusi normal; penggunaan kuadrat error sesuai dengan asumsi ini.
+
+---
+
+## Hasil Evaluasi Model Berdasarkan Nilai MSE
+
+| Model                      | Nilai MSE               | Keterangan Singkat                  |
+|----------------------------|-------------------------|-----------------------------------|
+| RandomForestRegressor       | 0.08588964019547693     | Terbaik secara visualisasi         |
+| Support Vector Regressor(SVR)| 0.08576352732813326    | Underfitting; prediksi konstan     |
+| XGBoost                    | **0.08541151237146728** | Menangkap pola tapi agak menyebar  |
+| CatBoost                   | 0.08562445585396082     | Mirip XGBoost                     |
+
+---
+
+## Interpretasi Visualisasi Hasil Prediksi
+
+Selain melihat angka MSE sebagai ukuran kuantitatif kualitas model, analisis visual juga dilakukan untuk menilai bagaimana titik-titik data hasil prediksi tersebar terhadap garis fitted line (garis ideal):
+
+- **RandomForestRegressor** menunjukkan titik-titik hasil prediksi paling rapat ke garis fitted line sehingga secara visual memberikan kualitas terbaik meskipun nilainya sedikit lebih tinggi.
+  
+- **SVR** cenderung underfitting dengan pola prediksi hampir konstan sehingga kurang mampu menangkap variasi data.
+
+- **XGBoost** dan **CatBoost** mampu menangkap pola non-linear namun titik-titiknya agak tersebar sehingga ada sedikit ketidakakuratan lokal walau secara numerik menghasilkan nilai mse terendah.
+
+---
+
+## Keputusan Pemilihan Model
+
+Berdasarkan kombinasi antara metrik numerik (MSE) dan analisis visualisasi:
+
+> Diputuskan memilih **RandomForestRegressor** sebagai model final karena kualitas visualisasinya paling baik — titik-titik hasil prediksinya sangat rapat ke garis ideal meskipun memiliki nilai mse tertinggi di antara kandidat lain. Perbedaan mse sangat kecil dan masih dapat ditoleransi dalam konteks aplikasi ini.
+
+Keputusan ini mendukung solusi praktis agar tidak hanya bergantung pada angka statistik saja tetapi juga mempertimbangkan interpretabilitas serta kestabilan hasil di lapangan.
+```
 
 ### Feature Interaction
 #### Category Feature
@@ -816,29 +875,30 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 
 ![image](https://github.com/user-attachments/assets/e6289de5-1d33-45e5-b892-38f0349b7193)
 
-Plot ini menunjukkan interaksi antara pengeluaran pemasaran dan durasi pekerjaan terhadap target model.
-Nilai partial dependence relatif stabil di kisaran 0.49 - 0.50 untuk sebagian besar kombinasi nilai Marketing Spend dan Job Duration Days.
-Namun, terdapat lonjakan nilai partial dependence yang cukup signifikan (mencapai sekitar 0.52 - 0.53) ketika Marketing Spend sangat tinggi (mendekati 1.0), terlepas dari durasi pekerjaan.
-Ini mengindikasikan bahwa pengeluaran pemasaran yang sangat tinggi memberikan dampak positif kuat terhadap target, terutama tanpa terlalu dipengaruhi oleh durasi kerja.
-Secara keseluruhan, fitur Marketing Spend dengan nilai tinggi adalah faktor utama yang meningkatkan hasil model dalam konteks ini, sementara Job Duration Days memiliki efek yang lebih netral atau minor
+
+| **Fitur**            | **Rentang Nilai**       | **Partial Dependence**     | **Dampak Terhadap Target Model**                                                                                  |
+|----------------------|------------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Marketing Spend      | Sebagian besar nilai    | Stabil di kisaran 0.49-0.50 | Dampak relatif netral atau minor pada target model                                                                |
+| Marketing Spend      | Sangat tinggi (mendekati 1.0) | Lonjakan signifikan, sekitar 0.52-0.53   | Memberikan dampak positif kuat terhadap target model, terlepas dari durasi pekerjaan                               |
+| Job Duration Days    | Seluruh rentang nilai   | Stabil di kisaran 0.49-0.50   | Efek netral atau minor terhadap hasil model                                                                       |
 
 
 
 ![image](https://github.com/user-attachments/assets/ad710de1-ea3a-4833-b3b2-41aabed63cd7)
 
-Nilai partial dependence relatif stabil di kisaran 0.48 - 0.50 untuk sebagian besar kombinasi nilai Marketing Spend dan Hourly Rate.
-Terdapat lonjakan nilai partial dependence yang cukup signifikan (mencapai sekitar 0.52) ketika Marketing Spend sangat tinggi (mendekati 1.0), terlepas dari nilai Hourly Rate.
-Ini menunjukkan bahwa pengeluaran pemasaran yang sangat tinggi memberikan dampak positif kuat terhadap target model, sementara variasi pada tarif per jam tidak terlalu mempengaruhi hasil secara signifikan dalam konteks ini.
-Secara keseluruhan, fitur Marketing Spend dengan nilai tinggi adalah faktor utama yang meningkatkan hasil model, sedangkan Hourly Rate memiliki efek yang lebih netral atau minor
-
-
+| **Fitur**            | **Rentang Nilai**       | **Partial Dependence**     | **Dampak Terhadap Target Model**                                                                                  |
+|----------------------|------------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Marketing Spend      | Sebagian besar nilai    | Stabil di kisaran 0.48-0.50 | Dampak relatif netral atau minor pada target model                                                                |
+| Marketing Spend      | Sangat tinggi (mendekati 1.0) | Lonjakan signifikan, sekitar 0.52   | Memberikan dampak positif kuat terhadap target model, terlepas dari variasi Hourly Rate                            |
+| Hourly Rate          | Seluruh rentang nilai   | Stabil di kisaran 0.48-0.50   | Efek netral atau minor terhadap hasil model                                                                       |
 
 ![image](https://github.com/user-attachments/assets/079998c7-8aec-4dc3-b198-39fbe08e4366)
 
-Nilai partial dependence cenderung stabil di kisaran 0.48 - 0.50 untuk sebagian besar kombinasi durasi pekerjaan dan tarif per jam.
-Terdapat peningkatan nilai partial dependence (mencapai sekitar 0.51) pada rentang durasi pekerjaan yang cukup panjang (sekitar 0.7 - 0.85) dengan tarif per jam sedang hingga tinggi (sekitar 0.4 - 1.0).
-Area dengan durasi kerja pendek dan tarif per jam rendah menunjukkan nilai partial dependence yang lebih rendah (~0.48).
-Secara keseluruhan, kombinasi durasi kerja yang lebih lama dan tarif per jam yang cukup tinggi memberikan dampak positif paling kuat terhadap target model dalam konteks ini 
+| **Fitur**            | **Rentang Nilai**               | **Partial Dependence**           | **Dampak Terhadap Target Model**                                                                                  |
+|----------------------|--------------------------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Durasi Pekerjaan & Tarif Per Jam | Sebagian besar kombinasi nilai  | Stabil di kisaran 0.48-0.50       | Dampak relatif netral atau minor pada target model                                                                |
+| Durasi Pekerjaan Panjang (0.7 - 0.85) & Tarif Per Jam Sedang-Hinggi (0.4 - 1.0) | Rentang spesifik tersebut          | Peningkatan hingga sekitar 0.51                        | Kombinasi durasi kerja lebih lama dan tarif per jam cukup tinggi memberikan dampak positif paling kuat            |
+| Durasi Kerja Pendek & Tarif Per Jam Rendah   | Area dengan nilai rendah (~0.48)    | Partial dependence lebih rendah (~0.48)                | Dampak kurang signifikan terhadap hasil model                                                                     |
 
 
 
