@@ -4,19 +4,62 @@
 
 # Domain Proyek
 
+Berikut adalah versi markdown yang sudah dirapikan dan diformat dengan baik untuk meningkatkan keterbacaan dan struktur:
+
+---
+
+Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2].
+
+Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam jurnal penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesia mengalami peningkatan yang signifikan. Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya.
+
+Tren ini terus berlanjut hingga 2025, dengan banyak generasi muda beralih ke pekerjaan freelance karena fleksibilitas dan otonomi yang ditawarkan [^4]. Survei menunjukkan mayoritas freelancer berasal dari generasi milenial dan Z yang mengutamakan fleksibilitas dan kesempatan menyalurkan kreativitas. Sebanyak 95 persen responden survei berencana menekuni pekerjaan freelance dalam jangka panjang, dengan 53 persen berencana melakukannya lebih dari 5 tahun [^5].
+
+Dengan kata lain, saat ini banyak pekerja pemula (entry level) yang ingin berkarir sebagai freelancer. Namun hal ini tidak mudah karena banyak faktor yang harus dipertimbangkan untuk sukses di dunia freelance.
+
+### Tantangan bagi Freelancer Pemula
+
+Freelancer menghadapi tantangan seperti:
+
+- Ketidakstabilan pendapatan
+- Minimnya akses terhadap jaminan sosial
+- Ketidakpastian keberlanjutan karir terutama menghadapi persaingan global di platform digital
+- Kekhawatiran terhadap kurangnya jaminan kesehatan dan pensiun
+
+Hal-hal tersebut menjadi tantangan besar sehingga memerlukan solusi kebijakan inovatif[^6].
+
+### Analisis Faktor-faktor Meningkatkan Pendapatan Freelancer
+
+Untuk menemukan solusi tersebut perlu dilakukan analisis faktor-faktor apa saja yang bisa meningkatkan pendapatan:
+
+- **Job Success Rate (JSR):** Menunjukkan keberhasilan penyelesaian pekerjaan; jika JSR meningkat maka pendapatan kemungkinan juga naik meski jenis pekerjaan dan pengalaman turut memengaruhi.
+  
+- **Alokasi anggaran pemasaran:** Melalui digital ads atau program referral dapat meningkatkan efektivitas investasi promosi sehingga mendongkrak penghasilan.
+  
+- **Durasi kerja:** Durasi kerja panjang dapat menurunkan produktivitas akibat kelelahan; penting menemukan durasi ideal agar efisiensi tetap maksimal tanpa burnout.
+  
+- **Tarif per jam:** Harus ditetapkan hati-hati karena kenaikan harga tidak selalu menaikkan pendapatan jika justru mengurangi jumlah klien.
+
+Analisis menyeluruh faktor-faktor tersebut dapat membantu freelancer meningkatkan stabilitas serta besaran penghasilan sekaligus mendorong kebijakan perlindungan sosial inovatif di sektor gig economy.
+
+### Tantangan Penetapan Harga Jasa
+
+Tantangan utama lain bagi freelancer pemula termasuk kesulitan menetapkan harga jasa kompetitif:
+
+> Menetapkan harga terlalu rendah dapat mengurangi nilai pekerjaan,
+> sementara harga terlalu tinggi membuat klien ragu.
+
+Riset pasar menjadi penting untuk menemukan tarif sesuai pada platform freelance seperti Upwork dan Fiverr[^7].
+
+---
+
 Akhir-akhir ini, banyak sekali di sosial media atau dari orang-orang sekitar saya yang mengeluhkan betapa susahnya mencari pekerjaan di Indonesia. Pada saat ini, tercatat sebanyak **7,2 juta orang** pada Februari 2024 [^1]. Hal ini disebabkan oleh berbagai macam faktor, salah satunya adalah terdapat ketidaksesuaian antara jumlah pencari kerja dan jumlah lapangan kerja yang tersedia. Ini menciptakan persaingan yang sangat ketat di antara pencari kerja, terutama di kalangan lulusan baru [^2]. 
 
-Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam Jurnal Penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesi a mengalami peningkatan yang signifikan, dengan Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya. Tren ini terus berlanjut hingga 2025, dengan banyak generasi muda beralih ke pekerjaan freelance karena fleksibilitas dan otonomi yang ditawarkan [^4]. Survei menunjukkan mayoritas freelancer berasal dari generasi milenial dan Z yang mengutamakan fleksibilitas dan kesempatan menyalurkan kreativitas. Sebanyak 95 persen responden survei berencana menekuni pekerjaan freelance dalam jangka panjang, dengan 53 persen berencana melakukannya lebih dari 5 tahun [reza]. Dengan kata lain, saat ini banyak pekerja pemula (entry level) yang ingin berkarir sebagai freelancer. Namun, hal ini tidak mudah karena banyak faktor yang harus dipertimbangkan untuk sukses di dunia freelance. Berikut beberapa tantangan yang perlu diantisipasi:
+Oleh karena itu, saat ini kebanyakan dari mereka ingin menjadi freelancer untuk dapat menjangkau klien di seluruh dunia. Ini membuka peluang kerja yang lebih luas tanpa batasan geografis, memungkinkan individu untuk mendapatkan penghasilan dari berbagai sumber [^3]. Hal ini dibuktikan oleh Ulfah Nur Hikmawati dalam Jurnal Penelitiannya yang menunjukkan bahwa jumlah freelancer di Indonesi a mengalami peningkatan yang signifikan, dengan Badan Pusat Statistik (BPS) mencatat sekitar **33,34 juta orang** memilih bekerja sebagai freelancer pada Agustus 2020, meningkat **4,32 juta orang** dari tahun sebelumnya. Tren ini terus berlanjut hingga 2025, dengan banyak generasi muda beralih ke pekerjaan freelance karena fleksibilitas dan otonomi yang ditawarkan [^4]. Survei menunjukkan mayoritas freelancer berasal dari generasi milenial dan Z yang mengutamakan fleksibilitas dan kesempatan menyalurkan kreativitas. Sebanyak 95 persen responden survei berencana menekuni pekerjaan freelance dalam jangka panjang, dengan 53 persen berencana melakukannya lebih dari 5 tahun [^5]. Dengan kata lain, saat ini banyak pekerja pemula (entry level) yang ingin berkarir sebagai freelancer. Namun, hal ini tidak mudah karena banyak faktor yang harus dipertimbangkan untuk sukses di dunia freelance. Berikut beberapa tantangan yang perlu diantisipasi:
 
-freelancer  menghadapi  tantangan  ketidakstabilan  pendapatan  dan  minimnya  akses  terhadap jaminan sosial, banyak freelancer mengalami ketidakpastian terkait keberlanjutan karir mereka, terutama  dalam  menghadapi  persaingan  global  di  platform  digital.  Kekhawatiran  terhadap  kurangnya jaminan kesehatan dan pensiun menjadi tantangan yang memerlukan solusi kebijakan yang inovatif.[pengaruh platform freelance]. Untuk menemukan solusi tersebut perlu dilakukan analisis faktor faktor apa saja yang bisa meningkatkan pendapatan. Untuk meningkatkan pendapatan, perlu dianalisis faktor-faktor seperti Job Success Rate (JSR), yang menunjukkan keberhasilan penyelesaian pekerjaan. Jika JSR meningkat, pendapatan kemungkinan juga naik, meski jenis pekerjaan dan pengalaman turut memengaruhi. Selain itu, alokasi anggaran pemasaran yang tepat—melalui digital ads atau program referral—dapat meningkatkan efektivitas investasi promosi dan mendongkrak penghasilan. Durasi kerja panjang berpotensi menurunkan produktivitas akibat kelelahan, sehingga penting menemukan durasi kerja ideal agar efisiensi tetap maksimal tanpa burnout. Terakhir, tarif per jam harus ditetapkan dengan hati-hati karena kenaikan harga tidak selalu menaikkan pendapatan jika mengurangi jumlah klien. Analisis menyeluruh dari faktor-faktor ini dapat membantu freelancer meningkatkan stabilitas dan besaran penghasilan sekaligus mendorong kebijakan perlindungan sosial yang inovatif di sektor gig economy.
+freelancer  menghadapi  tantangan  ketidakstabilan  pendapatan  dan  minimnya  akses  terhadap jaminan sosial, banyak freelancer mengalami ketidakpastian terkait keberlanjutan karir mereka, terutama  dalam  menghadapi  persaingan  global  di  platform  digital.  Kekhawatiran  terhadap  kurangnya jaminan kesehatan dan pensiun menjadi tantangan yang memerlukan solusi kebijakan yang inovatif.[^6]. Untuk menemukan solusi tersebut perlu dilakukan analisis faktor faktor apa saja yang bisa meningkatkan pendapatan. Untuk meningkatkan pendapatan, perlu dianalisis faktor-faktor seperti Job Success Rate (JSR), yang menunjukkan keberhasilan penyelesaian pekerjaan. Jika JSR meningkat, pendapatan kemungkinan juga naik, meski jenis pekerjaan dan pengalaman turut memengaruhi. Selain itu, alokasi anggaran pemasaran yang tepat—melalui digital ads atau program referral—dapat meningkatkan efektivitas investasi promosi dan mendongkrak penghasilan. Durasi kerja panjang berpotensi menurunkan produktivitas akibat kelelahan, sehingga penting menemukan durasi kerja ideal agar efisiensi tetap maksimal tanpa burnout. Terakhir, tarif per jam harus ditetapkan dengan hati-hati karena kenaikan harga tidak selalu menaikkan pendapatan jika mengurangi jumlah klien. Analisis menyeluruh dari faktor-faktor ini dapat membantu freelancer meningkatkan stabilitas dan besaran penghasilan sekaligus mendorong kebijakan perlindungan sosial yang inovatif di sektor gig economy.
 
+Tantangan utama lain bagi freelancer pemula termasuk kesulitan dalam menetapkan harga jasa yang kompetitif. Ditekankan bahwa menetapkan harga terlalu rendah dapat mengurangi nilai pekerjaan, sementara harga yang terlalu tinggi dapat membuat klien ragu. Riset pasar menjadi penting untuk menemukan tarif yang sesuai di platform freelance seperti Upwork dan Fiverr [^7]. 
 
-
-Namun, meskipun begitu, freelancer sering kali menghadapi persaingan yang ketat dan tekanan untuk menerima tawaran pekerjaan dengan upah yang lebih rendah, sehingga mengurangi daya tawar mereka. Tak hanya itu, mencari dan mempertahankan klien merupakan tantangan terbesar bagi para freelancer [^5]. Oleh karena itu akan dilakukan analisis juga mengenai pengaruh beriklan terhadap kesempatan mendapatkan client.
-
-Tantangan utama lain bagi freelancer pemula termasuk kesulitan dalam menetapkan harga jasa yang kompetitif. Ditekankan bahwa menetapkan harga terlalu rendah dapat mengurangi nilai pekerjaan, sementara harga yang terlalu tinggi dapat membuat klien ragu. Riset pasar menjadi penting untuk menemukan tarif yang sesuai di platform freelance seperti Upwork dan Fiverr [^6]. 
-
-Selain itu, para freelancer juga menghadapi tantangan lain, yaitu keraguan mengenai tingkat keberhasilan pekerjaan mereka. Freelancer sering kali merasa kurang dihargai dan mengalami ketidakpastian dalam hubungan dengan klien, yang dapat mempengaruhi kepercayaan diri mereka dalam menyelesaikan proyek dengan baik [^7].
 
 
 # Business Understanding
@@ -985,6 +1028,9 @@ Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan se
 [^2]: Tysara, L., & Mandasari, R. (2023). 15 Penyebab Pengangguran di Indonesia, Simak Macam-Macamnya. LIPUTAN 6.
 [^3]: Albii. (2025). Kabar Gembira bagi Freelance di Tahun 2025. tebuirengonline.
 [^4]: Hikmawati, U. N. (2024). DI AMBANG KEGAIRAHAN DAN KERENTANAN (Fleksibilitas Freelance Industri Kreatif Desain di Yogyakarta). Jurnal Studi Pemuda, 12(1), 50.
-[^5]: Jurnal Pendidikan Ekonomi Undiksha, Masakazu, K., Sisdianto, E., Suwardika, G., & Nugroho, D. S. (2023). Peran Digital Freelancer Marketplace dan Media Sosial Terhadap Perkembangan Gig Economy Worker. Jurnal Pendidikan Ekonomi Undiksha, 15(1). 
-[^6]: Tim Penyusun, Dan Teknis, Aini, N., & Rosmiati, M. (n.d.). Upah Layak untuk Semua: Model Pengupahan Pekerja Lepas Industri Media dan Kreatif.
-[^7]: Amanda, A. (2024). KERENTANAN KERJA PADA PEKERJA HARIAN LEPAS DI INDUSTRI KREATIF INDONESIA. Journal Research of Management (JARMA), 5(2), 186-185.
+[^5]: Hadyan, Rezha. (2020, February 13). Pekerjaan Sebagai Freelancer Banyak Dipilih Oleh Generasi Muda, Kenapa?
+[^6]: Lubis, R. K. (2024). AsbaK : Jurnal Ekonomi dan Bisnis Pengaruh Platform Freelance Terhadap Perubahan Pola Konsumsi dan Pekerjaan di Indonesia.
+[^7]: Tim Penyusun, Dan Teknis, Aini, N., & Rosmiati, M. (n.d.). Upah Layak untuk Semua: Model Pengupahan Pekerja Lepas Industri Media dan Kreatif.
+
+
+
