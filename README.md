@@ -785,21 +785,36 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 
 ![image](https://github.com/user-attachments/assets/e34cd32a-70b1-4512-8ad6-46879f24539b)
 
-Plot ini menunjukkan interaksi antara dua fitur tersebut terhadap target model.
-Nilai partial dependence cenderung lebih tinggi (sekitar 0.50 - 0.52) ketika Job Success Rate berada di kisaran menengah hingga tinggi (sekitar 1.0 ke atas).
-Pada saat yang sama, nilai Marketing Spend yang lebih tinggi (mendekati 0.8 - 1.0) juga berasosiasi dengan partial dependence yang lebih besar.
-Area dengan kombinasi rendah dari kedua fitur menunjukkan nilai partial dependence yang lebih rendah (~0.41 - 0.48).
-Secara keseluruhan, kombinasi tingkat keberhasilan pekerjaan yang baik dan pengeluaran pemasaran yang cukup tinggi memberikan dampak positif paling kuat terhadap target model dalam konteks ini
+| Rentang Job Success Rate | Rentang Marketing Spend | Nilai Partial Dependence | Keterangan                                                                                  |
+|-------------------------|------------------------|--------------------------|---------------------------------------------------------------------------------------------|
+| Rendah                  | Rendah                 | ~0.41 - 0.48             | Kombinasi rendah dari kedua fitur, nilai partial dependence lebih rendah                    |
+| Menengah hingga Tinggi   | Rendah                 | (Tidak disebutkan spesifik)  | Tidak ada informasi eksplisit, kemungkinan nilai partial dependence sedang atau rendah      |
+| Menengah hingga Tinggi   | Tinggi (0.8 - 1.0)     | ~0.50 - 0.52             | Nilai partial dependence cenderung lebih tinggi                                            |
+| Tinggi (≥1.0)           | Tinggi (mendekati 1.0)  | ~0.50 - 0.52             | Kombinasi tingkat keberhasilan pekerjaan yang baik dan pengeluaran pemasaran tinggi berdampak positif paling kuat terhadap target model |
+
 
 ![image](https://github.com/user-attachments/assets/2bdd854e-acf3-4ef9-87c1-0266816d12fb)
 
-Plot ini menunjukkan interaksi antara tingkat keberhasilan pekerjaan dan durasi pekerjaan terhadap target model.
-Nilai partial dependence cenderung lebih tinggi (sekitar 0.50 - 0.51) ketika Job Success Rate berada di kisaran menengah hingga tinggi (sekitar 1.0 ke atas).
-Pada saat yang sama, nilai Job Duration Days yang lebih tinggi (mendekati 0.8 - 1.0) juga berasosiasi dengan partial dependence yang lebih besar.
-Area dengan kombinasi rendah dari kedua fitur menunjukkan nilai partial dependence yang lebih rendah (~0.48 - 0.49).
-Secara keseluruhan, kombinasi tingkat keberhasilan pekerjaan yang baik dan durasi kerja yang panjang memberikan dampak positif paling kuat terhadap target model dalam konteks ini
+| Rentang Job Success Rate | Rentang Job Duration Days | Nilai Partial Dependence | Keterangan                                                                                  |
+|-------------------------|---------------------------|--------------------------|---------------------------------------------------------------------------------------------|
+| Rendah                  | Rendah                    | ~0.48 - 0.49             | Kombinasi rendah dari kedua fitur, nilai partial dependence lebih rendah                    |
+| Menengah hingga Tinggi   | Rendah                    | (Tidak disebutkan spesifik)  | Tidak ada informasi eksplisit, kemungkinan nilai partial dependence sedang atau rendah      |
+| Menengah hingga Tinggi   | Tinggi (0.8 - 1.0)        | ~0.50 - 0.51             | Nilai partial dependence cenderung lebih tinggi                                            |
+| Tinggi (≥1.0)           | Tinggi (mendekati 1.0)    | ~0.50 - 0.51             | Kombinasi tingkat keberhasilan pekerjaan yang baik dan durasi kerja panjang berdampak positif paling kuat terhadap target model |
+
 
 ![image](https://github.com/user-attachments/assets/7424f25a-2c6d-4a2c-8f9f-4b70fc110d0e)
+
+| Rentang Job Success Rate | Rentang Hourly Rate      | Nilai Partial Dependence | Keterangan                                                                                  |
+|-------------------------|-------------------------|--------------------------|---------------------------------------------------------------------------------------------|
+| Rendah                  | Rendah                  | ~0.48 - 0.49             | Kombinasi rendah dari kedua fitur, nilai partial dependence lebih rendah                    |
+| Menengah hingga Tinggi   | Rendah atau Sedang       | (Tidak disebutkan spesifik)  | Tidak ada informasi eksplisit, kemungkinan nilai partial dependence sedang atau rendah      |
+| Menengah hingga Tinggi   | Sedang hingga Tinggi (0.4 - 1.0)  | ~0.50                   | Nilai partial dependence cenderung meningkat                                               |
+| Tinggi (≥1.0)           | Sedang hingga Tinggi     | ~0.50                   | Kombinasi tingkat keberhasilan pekerjaan yang baik dan tarif per jam cukup tinggi berdampak positif paling kuat terhadap target model |
+
+
+
+![image](https://github.com/user-attachments/assets/e6289de5-1d33-45e5-b892-38f0349b7193)
 
 Plot ini menunjukkan interaksi antara pengeluaran pemasaran dan durasi pekerjaan terhadap target model.
 Nilai partial dependence relatif stabil di kisaran 0.49 - 0.50 untuk sebagian besar kombinasi nilai Marketing Spend dan Job Duration Days.
@@ -807,22 +822,23 @@ Namun, terdapat lonjakan nilai partial dependence yang cukup signifikan (mencapa
 Ini mengindikasikan bahwa pengeluaran pemasaran yang sangat tinggi memberikan dampak positif kuat terhadap target, terutama tanpa terlalu dipengaruhi oleh durasi kerja.
 Secara keseluruhan, fitur Marketing Spend dengan nilai tinggi adalah faktor utama yang meningkatkan hasil model dalam konteks ini, sementara Job Duration Days memiliki efek yang lebih netral atau minor
 
-![image](https://github.com/user-attachments/assets/e6289de5-1d33-45e5-b892-38f0349b7193)
+
+
+![image](https://github.com/user-attachments/assets/ad710de1-ea3a-4833-b3b2-41aabed63cd7)
 
 Nilai partial dependence relatif stabil di kisaran 0.48 - 0.50 untuk sebagian besar kombinasi nilai Marketing Spend dan Hourly Rate.
 Terdapat lonjakan nilai partial dependence yang cukup signifikan (mencapai sekitar 0.52) ketika Marketing Spend sangat tinggi (mendekati 1.0), terlepas dari nilai Hourly Rate.
 Ini menunjukkan bahwa pengeluaran pemasaran yang sangat tinggi memberikan dampak positif kuat terhadap target model, sementara variasi pada tarif per jam tidak terlalu mempengaruhi hasil secara signifikan dalam konteks ini.
 Secara keseluruhan, fitur Marketing Spend dengan nilai tinggi adalah faktor utama yang meningkatkan hasil model, sedangkan Hourly Rate memiliki efek yang lebih netral atau minor
 
-![image](https://github.com/user-attachments/assets/ad710de1-ea3a-4833-b3b2-41aabed63cd7)
+
+
+![image](https://github.com/user-attachments/assets/079998c7-8aec-4dc3-b198-39fbe08e4366)
 
 Nilai partial dependence cenderung stabil di kisaran 0.48 - 0.50 untuk sebagian besar kombinasi durasi pekerjaan dan tarif per jam.
 Terdapat peningkatan nilai partial dependence (mencapai sekitar 0.51) pada rentang durasi pekerjaan yang cukup panjang (sekitar 0.7 - 0.85) dengan tarif per jam sedang hingga tinggi (sekitar 0.4 - 1.0).
 Area dengan durasi kerja pendek dan tarif per jam rendah menunjukkan nilai partial dependence yang lebih rendah (~0.48).
 Secara keseluruhan, kombinasi durasi kerja yang lebih lama dan tarif per jam yang cukup tinggi memberikan dampak positif paling kuat terhadap target model dalam konteks ini 
-
-![image](https://github.com/user-attachments/assets/079998c7-8aec-4dc3-b198-39fbe08e4366)
-
 
 
 
