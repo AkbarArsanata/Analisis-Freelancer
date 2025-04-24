@@ -763,10 +763,9 @@ Jika menggunakan satu algoritma pada solution statement, lakukan proses improvem
 Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. Jelaskan mengapa memilih model tersebut sebagai model terbaik.
 ## Evaluation
 
-```markdown
-# Penjelasan Metrik Evaluasi: Mean Squared Error (MSE)
+## Penjelasan Metrik Evaluasi: Mean Squared Error (MSE)
 
-## Apa itu MSE?
+### Apa itu MSE?
 
 Mean Squared Error (MSE) adalah metrik evaluasi yang umum digunakan dalam masalah regresi untuk mengukur seberapa dekat prediksi model dengan nilai aktual. Secara matematis, MSE dihitung sebagai rata-rata dari kuadrat selisih antara nilai prediksi dan nilai sebenarnya:
 
@@ -779,7 +778,7 @@ di mana:
 - \( \hat{y}_i \) adalah nilai prediksi,
 - \( n \) adalah jumlah data.
 
-## Mengapa Memilih MSE?
+### Mengapa Memilih MSE?
 
 *Dalam konteks proyek ini*, tujuan utama adalah memprediksi pendapatan freelancer berdasarkan berbagai faktor seperti Job Success Rate, alokasi pemasaran, durasi kerja, dan tarif per jam. Karena target variabel berupa angka kontinu (pendapatan), maka regresi menjadi metode yang tepat.
 
@@ -791,7 +790,7 @@ MSE dipilih karena:
 
 ---
 
-## Hasil Evaluasi Model Berdasarkan Nilai MSE
+### Hasil Evaluasi Model Berdasarkan Nilai MSE
 
 | Model                      | Nilai MSE               | Keterangan Singkat                  |
 |----------------------------|-------------------------|-----------------------------------|
@@ -803,6 +802,8 @@ MSE dipilih karena:
 ---
 
 ## Interpretasi Visualisasi Hasil Prediksi
+
+![image](https://github.com/user-attachments/assets/2fdd3d2e-21b2-49b2-8d48-0d36cf835489)
 
 Selain melihat angka MSE sebagai ukuran kuantitatif kualitas model, analisis visual juga dilakukan untuk menilai bagaimana titik-titik data hasil prediksi tersebar terhadap garis fitted line (garis ideal):
 
@@ -821,7 +822,7 @@ Berdasarkan kombinasi antara metrik numerik (MSE) dan analisis visualisasi:
 > Diputuskan memilih **RandomForestRegressor** sebagai model final karena kualitas visualisasinya paling baik — titik-titik hasil prediksinya sangat rapat ke garis ideal meskipun memiliki nilai mse tertinggi di antara kandidat lain. Perbedaan mse sangat kecil dan masih dapat ditoleransi dalam konteks aplikasi ini.
 
 Keputusan ini mendukung solusi praktis agar tidak hanya bergantung pada angka statistik saja tetapi juga mempertimbangkan interpretabilitas serta kestabilan hasil di lapangan.
-```
+
 
 ### Feature Interaction
 #### Category Feature
@@ -900,9 +901,63 @@ Berikut adalah interpretasi singkat dari plot partial dependence untuk masing-ma
 | Durasi Pekerjaan Panjang (0.7 - 0.85) & Tarif Per Jam Sedang-Hinggi (0.4 - 1.0) | Rentang spesifik tersebut          | Peningkatan hingga sekitar 0.51                        | Kombinasi durasi kerja lebih lama dan tarif per jam cukup tinggi memberikan dampak positif paling kuat            |
 | Durasi Kerja Pendek & Tarif Per Jam Rendah   | Area dengan nilai rendah (~0.48)    | Partial dependence lebih rendah (~0.48)                | Dampak kurang signifikan terhadap hasil model                                                                     |
 
+## Keterbatasan Metrik Evaluasi
 
+Meskipun **Mean Squared Error (MSE)** sangat berguna untuk mengukur performa kuantitatif model, metrik ini tidak dapat menjelaskan secara jelas bagaimana setiap fitur memengaruhi prediksi. Oleh karena itu, diperlukan teknik tambahan untuk memahami kontribusi dan pengaruh fitur terhadap hasil prediksi. Dua teknik interpretabilitas yang digunakan adalah **SHAP** dan **Partial Dependence Plot (PDP)**.
 
+---
 
+## 1. SHAP (SHapley Additive exPlanations)
+
+### Penjelasan
+
+SHAP adalah metode berbasis teori permainan kooperatif yang memberikan nilai kontribusi setiap fitur dalam sebuah prediksi model secara adil dan konsisten. Nilai SHAP menunjukkan seberapa besar pengaruh suatu fitur terhadap perubahan output model dibandingkan dengan rata-rata output.
+
+### Cara Kerja
+
+- Setiap fitur dianggap sebagai "pemain" dalam permainan.
+- Kontribusi tiap pemain dihitung berdasarkan rata-rata marginal contribution-nya di semua subset kombinasi pemain lain.
+- Nilai SHAP memenuhi properti additivitas sehingga total kontribusi semua fitur sama dengan selisih antara prediksi aktual dengan nilai baseline (rata-rata).
+
+### Persamaan Matematik SHAP
+
+Nilai SHAP untuk fitur \( i \) pada instance \( x \) didefinisikan sebagai:
+
+$$
+\phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! (|N| - |S| - 1)!}{|N|!} [f_{S \cup \{i\}}(x_{S \cup \{i\}}) - f_S(x_S)]
+$$
+
+di mana:
+- \( N = \{1, 2, ..., M\} \) adalah himpunan semua fitur,
+- \( S \) adalah subset dari fitur tanpa elemen \( i \),
+- \( f_S(x_S) = E[f(x)|x_S] \) adalah ekspektasi output model ketika hanya menggunakan subset fitur \( S\),
+- Faktor pembobot di depan memastikan distribusi kontribusi adil sesuai teori Shapley.
+
+---
+
+## 2. Partial Dependence Plot (PDP)
+
+### Penjelasan
+
+Partial Dependence Plot menggambarkan hubungan marginal antara satu atau dua variabel input tertentu dengan target prediksi, dengan mengabaikan efek variabel lain. PDP membantu melihat pola pengaruh langsung suatu atau beberapa variabel terhadap hasil model secara global.
+
+### Cara Kerja
+
+Untuk satu variabel input \( X_j \), PDP menghitung rata-rata prediksi model ketika nilai variabel tersebut diubah sementara variabel lain tetap mengikuti distribusinya asli:
+
+$$
+PD_j(x_j) = E_{X_{\setminus j}}[f(x_j, X_{\setminus j})] = 
+\int f(x_j, x_{\setminus j}) dP(X_{\setminus j})
+$$
+
+di mana:
+- \( x_j \) adalah nilai tetap dari variabel yang dianalisis,
+- \( X_{\setminus j} = X_1,...,X_{j-1},X_{j+1},...,X_M\),
+- Ekspektasi dilakukan atas distribusi gabungan dari semua variabel kecuali variable ke-\(j\).
+
+Dengan kata lain, PDP menampilkan bagaimana perubahan nilai pada satu atau dua feature mempengaruhi rata-rata output model secara keseluruhan.
+
+---
 
 
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
