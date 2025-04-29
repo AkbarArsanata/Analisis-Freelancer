@@ -519,8 +519,6 @@ Normalisasi menggunakan Min-Max Scaler sangat tepat diterapkan pada dataset free
 
 ### Menyiapkan Data Dan Menyesuaikannya Dengan Asumsi Regresi
 
-*Residual* adalah selisih antara nilai observasi aktual dengan nilai prediksi model.
-
 #### a. Linearitas Predictor dan Response
 Memastikan hubungan linier antara variabel prediktor dengan respons.
 
