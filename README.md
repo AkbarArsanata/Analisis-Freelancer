@@ -431,7 +431,7 @@ Gambar tersebut menampilkan distribusi dari sembilan variabel yang berkaitan den
 ## Missing Value Checking
 ![image](https://github.com/user-attachments/assets/9c02a967-8a03-4ac6-a3e4-d046eabd19cf)
 
-Terlihat dari gambar diatas tidak terindikasi adanya missing value
+Terlihat dari gambar diatas **tidak terindikasi adanya missing value** sehingga tidak perlu dilakukan penanganan missing value pada data preparation
 
 ## Duplicated Checking 
 
@@ -441,7 +441,7 @@ duplicate_count = df.duplicated().sum()
 print(f"Jumlah baris duplikat: {duplicate_count}")
 ```
 
-Dalam Code tersebut tidak terdeteksi adanya duplikat
+Dalam Code tersebut tidak **terdeteksi adanya duplikat** sehingga tidak perlu dilakukan penanganan terhadap data duplikat
 
 ## Inconsistent Checking
 
@@ -458,7 +458,7 @@ Tidak ada isu inkonsistensi atau ketidaktepatan ditemukan dari semua langkah dia
 ## Outlier Checking
 ![image](https://github.com/user-attachments/assets/e3f4c3c1-15f2-4942-ba17-a321fb7a3ffd)
 
-Terlihat dari gambar diatas tidak terindikasi adanya Outlier
+Terlihat dari gambar diatas **tidak terindikasi adanya Outlier**, sehingga pada data preparation tidak usah dilakukan penanganan terhadap outlier
 
 
 ## Korelasi
@@ -479,20 +479,43 @@ Oleh karena itu, **tidak perlu dilakukan teknik reduksi dimensi seperti Principa
 
 ## Data Preparation
 
+### Membersihkan Noise
+
+#### 1. Inkonsistensi
+**Hasil pemeriksaan kualitas data menunjukkan tidak ditemukannya inkonsistensi atau ketidaktepatan dalam dataset yang dianalisis.** Semua variabel numerik telah memenuhi threshold yang ditetapkan, di mana nilai persentase seperti Job_Success_Rate dan Rehire_Rate berada dalam rentang 0-100%, rating klien (Client_Rating) konsisten pada skala 0-5, serta seluruh variabel kuantitatif seperti Job_Duration_Days, Earnings_USD, Hourly_Rate, Marketing_Spend, dan Job_Completed tidak mengandung nilai negatif. Pemeriksaan menyeluruh menggunakan skrip validasi otomatis juga tidak menemukan pelanggaran aturan logis antar variabel, sehingga dapat disimpulkan bahwa dataset ini telah melalui proses kontrol kualitas yang baik dan siap untuk tahap analisis lebih lanjut tanpa memerlukan pembersihan tambahan terkait inkonsistensi nilai.
+
+#### 2. Inrelevant
+**Hasil pemeriksaan kualitas data menunjukkan tidak ditemukannya Inrelevant dalam dataset yang dianalisis.** Selain memeriksa inkonsistensi nilai, kami juga melakukan identifikasi terhadap data yang secara logika bisnis dianggap tidak relevan atau merupakan outlier ekstrem. Untuk variabel *Job_Duration_Days*, kami menetapkan batas atas 1000 hari (≈2.7 tahun) karena durasi pekerjaan yang melebihi nilai ini dianggap tidak realistis untuk sebagian besar jenis proyek. Pada variabel *Earnings_USD*, kami menetapkan threshold 1.000.000 USD sebagai batas atas yang wajar untuk pendapatan per pekerjaan. Hasil pemeriksaan menunjukkan tidak ditemukannya data yang melebihi batas-batas tersebut, mengindikasikan bahwa seluruh entri data dalam kedua variabel ini berada dalam range yang masuk akal dan relevan dengan konteks bisnis yang dianalisis. Dengan demikian, tidak diperlukan tindakan lebih lanjut untuk menghapus atau menangani data outlier ekstrem pada tahap ini.
+
+#### 3. Outlier
+**Hasil pemeriksaan kualitas data menunjukkan tidak ditemukannya outlier dalam dataset yang dianalisis.** kami telah melakukan analisis outlier komprehensif menggunakan visualisasi boxplot dan perhitungan Interquartile Range (IQR), di mana boxplot menunjukkan distribusi data yang compact tanpa titik ekstrem di luar whiskers, sementara perhitungan IQR (dengan batas bawah Q1 - 1.5×IQR dan batas atas Q3 + 1.5×IQR) mengonfirmasi tidak adanya outlier ekstrem/masih dalam batas wajar. Beberapa outlier moderat yang terdeteksi dipertahankan karena merepresentasikan variasi alami data dan masih relevan secara bisnis, sehingga kami menyimpulkan dataset ini tidak memerlukan penghapusan outlier maupun transformasi data lebih lanjut.
+
+#### 4. Duplikat
+**Hasil pemeriksaan kualitas data menunjukkan tidak ditemukannya Duplikat dalam dataset yang dianalisis.** kami juga telah melakukan pemeriksaan komprehensif terhadap duplikat data dengan menganalisis seluruh kolom identifier kunci, di mana hasilnya menunjukkan tidak ada baris data yang terduplikasi secara sempurna (100% identik). Sehingga dapat disimpulkan bahwa dataset ini benar-benar unik dan tidak memerlukan tindakan penghapusan duplikat.**
+
+#### 5. Missing Value
+**Hasil pemeriksaan kualitas data menunjukkan tidak ditemukannya Missing Value dalam dataset yang dianalisis.** Heatmap yang dihasilkan secara visual mengkonfirmasi kelengkapan data dengan semua kolom. Kelengkapan data ini sangat menguntungkan untuk proses analisis lebih lanjut karena menghilangkan kebutuhan akan teknik penanganan missing values seperti imputasi atau penghapusan baris, sehingga memastikan integritas dataset tetap terjaga dan seluruh catatan dapat dimanfaatkan secara optimal dalam pemodelan atau analisis bisnis. Temuan ini melengkapi kesimpulan sebelumnya tentang tidak adanya inkonsistensi, outlier ekstrem, maupun duplikat data, yang semakin memperkuat validitas dan kesiapan dataset untuk tahap pemrosesan berikutnya.**
+
 ### Mengubah Format Agar Compatible Dengan Model
 
 #### 1. Encode
 - Proses ini biasanya merujuk pada pengubahan data kategorikal menjadi format numerik agar dapat digunakan dalam analisis statistik atau pemodelan.
 - Contoh: Mengubah variabel kategori seperti **"Jenis Kelamin"** (Laki-laki, Perempuan) menjadi angka (0, 1).
+- Pada tahap ini digunakan Label Encoder
+Label Encoder merupakan teknik yang efektif untuk mengubah variabel kategorikal menjadi numerik dalam dataset freelancer ini, terutama untuk kolom-kolom yang bersifat ordinal. Teknik ini cocok digunakan karena mampu mempertahankan hubungan hierarkis antar kategori - misalnya mengubah "Beginner", "Intermediate", dan "Expert" menjadi 0, 1, dan 2 secara berurutan. Keunggulan utama Label Encoder terletak pada efisiensinya yang hanya membutuhkan satu kolom tambahan, sehingga lebih hemat memori dibandingkan One-Hot Encoding yang akan membuat banyak kolom baru untuk setiap kategori. Selain itu, teknik ini sangat kompatibel dengan model berbasis pohon (seperti Random Forest dan XGBoost) yang akan digunakan untuk menganalisis data freelancer ini, karena model-model tersebut tidak terpengaruh oleh besaran numerik selama struktur kategori tetap jelas.
 
 #### 2. Binning
 - Binning adalah teknik mengelompokkan data kontinu ke dalam beberapa interval atau "bin".
 - Tujuannya untuk menyederhanakan data dan mengurangi noise.
 - Contoh: Mengelompokkan usia ke dalam rentang umur seperti **0–20**, **21–40**, dst.
+- Pada tahap ini digunakan adaptive binning
+Kelebihan utama Adaptive Binning terletak pada kemampuannya mempertahankan informasi penting dari data asli sekaligus mengurangi dampak outlier. Teknik ini sangat relevan untuk analisis segmentasi freelancer berdasarkan metrik seperti Job_Success_Rate atau Client_Rating, dimana pengelompokan yang tepat dapat mengungkap pola perilaku yang berbeda antar kelompok.
 
 #### 3. Normalized
 - Normalisasi adalah proses menskalakan nilai-nilai fitur agar berada dalam rentang tertentu (misalnya antara 0 dan 1).
 - Ini penting untuk memastikan bahwa semua fitur memiliki bobot yang seimbang saat dimasukkan ke model.
+- Pada tahap ini digunakan MinMax Scaler
+Normalisasi menggunakan Min-Max Scaler sangat tepat diterapkan pada dataset freelancer ini karena kemampuannya menyamakan skala berbagai fitur numerik seperti Earnings_USD dan Hourly_Rate yang memiliki rentang nilai sangat berbeda. Teknik ini bekerja dengan mengubah semua nilai ke dalam rentang seragam antara 0 hingga 1, dimana nilai minimum fitur menjadi 0 dan nilai maksimum menjadi 1, sementara nilai-nilai lainnya didistribusikan secara proporsional di antara keduanya. Pada kasus dataset freelancer, normalisasi ini penting karena perbedaan skala yang besar antar variabel dapat menyebabkan bias pada model machine learning. Keunggulan utama Min-Max Scaler adalah kemudahan interpretasi hasil transformasi dan kemampuannya mempertahankan distribusi asli data, berbeda dengan metode standardisasi yang mengubah bentuk distribusi.
 
 ### Menyiapkan Data Dan Menyesuaikannya Dengan Asumsi Regresi
 
